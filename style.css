@@ -1,0 +1,352 @@
+@charset "UTF-8";
+
+/*    --------- 共通 ---------    */
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 100%;
+    overflow-x: hidden;    
+}
+
+body{
+    font-family:  "Klee One","Noto Serif JP", "Noto Sans JP",  "cursive", serif, sans-serif;
+    line-height: 1.7;
+    color: rgb(23, 23, 23);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+.page{
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+article{
+    width: 74%;
+}
+aside{
+    padding-top:0.5rem;
+    width: 16%;
+}
+section{
+    padding-bottom:6rem;
+}
+li{
+    list-style: none;
+}
+h2{
+    padding-bottom: 1rem;
+    /* background-color: antiquewhite; */
+}
+h3{
+    border-bottom: 1px solid rgb(204, 204, 204,0.6);
+    margin: 0 0 1.6rem;
+    /* background-color: #a12c32 */
+}
+/*    --------- aside ---------    */
+aside li{
+    border-bottom: 1px solid rgb(204, 204, 204,0.6);
+    margin-bottom:1.4rem;
+}
+aside nav ul a{
+    display: block;
+}
+aside nav ul a:hover{
+    background-color:rgb(204, 204, 204,0.3) ;
+}
+
+/*    --------- フッター ---------    */
+footer p{
+    text-align: center;
+}
+footer{
+    padding:2rem 0 2rem 0;
+    /* background-color: #f8e72b; */
+}
+/*    --------- ヘッダー ---------    */
+header{
+    width: 1000px;
+    padding:2rem 0 2rem 0;
+    text-align: left;
+    margin: auto;
+    /* background-color: #2bf898 */
+}
+
+/*    --------- 自己紹介スキル ---------    */
+.skill{
+    padding-bottom:1.4rem;
+}
+.skill p{
+    border-bottom: 1px dashed rgb(204, 204, 204);
+    margin-bottom:1rem;
+    font-size:1.2rem;
+}
+/*    --------- バナー ---------    */
+.banner{
+    display: flex;
+    gap:1rem;
+    margin-bottom:4rem;
+}
+.banner img{
+    width: 58%;
+}
+.banner p{
+    width: 34%;
+}
+
+/*    --------- webサイト ---------    */
+.white{
+    padding:0 0.8rem 0 0;
+    border: 1px solid rgb(204, 204, 204,0.6);
+    background-color: #ffffff;
+}
+.gold{
+    padding:0 0.5rem;
+    background: linear-gradient(270deg, #c9ab1b, #f8e72b);
+}
+.navy{
+    padding:0 0.5rem;
+    background-color: #222136;
+    color:#ffffff
+}
+.img-frame{
+    border: 1px solid rgb(204, 204, 204,0.6);
+}
+.wood{
+    display: flex;
+    gap:1rem;
+}
+.tax-s{
+    width: auto;
+    height: 300px;
+}
+.tax-pc{
+    width: auto;
+    height: 300px;
+}
+.tax{
+    display: flex;
+    gap:2rem;
+}
+.click{
+    border: 1px solid rgb(204, 204, 204,0.6);
+    background-color:rgb(204, 204, 204,0.3) ;
+    padding:0.2rem 0.5rem;
+
+}
+
+.click:hover{
+    background-color:rgb(255, 255, 255) ;
+}
+
+/*    --------- LP ---------    */
+.lp{
+display: flex;
+gap:2rem;
+}
+.lp img{
+    width: 30%;
+    height: auto;
+}
+.lp2{
+    display: flex;
+
+    gap:4rem;
+    margin-bottom:2rem;
+}
+.lp2s,.lp2pc{
+    height: 280px;
+    width: auto;
+}
+
+/*    --------- 仕事歴 ---------    */
+.management{
+    display: flex;
+    padding-bottom:2rem;
+}
+.manage-left{
+    width: 14%;
+}
+
+/*    --------- 現在 ---------    */
+.now{
+    display: flex;
+    padding-bottom:2rem;
+}
+.now-left{
+    width: 20%;
+}
+
+
+/*    --------- レスポンシブのメニュー---------    */
+.sheader{
+    display: none;
+}
+.pcheader{
+    display: block;
+}
+
+
+
+
+/*    --------- スマホ ---------    */
+@media (max-width: 600px) {
+    /*    --------- レスポンシブのメニュー---------    */
+    .sheader{
+        display: block;
+    }
+    .pcheader{
+        display: none;
+    }
+    aside{
+        display: none;
+    }
+    .sheaderf{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .sul{
+        background-color: rgb(255, 255, 255,0.8);
+        position: absolute;
+        /* top:80px; */
+        right: -150px; 
+        width: 150px;
+        padding:2rem 0;
+        opacity: 1;
+        z-index: 999;
+    }
+    .sul.active{
+        right: 0px; 
+        transition: all 0.5s;
+        position: absolute;
+        z-index: 999;
+    }
+    .sli{
+        display: block;
+        cursor: pointer;
+        list-style: none;
+        /* text-align: center; */
+        line-height: 2.6rem;
+        border-bottom:0.9px solid #0d0d0d;
+        margin:0 10px;
+    }
+    .sli:hover{
+        background-color: #ffffff;
+        transition: all 0.8s;
+    }
+    #hum{
+        display: block;
+    }
+    #hum.active{
+        display: none;
+    }
+    #batu{
+        display: none;
+    }
+    #batu.active{
+        display:block;
+    }
+    body{
+        width: 380px;
+    }
+    header,footer,section,article,aside,.page{
+        width: 90%;
+        margin:0 auto;
+    }
+
+    .page{
+        display: block;
+    }
+
+    
+
+    /*    --------- バナー ---------    */
+    .banner{
+        display: block;
+        gap:1rem;
+        margin-bottom:4rem;
+    }
+    .banner img{
+        width: 100%;
+    }
+    .banner p{
+        width: 100%;
+    }
+
+    /*    --------- webサイト ---------    */
+    .wood{
+        display: block;
+    }
+    .wood-img img{
+        width: 300px;
+        height: auto;
+    }
+    .tax-s{
+        width: 180px;
+        height: auto;
+    }
+    .tax-pc{
+        width: 360px;
+        height: auto;
+    }
+    .tax{
+        display: block;
+    }
+
+    /*    --------- LP---------    */
+    .lp2s{
+        height: auto;
+        width: 120px;
+        margin:1rem auto;
+    }
+    .lp2pc{
+        width: 300px;
+        height: auto;
+    }
+    .lp2{
+
+        flex-direction: column;
+
+    }
+
+    /*    --------- 現在 ---------    */
+    .now{
+        display: block;    
+    }
+    .now-left{
+        width: 100%;
+    }
+    /*    --------- 仕事歴 ---------    */
+    .management{
+        display: block;
+    }
+    .manage-left{
+        width: 100%;
+    }
+    .youtube iframe{
+        width: 100%;
+        height: 100;
+    }
+    .yamato{
+        width: 100%;
+        height: atuo;
+    }
+    
+    /*    --------- お問合せ ---------    */
+    .contact iframe{
+    width: 100%;
+    }
+}
+
+
+
+
+
