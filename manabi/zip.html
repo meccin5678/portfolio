@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptのあれこれ</title>
+
+            <!-- CSS -->
+            <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+            <link rel="stylesheet" href="style.css">
+    
+            <!-- フォントの読み込み -->
+            <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap" rel="stylesheet"> -->
+        
+            <!-- JavaScriptの読み込み -->
+            <script src="script15.js" defer></script>
+
+
+</head>
+<body>
+    <header>
+        <p>
+            <a href="https://meccin56.github.io/portfolio/index.html" target="_blank">
+            私のポートフォリオはこちらから→
+            </a>
+        </p> 
+    </header>
+    <nav>
+        <ul>
+            <a href="index.html"><li>HOME</li></a>
+            <a href="array.html"><li>配列</li></a>
+            <a href="observe.html"><li>Observe</li></a>
+            <a href="foreach.html"><li>forEach</li></a>
+            <a href="modal.html"><li>モーダル</li></a>
+            <a href="menu.html"><li>メニュー</li></a>
+            <a href="slider.html"><li>スライドショー</li></a>
+            <a href="transitionend.html"><li>transitionend</li></a>
+            <a href="spinner.html"><li>ローディング</li></a>
+            <a href="honyaku.html"><li>翻訳アプリ</li></a>
+            <a href="zip.html"><li>郵便番号API</li></a>
+            <a href="calendar.html"><li>カレンダー</li></a>
+            <a href="fortune.html"><li>占い</li></a>
+            <a href="swiper1.html"><li>swiper1</li></a>
+            <a href="swiper2.html"><li>swiper2</li></a>
+    
+        </ul>
+    </nav>
+<main>
+<section>
+        <h2>郵便番号API</h2>
+        <p>郵便番号を入力すると、都道府県、市町村、町名が自動入力されます<br>
+            fetchで郵便番号のAPIを取りに行き表示させています</p>
+</section>
+<section>
+    <div class="zip">
+        <form action="" name="zipform" class="zipform">
+            <label for="zipcode">郵便番号</label>
+            <input type="number" id="zipcode" name="zipcode" placeholder="7桁の郵便番号">
+
+            <label for="prefecture">都道府県</label>
+            <input type="text" id="json()" name="prefecture" placeholder="都道府県">
+
+            <label for="city">市町村</label>
+            <input type="text" id="city" name="city" placeholder="市町村">
+
+            <label for="town">町名以下</label>
+            <input type="text" id="town" name="town" placeholder="町名など">
+        </form>
+    </div>    
+</section>
+
+</main>
+
+<footer>
+    <p><a href="https://meccin56.github.io/portfolio/index.html" target="_blank">
+        私のポートフォリオはこちらから→
+        </a>
+    </p> 
+</footer>  
+</body>
+</html>
