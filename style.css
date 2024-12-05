@@ -166,6 +166,9 @@ nav li:hover{
   .w70{
     width: 80%;
   }
+  .w90{
+    width: 100%;
+  }
   h3 {
     width: 50%;
   }
@@ -236,5 +239,9 @@ nav li:hover{
     display: block;
     width: 100%;
   }
+  .flex_long img,
+  .flex_mp img{
+    max-width: 100%;
+}
   
 }
