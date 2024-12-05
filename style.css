@@ -146,10 +146,7 @@ nav li:hover{
   width: 340px;
   height: auto;
 }
-.flex_long,
-.flex_mp{
-  width: 70%;
-}
+
 .now-left{
   width: 20%;
 }
@@ -165,6 +162,10 @@ nav li:hover{
   }
   .w70{
     width: 80%;
+  }
+  .w70 img{
+    max-width: 100%;
+    height: auto;
   }
   .w90{
     width: 100%;
@@ -231,6 +232,7 @@ nav li:hover{
     width: 100%;
   }
   .flex_long,
+  .flex_mp,
   .flex_now,
   .flex_management,
   .now-left,
