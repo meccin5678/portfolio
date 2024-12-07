@@ -146,7 +146,9 @@ nav li:hover{
   width: 340px;
   height: auto;
 }
-
+.flex_mp{
+  width: 70%;
+}
 .now-left{
   width: 20%;
 }
