@@ -176,7 +176,7 @@ nav li:hover{
       right: calc((100% - 90%) / 2);
   }
   .flex_management_left{
-    width: 20%;
+    width: 23%;
   }
 }
 /* 画面幅が800px以下の場合 */
