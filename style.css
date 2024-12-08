@@ -128,7 +128,8 @@ nav li:hover{
 /*--------------- flexレイアウト----------------- */
 .flex_long{
   display: flex;
-  gap:1rem;
+  gap:1.3rem;
+  width: 70%;
 }
 .flex_now,
 .flex_management{
@@ -139,7 +140,7 @@ nav li:hover{
   margin-bottom: 3rem;
 }
 .flex_rigth{
-  width: 50%;
+  /* width: 50%; */
 }
 .flex_long img,
 .flex_mp img{
@@ -173,7 +174,7 @@ nav li:hover{
     width: 100%;
   }
   h3 {
-    width: 50%;
+    /* width: 70%; */
   }
   #nav{
       /* セクションの右端に揃える */
