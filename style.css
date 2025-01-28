@@ -29,6 +29,11 @@ footer {
   height: 100px;
   /* background-color: antiquewhite; */
 }
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 footer {
   display: grid;
   place-items: center;
@@ -345,6 +350,7 @@ header .hmb span {
   header .hmb span {
     opacity: 1;
     visibility: visible;
+
   }
 
   header .hmb.active span:nth-child(1) {
