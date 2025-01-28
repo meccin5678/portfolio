@@ -3,67 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScriptのあれこれ</title>
-
-            <!-- CSS -->
-            <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-            <link rel="stylesheet" href="style.css">
+    <title>ポートフォリオ megumi Lab</title>
     
-            <!-- フォントの読み込み -->
-            <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap" rel="stylesheet"> -->
-        
-            <!-- JavaScriptの読み込み -->
-            <script src="script13.js" defer></script>
+    <!-- SEOメタタグ -->
+    <meta name="description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="keywords" content="ポートフォリオ, Web制作, JavaScript, デザイン, megumi Lab">
+    <meta name="author" content="megumi Lab">
+    
+    <!-- Open Graph メタタグ -->
+    <meta property="og:title" content="ポートフォリオ megumi Lab">
+    <meta property="og:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta property="og:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    <meta property="og:url" content="https://meccin5678.github.io/portfolio/index.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitterカード メタタグ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ポートフォリオ megumi Lab">
+    <meta name="twitter:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="twitter:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
 
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="nav.js" defer></script>
 
+    <!-- Googleタグマネージャー -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8R8H0HG7H0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8R8H0HG7H0');
+    </script>
 </head>
 <body>
-    <div class="loader-container">
-        <div class="loader"></div>
-    </div>
+<style>
+.w70S{
+    max-width: 70%;
+    height: 80vh;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (max-width: 800px) {
+    .w70S {
+        max-width: 100%;
+    }
+}
+.w70S > * {
+    max-width: 70%;
+}
+.w70S.visible{
+opacity: 1;
+}
+
+.loader-container{
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: #0c0603;
+    display: grid;
+    place-items: center;
+}
+.loader-container.hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader{
+    width: 64px;
+    height: 64px;
+    border: 8px solid #ffffff;
+    border-radius: 50%;
+    /* 透明 */
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: spin 0.8s ease infinite alternate;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg) scale(1);
+
+    }
+    100%{
+        transform: rotate(360deg) scale(2);
+    }
+}
+
+</style>
+<div class="loader-container">
+    <div class="loader"></div>
+</div>
 <header>
-    <p>
-        <a href="https://meccin5678.github.io/portfolio/index.html" target="_blank">
-        私のポートフォリオはこちらから→
-        </a>
-    </p> 
+    <p class="top"><a href="index.html">JavaScriptサンプル集</a></p>
+    <div class="hmb" id="hmb">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> 
 </header>
-<nav>
-    <ul>
-        <a href="index.html"><li>HOME</li></a>
-        <a href="array.html"><li>配列</li></a>
-        <a href="observe.html"><li>Observe</li></a>
-        <a href="foreach.html"><li>forEach</li></a>
-        <a href="modal.html"><li>モーダル</li></a>
-        <a href="menu.html"><li>メニュー</li></a>
-        <a href="slider.html"><li>スライドショー</li></a>
-        <a href="transitionend.html"><li>transitionend</li></a>
-        <a href="spinner.html"><li>ローディング</li></a>
-        <a href="honyaku.html"><li>翻訳アプリ</li></a>
-        <a href="zip.html"><li>郵便番号API</li></a>
-        <a href="calendar.html"><li>カレンダー</li></a>
-        <a href="fortune.html"><li>占い</li></a>
-        <a href="swiper1.html"><li>swiper1</li></a>
-        <a href="swiper2.html"><li>swiper2</li></a>
-        <a href="tab.html"><li>タブ</li></a>
-    </ul>
-</nav>
+
+<aside>
+<!-- nav.htmlの内容が表示される -->
+</aside>
 <main>
-    <section class="section">
+    <div class="w70S">
         <h2>ローディングが終わり、ページが表示されました！</h2>
         <p>
             ※ローディングがあっという間に終わるので、イベント関数をloadからclickに変更しています
         </p>
-    </section>
-
+    </div>
 </main>
 <footer>
-    <p><a href="https://meccin5678.github.io/portfolio/index.html" target="_blank">
-        私のポートフォリオはこちらから→
-        </a>
-    </p>
-</footer>  
-</body>
+    <p>&copy; 2023 megumi Lab. All rights reserved.</p>
+</footer>
+<script>
+const loaderContainer = document.querySelector('.loader-container');
+const section = document.querySelector('.w70S');
+
+window.addEventListener('click', () => {
+  loaderContainer.classList.add('hidden');
+  section.classList.add('visible');
+});
+</script> 
+</bod>
 </html>
