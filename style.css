@@ -192,6 +192,9 @@ aside nav ul li .submenu {
   display: none;
   background-color: #ffffff;
 }
+aside nav ul li .submenu li a{
+  display: block;
+}
 aside nav ul li .submenu li {
   padding: 0.7rem 0.5rem;
   border-bottom:1px dashed rgb(204, 204, 204);
