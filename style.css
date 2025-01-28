@@ -245,6 +245,10 @@ header .hmb span {
   .banner img{
     max-width: 100%;
   }
+  /*--------------- webサイト----------------- */
+  .img340{
+    max-width: 100%;
+  }
   /*--------------- サイドナビゲーション----------------- */
   aside {
     visibility: hidden;
