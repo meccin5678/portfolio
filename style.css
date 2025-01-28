@@ -163,6 +163,7 @@ aside {
   overflow-y: auto;
   scrollbar-width: none; /* Firefox用 */
   -ms-overflow-style: none; /* IE/Edge用 */
+  z-index: 3;
 }
 /* スクロールバーを非表示にする */
 aside::-webkit-scrollbar {

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ megumi Lab</title>
+    
+    <!-- SEOメタタグ -->
+    <meta name="description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="keywords" content="ポートフォリオ, Web制作, JavaScript, デザイン, megumi Lab">
+    <meta name="author" content="megumi Lab">
+    
+    <!-- Open Graph メタタグ -->
+    <meta property="og:title" content="ポートフォリオ megumi Lab">
+    <meta property="og:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta property="og:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    <meta property="og:url" content="https://meccin5678.github.io/portfolio/index.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitterカード メタタグ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ポートフォリオ megumi Lab">
+    <meta name="twitter:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="twitter:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="nav.js" defer></script>
+
+    <!-- Googleタグマネージャー -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8R8H0HG7H0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8R8H0HG7H0');
+    </script>
+</head>
+<body>
+<style>
+.fortune{
+    border: 1.5px solid rgb(107, 107, 107);
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 20px;
+    cursor: pointer;
+    text-align: center;
+}
+.fortune:hover{
+    background-color: rgb(107, 107, 107);
+    color: #ffffff;
+    transform: scale(0.85);
+}
+.fortune-result{
+    width: 200px;
+    height: 200px;
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    border-radius: 50%;
+}
+.fortune-result-wrapper{
+    display: flex;
+    gap:2rem;
+    align-items: center;
+    @media (max-width: 800px) {
+        display: block;
+        width: 100%;
+    }
+}
+
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow;
+    color: #5c5c5c;
+}
+.purple{
+    background-color: purple;
+}
+.green{
+    background-color: green;
+}
+</style>
+<header>
+    <p class="top"><a href="index.html">JavaScriptサンプル集</a></p>
+    <div class="hmb" id="hmb">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> 
+</header>
+
+<aside>
+<!-- nav.htmlの内容が表示される -->
+</aside>
+<main>
+<section>
+    <h2>色占い</h2>
+    <p>今日のラッキカラーは何かな？</p><br>
+    <p class="fortune">占う！</p><br><br><br>
+    <div class="fortune-result-wrapper">
+        <div class = "fortune-result"></div><br>
+        <div class = "fortune-result-comment"></div>
+    </div> 
+</section>
+</main>
+<footer>
+    <p>&copy; 2023 megumi Lab. All rights reserved.</p>
+</footer>   
+    
+<script>
+'use strict'
+
+const fortune = document.querySelector('.fortune');
+const result = document.querySelector('.fortune-result');
+const resultComment = document.querySelector('.fortune-result-comment');
+
+// 占うをクリックすると、イベントを発動
+fortune.addEventListener('click', ()=> {
+
+    // ラッキーカラーのリストを定めておく
+    const colorList = ['赤','青','黄','紫','緑'];
+
+    // ランダムに発行される数をカラーリストのインデックス数分、取得する
+    const Random = Math.floor(Math.random() * colorList.length);
+
+    // 占い結果をテキストで表示
+    result.textContent = colorList[Random];
+
+    // 背景色をリセットしておく、既存のクラスをクリア
+    result.classList.remove('red', 'blue', 'yellow','purple','green');
+
+    if(colorList[Random] === '赤'){
+        result.classList.add('red');
+        resultComment.textContent = '赤い食材が疲労回復につながります'
+    }
+    else if(colorList[Random] === '青'){
+        result.classList.add('blue');
+        resultComment.textContent = '青のレインコートで俯きがちな気持ちも上向きに'
+    }
+    else if(colorList[Random] === '黄'){
+        result.classList.add('yellow');
+        resultComment.textContent = '黄色のハンカチで新しい出会いがあるでしょう'
+    }
+    else if(colorList[Random] === '紫'){
+        result.classList.add('purple');
+        resultComment.textContent = '紫のスカーフをどこかに巻きましょう'
+    }
+    else if(colorList[Random] === '緑'){
+        result.classList.add('green');
+        resultComment.textContent = '緑の何か新しいファッションアイテムを買いましょう'
+    }
+});
+</script> 
+</body>
+</html>

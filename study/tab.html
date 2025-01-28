@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ megumi Lab</title>
+    
+    <!-- SEOメタタグ -->
+    <meta name="description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="keywords" content="ポートフォリオ, Web制作, JavaScript, デザイン, megumi Lab">
+    <meta name="author" content="megumi Lab">
+    
+    <!-- Open Graph メタタグ -->
+    <meta property="og:title" content="ポートフォリオ megumi Lab">
+    <meta property="og:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta property="og:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    <meta property="og:url" content="https://meccin5678.github.io/portfolio/index.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitterカード メタタグ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ポートフォリオ megumi Lab">
+    <meta name="twitter:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="twitter:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="nav.js" defer></script>
+
+    <!-- Googleタグマネージャー -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8R8H0HG7H0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8R8H0HG7H0');
+    </script>
+</head>
+<body>
+<style>
+.tab-wrapper{
+    width: 70%;
+    @media  (max-width: 800px){
+        width: 100%
+    }
+}
+.tabs-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2px;
+}
+.tabs-title p{
+    width: 25%;
+    padding: 10px 20px;
+    border-radius: 15px 15px 0 0;
+    background-color: #dfdfdf;
+    /* display: none; */
+    cursor: pointer;
+}
+.tabs-title p.active{
+    display: block;
+    background-color: #ffffff;
+    border-top:1px solid #989898;
+    border-right: 1px solid #989898;
+    border-left: 1px solid #989898;
+}
+.tabs-title p:hover{
+    background-color: #ececec;
+}
+.tabs-contents p{
+    padding: 30px 20px;
+    width: 100%;
+    height: 300px;
+    border-bottom:1px solid #989898;
+    border-right: 1px solid #989898;
+    border-left: 1px solid #989898;
+    display: none;
+    
+}
+.tabs-contents p.active{
+    display: block;
+}
+</style>
+<header>
+    <p class="top"><a href="index.html">JavaScriptサンプル集</a></p>
+    <div class="hmb" id="hmb">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> 
+</header>
+
+<aside>
+<!-- nav.htmlの内容が表示される -->
+</aside>
+<main>
+<section>
+    <h2>タブ</h2>
+    <div class="tab-wrapper">
+        <div class="tabs-title">
+            <p data-id="A" class="active"><a href="">タブA</a></p>
+            <p data-id="B"><a href="">タブB</a></p>
+            <p data-id="C"><a href="">タブC</a></p>
+            <p data-id="D"><a href="">タブD</a></p>
+        </div>
+        <div class="tabs-contents">
+            <p id="A" class="active">タブAのコンテンツ</p>
+            <p id="B">タブBのコンテンツ</p>
+            <p id="C">タブCのコンテンツ</p>
+            <p id="D">タブDのコンテンツ</p>
+        </div>
+    </div>
+</section>
+</main>
+<footer>
+    <p>&copy; 2023 megumi Lab. All rights reserved.</p>
+</footer>   
+    
+<script>
+'use strict'
+
+const tabs = document.querySelectorAll('.tabs-title p')
+const tabsContents = document.querySelectorAll('.tabs-contents p')
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+        });
+        tab.classList.add('active');
+
+        tabsContents.forEach(tabContent => {
+            tabContent.classList.remove('active');
+        });
+        document.getElementById(tab.dataset.id).classList.add('active');
+        
+    });
+})
+</script> 
+</body>
+</html>

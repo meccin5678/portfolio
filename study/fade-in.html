@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ megumi Lab</title>
+    
+    <!-- SEOメタタグ -->
+    <meta name="description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="keywords" content="ポートフォリオ, Web制作, JavaScript, デザイン, megumi Lab">
+    <meta name="author" content="megumi Lab">
+    
+    <!-- Open Graph メタタグ -->
+    <meta property="og:title" content="ポートフォリオ megumi Lab">
+    <meta property="og:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta property="og:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    <meta property="og:url" content="https://meccin5678.github.io/portfolio/index.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitterカード メタタグ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ポートフォリオ megumi Lab">
+    <meta name="twitter:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="twitter:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="nav.js" defer></script>
+
+    <!-- Googleタグマネージャー -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8R8H0HG7H0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8R8H0HG7H0');
+    </script>
+</head>
+<body>
+    <style>
+        .space500 {
+            height: 500px;
+        }
+        .w70 {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 700px;
+        }
+
+        @media screen and (max-width: 800px) {
+            .w70 {
+                width: 100%;
+                gap: 300px;
+            }
+        }
+        .w70 img {
+            width: 60%;
+            height: auto;
+            border-radius: 50%;
+            opacity: 0;
+            transform: translate(-80px, 40px) scale(0.5);
+            transition: opacity 1s cubic-bezier(0.68, -0.55, 0.27, 1.55), transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            @media screen and (max-width: 800px) {
+                width: 70%;
+            }
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+    </style>
+    <header>
+        <p class="top"><a href="index.html">JavaScriptサンプル集</a></p>
+        <div class="hmb" id="hmb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> 
+    </header>
+    
+    <aside>
+    <!-- nav.htmlの内容が表示される -->
+    </aside>
+<main>
+    <section>
+        <h2>フェードイン</h2>
+        <p>スクロールするとコンテンツが現れる↓</p>
+        <p class="space500"></p>
+
+        <div class="w70">
+            <img src="img/001.jpg">
+            <img src="img/002.jpg">
+            <img src="img/003.jpg">
+            <img src="img/005.jpg">
+        </div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2023 megumi Lab. All rights reserved.</p>
+</footer>   
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const images = document.querySelectorAll('.w70 img');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        images.forEach(image => {
+            image.classList.add('fade-in');
+            observer.observe(image);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ megumi Lab</title>
+    
+    <!-- SEOメタタグ -->
+    <meta name="description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="keywords" content="ポートフォリオ, Web制作, JavaScript, デザイン, megumi Lab">
+    <meta name="author" content="megumi Lab">
+    
+    <!-- Open Graph メタタグ -->
+    <meta property="og:title" content="ポートフォリオ megumi Lab">
+    <meta property="og:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta property="og:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    <meta property="og:url" content="https://meccin5678.github.io/portfolio/index.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitterカード メタタグ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ポートフォリオ megumi Lab">
+    <meta name="twitter:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="twitter:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="nav.js" defer></script>
+
+    <!-- Googleタグマネージャー -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8R8H0HG7H0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8R8H0HG7H0');
+    </script>
+</head>
+<body>
+<style>
+.layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0,0.6);
+    opacity: 0;
+    visibility: hidden; 
+    z-index: 4;
+}
+.layer.active{
+    opacity: 1;
+    visibility: visible;
+}
+.modal{
+    width: 600px;
+    height: 400px;
+    transition: all 1s;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #989898;
+    border-radius: 10px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    margin: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1.2s;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    z-index: 5;
+    @media screen and (max-width: 800px){
+        width: 90%;
+        height: 300px;    
+    }
+}
+.modal.active{
+    opacity: 1;
+    visibility: visible;
+}
+.close,.click{
+    cursor: pointer;
+    border: 1px solid #989898;
+    padding:2px 20px;
+    background-color: #ffffff;
+    display: inline-block;
+}
+</style>
+<header>
+    <p class="top"><a href="index.html">JavaScriptサンプル集</a></p>
+    <div class="hmb" id="hmb">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> 
+</header>
+
+<aside>
+<!-- nav.htmlの内容が表示される -->
+</aside>
+<main>
+    <section>
+        <h2>モーダル</h2>
+    </section>
+
+    <section class="sec-modal">
+        <p>クリックするとモーダルウィンドウが立ち上がる</p><br>
+        <p>↓</p><br>
+        <p class="click">クリック</p><br>
+
+        <div class="layer"></div>
+
+        <div class="modal">
+            <p>モーダルウィンドウが立ち上がりました</p><br><br><br>
+            <p class="close">閉じる</p>
+        </div>  
+    </section>
+</main>
+<footer>
+    <p>&copy; 2023 megumi Lab. All rights reserved.</p>
+</footer>   
+    
+<script>
+const Modal = document.querySelector('.modal');
+const Layer = document.querySelector('.layer');
+const Click = document.querySelector('.click');
+const Close = document.querySelector('.close');
+
+Click.addEventListener('click', ()=> {
+
+    Modal.classList.add('active');
+    Layer.classList.add('active');
+});
+
+Close.addEventListener('click', ()=> {
+    Modal.classList.remove('active');
+    Layer.classList.remove('active');
+});
+
+Layer.addEventListener('click', ()=> {
+    Modal.classList.remove('active');
+    Layer.classList.remove('active');
+});
+</script> 
+</body>
+</html>
