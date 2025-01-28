@@ -53,6 +53,9 @@ section{
   background-color:rgb(255, 255, 255) ;
   }
 /*--------------- 調整レイアウト----------------- */
+header .top{
+  font-size: 1.7rem;
+}
 h2{
   /* background-color: pink; */
   margin-bottom: 1.5rem;
