@@ -13,19 +13,19 @@
     <!-- Open Graph メタタグ -->
     <meta property="og:title" content="ポートフォリオ megumi Lab">
     <meta property="og:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
-    <meta property="og:image" content="https://your-portfolio-site.com/path/to/image.jpg">
-    <meta property="og:url" content="https://your-portfolio-site.com">
+    <meta property="og:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    <meta property="og:url" content="https://meccin5678.github.io/portfolio/index.html">
     <meta property="og:type" content="website">
     
     <!-- Twitterカード メタタグ -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ポートフォリオ megumi Lab">
     <meta name="twitter:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
-    <meta name="twitter:image" content="https://your-portfolio-site.com/path/to/image.jpg">
+    <meta name="twitter:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
     
     <!-- CSSファイルの読み込み -->
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
 
     <!-- JavaScriptファイルの読み込み -->
     <script src="nav.js" defer></script>
@@ -46,7 +46,10 @@
     background-color: #ebebeb;
     padding:10px;
     font-size: 1.1rem;
-    width: 500px;
+    max-width: 500px;
+    @media (max-width: 800px) {
+        width: 100%;
+    }
 }
 .calendar table{
     width: 100%;
@@ -56,10 +59,9 @@
     padding:10px;
     text-align: center;
 }
-
 .hiniti{
-    font-size: 0.9rem;
     text-align: right;
+    margin-bottom: 10px;
 }
 </style>
 <header>
@@ -74,12 +76,12 @@
 <aside>
 <!-- nav.htmlの内容が表示される -->
 </aside>
-
+<main>
 <section>
     <h2>カレンダー</h2>
     <div class="calendar"></div>
 </section>
-    
+</main>
 <footer>
     <p>&copy; 2023 megumi Lab. All rights reserved.</p>
 </footer>   
