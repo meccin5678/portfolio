@@ -156,6 +156,9 @@ aside nav ul li {
   padding: 1rem  0.5rem 1rem 0.5rem;
   transition: all 0.3s;
 }
+aside nav ul li a{
+  display: block;
+}
 
 aside nav ul li:hover {
   background-color:rgb(204, 204, 204, 0.3);
