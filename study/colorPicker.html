@@ -105,6 +105,7 @@ li .color{
     </aside>
     <main>
     <section>
+        <h2>カラーピッカー</h2>
         <div class="popup">
             <button class="btn">カラーピッカー</button>
             <ul>
@@ -121,41 +122,42 @@ li .color{
     <footer>
         <p>&copy; 2023 megumi Lab. All rights reserved.</p>
     </footer>  
-    <script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
         const btn = document.querySelector('.btn');
-const ul = document.querySelector('ul');
-const clear = document.querySelector('.clear');
+        const ul = document.querySelector('ul');
+        const clear = document.querySelector('.clear');
 
 
 
-const dropper = new EyeDropper();
-btn.addEventListener('click', async () => {
+        const dropper = new EyeDropper();
+        btn.addEventListener('click', async () => {
 
-    try {
-        const result = await dropper.open();
-        const li = document.createElement('li');
-        const colorSpan = document.createElement('span');
-        const textSpan = document.createElement('span');
-        colorSpan.className = 'color';
-        textSpan.className = 'text';
-        colorSpan.style.backgroundColor = result.sRGBHex;
-        textSpan.textContent = result.sRGBHex;
-        
-        ul.appendChild(li);
-        li.appendChild(colorSpan);
-        li.appendChild(textSpan);
-        console.log(result);
-    }
-    catch (error) {
-        console.error(error);
-    }
+        try {
+            const result = await dropper.open();
+            const li = document.createElement('li');
+            const colorSpan = document.createElement('span');
+            const textSpan = document.createElement('span');
+            colorSpan.className = 'color';
+            textSpan.className = 'text';
+            colorSpan.style.backgroundColor = result.sRGBHex;
+            textSpan.textContent = result.sRGBHex;
+            
+            ul.appendChild(li);
+            li.appendChild(colorSpan);
+            li.appendChild(textSpan);
+            console.log(result);
+        }
+        catch (error) {
+            console.error(error);
+        }
 
-});
+        });
 
-clear.addEventListener('click', () => {
-    ul.innerHTML = '';
+        clear.addEventListener('click', () => {
+        ul.innerHTML = '';
+        });
     });
-
-    </script>
+</script>
 </body>
 </html>
