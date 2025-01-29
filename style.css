@@ -167,6 +167,8 @@ aside {
   right: 10%;
   /* 縦方向のスクロールを有効にする */
   overflow-y: auto;
+  /* 横方向のスクロールを非表示にする */
+  overflow-x: hidden;
   scrollbar-width: none; /* Firefox用 */
   -ms-overflow-style: none; /* IE/Edge用 */
   z-index: 3;
