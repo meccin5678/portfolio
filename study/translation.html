@@ -96,10 +96,7 @@ select:hover{
 .kikukopi p:hover{
     background-color: #ffffff;
 }
-.honyaku-btn:hover{
-    background-color: #ffffff;
-    border: 1px solid #444;
-}
+
 
 .kikukopi p{
     line-height: 32px;
@@ -111,31 +108,38 @@ select:hover{
     border-radius: 4px;
     background-color: #ececec;
 }
+.honyaku{
+    /* background-color: aqua; */
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    @media screen and (max-width: 800px){
+        width: 100%;
+    }
+}
 .honyaku-btn{
     width: 200px;
     height: 38px;
     border: none;
     outline: none;
-    background-color: #c2c2c2;
-    
+    background-color: #c2c2c2;   
     color: #000000;
     font-size: 16px;
     line-height: 38px;
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
-    margin: auto;
+    transition: all 0.3s;
 }
-.center1000{
-    width: 70%;
-    margin-top: 40px;
-    @media screen and (max-width: 800px){
-        width: 100%;
-    }
+.honyaku-btn:hover{
+    background-color: #ffffff;
+    border: 1px solid #444;
 }
+
 </style>
 <header>
-    <p class="top"><a href="calendar.html">JavaScriptサンプル集</a></p>
+    <p class="top"><a href="swiper1.html">JavaScriptサンプル集</a></p>
     <div class="hmb" id="hmb">
         <span></span>
         <span></span>
@@ -149,8 +153,10 @@ select:hover{
 <main>
 <section>
     <h2>翻訳アプリ</h2>
-    <p>fetchを使ってAPIを取りに行き、JavaScriptの機能で、スピーカーとコピーを働かせています</p><br>
 
+    <div class="honyaku">
+        <p class="honyaku-btn">翻訳する</p>
+    </div>
     <div class ="honyaku-container">
         <div class="from">
             <textarea class="fromText" placeholder="入力してください"></textarea>
@@ -179,9 +185,7 @@ select:hover{
             </div>
         </div>
     </div>
-    <div class="center1000">
-    <div class="honyaku-btn">翻訳する</div>
-    </div>
+
 </section>
 </main>
 <footer>
