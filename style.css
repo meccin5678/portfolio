@@ -26,6 +26,10 @@ a {
   text-decoration: none; /* 下線を削除 */
   color: inherit; /* 親要素の色を継承 */
 }
+nav a {
+  display: block; /* ブロック要素として表示 */
+  cursor: pointer; /* ポインターカーソルを表示 */
+}
 /*--------------- 全体レイアウト----------------- */
 header,
 footer,
