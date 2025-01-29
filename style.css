@@ -26,8 +26,10 @@ a {
   text-decoration: none; /* 下線を削除 */
   color: inherit; /* 親要素の色を継承 */
 }
-nav a {
+aside nav ul li a {
   display: block; /* ブロック要素として表示 */
+  width: 100%;
+  height: 100%;
   cursor: pointer; /* ポインターカーソルを表示 */
 }
 /*--------------- 全体レイアウト----------------- */
@@ -177,15 +179,20 @@ aside::-webkit-scrollbar {
 aside nav ul li {
   border-bottom:1px dashed rgb(204, 204, 204);
   cursor: pointer;
-  padding: 1rem  0.5rem 1rem 0.5rem;
+  /* padding: 1rem  0.5rem 1rem 0.5rem; */
   transition: all 0.3s;
 }
 aside nav ul li a{
   display: block;
+  padding: 1rem  0.5rem 1rem 0.5rem;
+
 }
 
 aside nav ul li:hover {
   background-color:rgb(204, 204, 204, 0.3);
+}
+aside nav ul li.change{
+  background-color:rgba(204, 204, 204, 0.3);
 }
 
 aside nav ul li:last-child {
@@ -198,9 +205,12 @@ aside nav ul li .submenu {
 }
 aside nav ul li .submenu li a{
   display: block;
+  padding: 0.7rem 0.5rem;
+  /* background-color: aqua; */
+
 }
 aside nav ul li .submenu li {
-  padding: 0.7rem 0.5rem;
+  /* padding: 0.7rem 0.5rem; */
   border-bottom:1px dashed rgb(204, 204, 204);
 }
 aside nav ul li .submenu li:last-child {
