@@ -42,26 +42,25 @@
 </head>
 <body>
 <style>
-.swiper,
+.swiper1,
 .swiper2
 {
     width: 100%;
     height: 200px;
 }
-.swiper-slide,
-.swiper2 .swiper-slide{
-    width: 100%;
-    height: 100%;
+.swiper-slide {
+    margin: 0; /* マージンをリセット */
+    padding: 0; /* パディングをリセット */
+    width: 300px;
+    height: 200px;
 }
-.swiper-slide img,
-.swiper2 .swiper-slide img
+.swiper-slide img
 {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.swiper-wrapper,
-.swiper2 .swiper-wrapper
+.swiper-wrapper
 {
     transition-timing-function: linear;
 }
@@ -84,35 +83,32 @@
         <p>ループ再生・逆再生</p>
     </section>
 </main>
-
-<div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="img/35.jpg"></div>
-      <div class="swiper-slide"><img src="img/36.jpg"></div>
-      <div class="swiper-slide"><img src="img/37.jpg"></div>
-      <div class="swiper-slide"><img src="img/38.jpg"></div>
-      <div class="swiper-slide"><img src="img/39.jpg"></div>
-      <div class="swiper-slide"><img src="img/40.jpg"></div>
-      <div class="swiper-slide"><img src="img/41.jpg"></div>
-      <div class="swiper-slide"><img src="img/42.jpg"></div>
-      <div class="swiper-slide"><img src="img/43.jpg"></div>
-    </div>
+<div class="swiper1">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="img/35.jpg"></div>
+    <div class="swiper-slide"><img src="img/36.jpg"></div>
+    <div class="swiper-slide"><img src="img/37.jpg"></div>
+    <div class="swiper-slide"><img src="img/38.jpg"></div>
+    <div class="swiper-slide"><img src="img/39.jpg"></div>
+    <div class="swiper-slide"><img src="img/40.jpg"></div>
+    <div class="swiper-slide"><img src="img/41.jpg"></div>
+    <div class="swiper-slide"><img src="img/42.jpg"></div>
+    <div class="swiper-slide"><img src="img/43.jpg"></div>
+  </div>
 </div>
 <div class="swiper2">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="img/35.jpg"></div>
-      <div class="swiper-slide"><img src="img/36.jpg"></div>
-      <div class="swiper-slide"><img src="img/37.jpg"></div>
-      <div class="swiper-slide"><img src="img/38.jpg"></div>
-      <div class="swiper-slide"><img src="img/39.jpg"></div>
-      <div class="swiper-slide"><img src="img/40.jpg"></div>
-      <div class="swiper-slide"><img src="img/41.jpg"></div>
-      <div class="swiper-slide"><img src="img/42.jpg"></div>
-      <div class="swiper-slide"><img src="img/43.jpg"></div>
-    </div>
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="img/35.jpg"></div>
+    <div class="swiper-slide"><img src="img/36.jpg"></div>
+    <div class="swiper-slide"><img src="img/37.jpg"></div>
+    <div class="swiper-slide"><img src="img/38.jpg"></div>
+    <div class="swiper-slide"><img src="img/39.jpg"></div>
+    <div class="swiper-slide"><img src="img/40.jpg"></div>
+    <div class="swiper-slide"><img src="img/41.jpg"></div>
+    <div class="swiper-slide"><img src="img/42.jpg"></div>
+    <div class="swiper-slide"><img src="img/43.jpg"></div>
+  </div>
 </div>
-
-
 <footer>
     <p>&copy; 2023 megumi Lab. All rights reserved.</p>
 </footer>   
@@ -120,7 +116,7 @@
 <script>
 'use strict'
 // -------------------------自動再生-----------------------------
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper1', {
   direction: 'horizontal',
   // effect: 'cube',
   loop: true,
@@ -170,24 +166,6 @@ const swiper2 = new Swiper('.swiper2', {
       slidesPerView: 1,
     }
   },
-});
-
-// -------------------------cube-----------------------------
-const swiperCube2 = new Swiper('.swiper-cube2', {
-  slidesPerView: 8,
-  // direction: 'vertical',
-  loop: true,
-  // speed: 1000,
-});
-
-const swiperCube = new Swiper('.swiper-cube', {
-  direction: 'horizontal',
-  loop: true,
-  effect: 'cube',
-  speed: 1200,
-  thumbs: {
-    swiper: swiperCube2,
-  }
 });
 </script> 
 </body>
