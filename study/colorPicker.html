@@ -40,8 +40,8 @@
     </script>
 </head>
 <body>
-    <style>
-        *{
+<style>
+    *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -72,56 +72,55 @@
     width: 40%;
     margin: 0 60%;
 }
-li{
+.color-ul li{
     list-style: none;
     display: flex;
     gap: 2px;
     align-items: center;
     justify-content: left;
 }
-li .text{
+.color-ul li .text{
     font-size: 11px;    
 }
-li .color{
+.color-ul li .color{
     width: 25px;
     height: 25px;
     border: 1px solid #ccc;
 }
 
+</style>
 
-    </style>
+<header>
+    <p class="top"><a href="swiper2.html">JavaScriptサンプル集</a></p>
+    <div class="hmb" id="hmb">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> 
+</header>
 
-    <header>
-        <p class="top"><a href="swiper2.html">JavaScriptサンプル集</a></p>
-        <div class="hmb" id="hmb">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div> 
-    </header>
-    
-    <aside>
-    <!-- nav.htmlの内容が表示される -->
-    </aside>
-    <main>
-    <section>
-        <h2>カラーピッカー</h2>
-        <div class="popup">
-            <button class="btn">カラーピッカー</button>
-            <ul>
-                <!-- <li>
-                    <span class="color"></span>
-                    <span class="text"></span>
-                </li> -->
-            </ul>
-            <button class="clear">クリア</button>
-    
-        </div>
-    </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 megumi Lab. All rights reserved.</p>
-    </footer>  
+<aside>
+<!-- nav.htmlの内容が表示される -->
+</aside>
+<main>
+<section>
+    <h2>カラーピッカー</h2>
+    <div class="popup">
+        <button class="btn">カラーピッカー</button>
+        <ul class="color-ul">
+            <!-- <li>
+                <span class="color"></span>
+                <span class="text"></span>
+            </li> -->
+        </ul>
+        <button class="clear">クリア</button>
+
+    </div>
+</section>
+</main>
+<footer>
+    <p>&copy; 2023 megumi Lab. All rights reserved.</p>
+</footer>  
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const btn = document.querySelector('.btn');
