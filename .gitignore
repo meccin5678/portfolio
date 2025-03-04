@@ -12,4 +12,4 @@
 # OSやIDEが生成するファイルを無視
 .DS_Store
 Thumbs.db
-.vscode/
+.vscode/.DS_Store
