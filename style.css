@@ -82,6 +82,8 @@ h3 {
   width: 70%;
   border-bottom: 1px dashed rgb(204, 204, 204);
   margin-bottom:1rem;
+  margin-top:1rem;
+
   font-size: 1.2rem;
 }
 small{
@@ -99,7 +101,8 @@ small{
 .flex {
   display: flex;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 .flex:last-child{
   margin-bottom: 0;
