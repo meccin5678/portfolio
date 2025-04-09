@@ -1,0 +1,704 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* ---------------- リセットcss ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------------- 全体レイアウト ---------------- */
+body {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  color: #070709;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.footer-wrapper,
+.header-wrapper {
+  width: 80%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .footer-wrapper,
+  .header-wrapper {
+    width: 90%;
+    max-width: 768px;
+  }
+}
+/* ---------------- ページタイトル ---------------- */
+.page-title {
+  width: 100vw;
+  height: 40vh;
+  position: relative;
+}
+.page-title .page-title-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.page-title .page-title-wrapper .page-title-bg {
+  background: url(img/title.webp) no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.page-title-company {
+  background: url(img/company.webp) no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.page-title-product{
+  background: url(img/product.webp) no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.page-title-contact{
+  background: url(img/contact.webp) no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.page-title .page-title-wrapper .page-title-maru {
+  position: absolute;
+  bottom: -70px;
+  left: calc((100vw - 1280px) / 2);
+  animation: maru 10s linear infinite;
+  width: 140px;
+  height: 140px;
+}
+@media (max-width: 480px) {
+  .page-title .page-title-wrapper .page-title-maru {
+    bottom: -50px;
+    width: 100px;
+    height: 100px;
+  }
+}
+.page-title .page-title-wrapper .page-title-maru img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes maru {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 1440px) {
+  .page-title .page-title-wrapper .page-title-maru {
+    left: 5%;
+  }
+}
+/* ---------------- ヘッダー ---------------- */
+header {
+  width: 100vw;
+  /* height: 100px; */
+  height: calc(40vh / 4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+header .header-wrapper {
+  width: 90%;
+  height: calc(40vh / 4);
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-wrapper h1 {
+  font-family: "Roboto", sans-serif;
+  border-radius: 3px;
+}
+header .header-wrapper .hum {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  z-index: 20;
+  background-color: rgb(7, 7, 9, .7);  
+}
+header .header-wrapper .hum span {
+  display: block;
+  width: 100%;
+  height: 3.5px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+header .header-wrapper .hum.active {
+  background-color: transparent;
+}
+header .header-wrapper .hum.active span:nth-child(1) {
+  transform: rotate(45deg);
+  transform-origin: 50% 50%; /* 回転の中心を調整 */
+  translate: 0 13px;
+}
+header .header-wrapper .hum.active span:nth-child(2) {
+  opacity: 0;
+}
+header .header-wrapper .hum.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  transform-origin: 50% 50%;
+  translate: 0 -13px;
+}
+header .nav-menu {
+  opacity: 0;
+  visibility: hidden;
+  width: 50vw;
+  transition: all 0.3s;
+  z-index: 10;
+  height: 40vh;
+  margin-top: calc(-40vh / 4);
+  /* margin-top: -100px; */
+  /* transform: translateY(-50vh); */
+  transform: translateX(50vw);
+}
+/* ナビゲーションメニューが表示されるときのスタイル */
+header .nav-menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+header .nav-menu.open ul li {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+@media (max-width: 768px) {
+  header .nav-menu {
+    width: 100%;
+  }
+  header .nav-menu.open {
+    transform: translateX(0);
+  }
+  header .nav-menu.open ul li {
+    transform: translateX(0);
+  }
+}
+header .nav-menu ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+header .nav-menu ul li {
+  opacity: 0;
+  visibility: hidden;
+  flex: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: #ffffff;
+  background-color: rgb(7, 7, 9, .7);
+  width: 100%;
+  border-bottom: .5px solid #ffffff;
+  cursor: pointer;
+  transform: translateY(-50vh);
+  transition: transform 0.4s ease, opacity 0.3s ease; 
+  z-index: 100;
+}
+header .nav-menu ul li a {
+  display: flex;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+}
+header .nav-menu ul li:nth-child(1) {
+  transition-delay: 0.2s;
+}
+header .nav-menu ul li:nth-child(2) {
+  transition-delay: 0.3s;
+}
+header .nav-menu ul li:nth-child(3) {
+  transition-delay: 0.4s;
+}
+header .nav-menu ul li:last-child {
+  border-bottom: none;
+}
+/* ---------------- フッター ---------------- */
+footer {
+  margin: 0 auto;
+  width: 100vw;
+  background-color: #070709;
+  color: #ffffff;
+}
+
+footer .footer-wrapper {
+  width: 90%;
+  height: auto;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+footer .footer-wrapper .footer-copy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  footer .footer-wrapper .footer-copy {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+}
+footer .footer-wrapper .footer-copy .small {
+  font-size: 0.8rem;
+}
+
+
+/* ---------------- Mission ---------------- */
+.section-mission {
+  width: 80%;
+  max-width: 1280px;
+  margin: 12rem auto;
+}
+.section-mission .mission-title {
+  position: relative;
+}
+.section-mission .mission-title::before {
+  content: "MISSION";
+  position: absolute;
+  top: -3rem;
+  left: 10%;
+  font-size: 6rem; /* サイズを調整 */
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.05); /* 透明度を調整 */
+  z-index: -1; /* 背面に配置 */
+  font-family: "Roboto", sans-serif;
+}
+@media (max-width: 768px) {
+  .section-mission .mission-title::before {
+    font-size: 4.8rem;
+    left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .section-mission .mission-title::before {
+    font-size: 4rem;
+    left: 0;
+  }
+}
+.section-mission .mission-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.section-mission .mission-text .fade-in {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 1s forwards;
+}
+.section-mission .mission-text .fade-in:nth-child(1) {
+  animation-delay: .25s;
+}
+.section-mission .mission-text .fade-in:nth-child(2) {
+  animation-delay: .5s;
+}
+.section-mission .mission-text .fade-in:nth-child(3) {
+  animation-delay: .75s;
+}
+.section-mission .mission-text .fade-in:nth-child(4) {
+  animation-delay: 1s;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- swiperエリア ---------------- */
+.swiper {
+  width: 100%;
+  margin: 12rem auto;
+  overflow: hidden;
+}
+.swiper .swiper-wrapper {
+  width: 100%;
+  transition-timing-function: linear;
+}
+.swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+.swiper .swiper-wrapper .swiper-slide {
+  position: relative;
+}
+.swiper .swiper-wrapper .swiper-slide .swiper-title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* 背景色と透明度 */
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+@media (max-width: 1024px) {
+  .swiper .swiper-wrapper .swiper-slide img {
+    height: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .swiper .swiper-wrapper .swiper-slide img {
+    height: 260px;
+  }
+}
+/* ---------------- プロダクトエリア ---------------- */
+.section-product {
+  width: 80%;
+  max-width: 1280px;
+  margin: 12rem auto;
+}
+.section-product .product-title {
+  position: relative;
+}
+.section-product .product-title::before {
+  content: "PRODUCT";
+  position: absolute;
+  top: -3rem;
+  left: 10%;
+  font-size: 6rem; /* サイズを調整 */
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.05); /* 透明度を調整 */
+  z-index: -1; /* 背面に配置 */
+  font-family: "Roboto", sans-serif;
+}
+@media (max-width: 768px) {
+  .section-product .product-title::before {
+    font-size: 4.8rem;
+    left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .section-product .product-title::before {
+    font-size: 4rem;
+    left: 0;
+  }
+}
+.section-product .product-list {
+  margin: 0 auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10rem;
+}
+.section-product .product-list .product-item {
+  width: 100%;
+}
+.section-product .product-list .product-item img {
+  width: 100%;
+  height: auto;
+  object-fit:cover;
+  cursor: pointer;
+  transition: .3s all;
+}
+.section-product .product-list .product-item img:hover {
+  scale: .9;
+}
+.section-product .product-list .product-item .name-p {
+  margin-top: .4rem;
+  margin-bottom: .6rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: 1px solid #070709;
+  padding-bottom: .4rem;
+  display: inline-block;
+  cursor: pointer;
+}
+.section-product .product-list .product-item p:last-child {
+  font-size: .85rem;
+  padding: 0 3rem 0 0;
+}
+.section-product .product-btn-wrapper {
+  width: 100%;
+  margin-top: 6rem;
+  text-align: center;
+}
+.section-product .product-btn-wrapper .product-btn {
+  padding: 0.5rem 6em;
+  width: 100%;
+  background-color: #070709;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: .3s;
+}
+.section-product .product-btn-wrapper .product-btn:hover {
+  background-color: #ffffff;
+  color: #070709;
+  border-bottom: 1px solid #070709;
+  padding: .5rem 0 .8rem;
+}
+@media (max-width: 1280px) {
+  .section-product .product-list {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .section-product .product-list {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 6rem;
+  }
+  .section-product .product-btn-wrapper .product-btn {
+    font-size: 1rem;
+    width: 100%;
+    display: inline-block;
+  }
+}
+/* ---------------- 会社概要 ---------------- */
+.section-company {
+  width: 80%;
+  max-width: 1280px;
+  margin: 12rem auto;
+}
+.section-company .company {
+  width: 60%;
+  border-bottom: 1px dotted #070709;
+  padding: 1.4rem 0;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+}
+.section-company .company:last-child {
+  border-bottom: none;
+}
+.section-company .company .company-left {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 水平方向に中央揃え */
+  align-items: center; /* 垂直方向に中央揃え */
+}
+.section-company .company .company-right {
+  width: 85%;
+}
+.section-company .company .company-right iframe {
+  margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+  .section-company {
+    width: 90%;
+  }
+  .section-company .company {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+.section-company .company-title {
+  position: relative;
+}
+.section-company .company-title::before {
+  content: "COMPANY";
+  position: absolute;
+  top: -3rem;
+  left: 10%;
+  font-size: 6rem; /* サイズを調整 */
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.05); /* 透明度を調整 */
+  z-index: -1; /* 背面に配置 */
+  font-family: "Roboto", sans-serif;
+}
+@media (max-width: 768px) {
+  .section-company .company-title::before {
+    font-size: 4.8rem;
+    left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .section-company .company-title::before {
+    font-size: 4rem;
+    left: 0;
+  }
+}
+
+/* ---------------- お問合せ ---------------- */
+.section-contact {
+  width: 80%;
+  max-width: 1280px;
+  margin: 12rem auto;
+}
+@media (max-width: 768px) {
+  .section-contact {
+    width: 90%;
+  }
+}
+.section-contact .contact-title {
+  position: relative;
+}
+.section-contact .contact-title::before {
+  content: "CONTACT";
+  position: absolute;
+  top: -3rem;
+  left: 10%;
+  font-size: 6rem; /* サイズを調整 */
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.05); /* 透明度を調整 */
+  z-index: -1; /* 背面に配置 */
+  font-family: "Roboto", sans-serif;
+}
+@media (max-width: 768px) {
+  .section-contact .contact-title::before {
+    font-size: 4.8rem;
+    left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .section-contact .contact-title::before {
+    font-size: 4rem;
+    left: 0;
+  }
+}
+
+/* フォーム全体 */
+.form-contact {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgb(249, 249, 249, .25);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* フィールドセットとラジオボタン */
+.form-fieldset {
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.form-legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.form-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-radio-text {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* 入力フィールド */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* ボタン */
+.contact-btn-wrapper {
+  text-align: center;
+}
+
+.contact-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+}
