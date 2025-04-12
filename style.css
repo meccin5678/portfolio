@@ -125,6 +125,13 @@ small{
   max-width: 360px;
   height: auto;
 }
+.img-smart {
+  border: 4px solid rgb(204, 204, 204,0.6);
+  border-radius: 15px;
+  /* max-width: 300px; */
+
+
+}
 
 /*--------------- webサイト----------------- */
 .white,
