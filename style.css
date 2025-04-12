@@ -122,9 +122,13 @@ small{
   width: 70%;
 }
 .banner img{
-  max-width: 460px;
+  max-width: 360px;
   height: auto;
 }
+/* .smart-banner {
+  width: 100px;
+  height: auto;
+} */
 /*--------------- webサイト----------------- */
 .white,
 .gold,
@@ -287,6 +291,7 @@ header .hmb span {
   .banner img{
     max-width: 100%;
   }
+
   /*--------------- webサイト----------------- */
   .img340{
     max-width: 100%;
