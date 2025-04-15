@@ -360,7 +360,7 @@ nav .nav-menu {
     margin: 1rem auto;
 }
 .policy-wrapper {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -417,7 +417,7 @@ nav .nav-menu {
 .sns {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
