@@ -306,18 +306,10 @@ nav .nav-menu {
 
 
 .swiper-container {
-    width: 100%;
+
     overflow: hidden;
     padding: 0; /* パディングをなくす */
     height: auto;
-}
-
-
-.swiper-slide {
-
-}
-.swiper-slide img {
-
 }
 
 .swiper-wrapper {
