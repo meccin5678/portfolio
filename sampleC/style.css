@@ -379,3 +379,9 @@ nav .nav-menu {
 .nav-btm-trial:hover {
     background: #FD9600;
 }
+
+.svg-bottom {
+    width: 100%;
+    height: auto;
+    display: block;
+}
