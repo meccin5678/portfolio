@@ -16,6 +16,7 @@ html {
     font-weight: 400; /* 通常の太さ */
     color: #232323;
     overflow-x: hidden;
+    max-width:100%;
 }
 li {
     list-style: none;
@@ -190,43 +191,55 @@ nav .nav-menu {
     width: 100%;
     height: auto;
     background: url(./img/bg-wave.webp);
-    background-size: 200% auto; /* 横方向に2倍のサイズ */
+    background-size: 200% auto;
     background-position: 0% 0%;
     background-repeat: no-repeat;
-    overflow: hidden; /* 波形が親要素からはみ出さないようにする */
-    animation: waveBackground 20s linear infinite; /* アニメーションを追加 */
-}
+    overflow: hidden;
+    animation: waveBackground 20s linear infinite;
+  }
 
-@keyframes waveBackground {
-    0% {
-        background-position: 0% 0%; /* 初期位置 */
+  @keyframes waveBackground {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+  }
+
+  .section-voice svg {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 200%;
+    animation: slideWave 10s linear infinite;
+    height: 200px;
+  }
+
+  /* .svg-btm-mobile {
+    display: none;
+  } */
+
+  @media (max-width: 480px) {
+    .section-voice svg {
+      height: 120px;
     }
-    100% {
-        background-position: 100% 0%; /* 背景を右にスライド */
+  }
+
+  @media (max-width: 375px) {
+    .section-voice svg {
+      height: 100px;
     }
-}
-
-.section-voice svg {
-    /* border: 5px solid #FD9600; */
-    display: block; /* インライン要素の余白を防ぐ */
-    margin: 0; 
-    padding: 0; 
-    width: 200%; /* 横に2倍でスライド用 */
-    animation: slideWave 10s linear infinite; /* アニメーションを追加 */
-
-
-}
-
-
-
-@keyframes slideWave {
-    0% {
-        transform: translateX(0);
+    /* .svg-btm-pc {
+      display: none;
     }
-    100% {
-        transform: translateX(-50%); /* 左にスライド */
-    }
-}
+    .svg-btm-mobile {
+      display: block;
+      width: 100%;
+      height: 100px;
+    } */
+  }
+
+  @keyframes slideWave {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 
 .section-title-voice {
     width: 100%;
@@ -352,7 +365,7 @@ nav .nav-menu {
     background: linear-gradient(to bottom, #0084FF 0%, #004F99 100%);
     font-weight: 700;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     text-align: center;
 }
 .nav-btm-junior:hover {
