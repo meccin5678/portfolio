@@ -216,7 +216,11 @@ nav .nav-menu {
 
     height: auto;
   }
-
+  .svg-bottom {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
   @media (max-width: 480px) {
     .section-voice svg {
@@ -272,7 +276,7 @@ nav .nav-menu {
     width: 100%;
     background: linear-gradient(to bottom, #FFFFFF 0%, #FFF2F2 20%, #FFE5E5 100%);
     position: relative;
-    padding: 0 0 3rem;
+    padding: 0 0 5rem;
 }
 .section-coach::after {
     content: '';
@@ -292,11 +296,41 @@ nav .nav-menu {
     font-weight: 700;
     margin-bottom: 2rem;
 }
-.coach {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+
+
+
+.swiper-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 0; /* 余白をなくす */
+    padding: 0; /* パディングをなくす */
+    height: auto;
 }
+
+.swiper-slide {
+    margin: 0; /* 余白をなくす */
+    padding: 0; /* パディングをなくす */
+    width: 100%;
+    height: auto;
+}
+.swiper-slide img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    object-fit: cover; /* 画像の比率を維持 */
+}
+
+.swiper-wrapper {
+    display: flex;
+    gap: 0; /* スライド間の隙間をなくす */
+    align-items: center;
+    justify-content: space-around;
+    margin: 0; /* 余白をなくす */
+    padding: 0; /* パディングをなくす */
+    transition-timing-function: linear !important;
+}
+
+
 /* ---------- 下の方 ---------- */
 .section-bottom {
     margin-top: 200px;
@@ -380,8 +414,6 @@ nav .nav-menu {
     background: #FD9600;
 }
 
-.svg-bottom {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+
+
+

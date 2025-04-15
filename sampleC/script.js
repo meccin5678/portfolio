@@ -1,8 +1,26 @@
-//同じ名前のセレクタに同じ処理をしたい時ALLで取得して、forEachで繰り返し処理の中身を書く
+document.addEventListener("DOMContentLoaded", () => {
+    new Swiper('.coachA', {
+        loop: true,
+        slidesPerView: 4,
+        spaceBetween: 0,
+        speed: 6000, // アニメーション速度を長くして滑らかに
+        autoplay: {
+            delay: 0, // ←止めない
+            disableOnInteraction: false,
+        },
+        allowTouchMove: false, // ←ユーザー操作による中断を防ぐ
+    });
 
-// const modalImg = document.querySelectorAll('.modal-img');
-// modalImg.forEach((item) => {
-//     item.addEventListener('click', () => {
-//         item.classList.toggle('active');
-//     });
-// });
+    new Swiper('.coachB', {
+        loop: true,
+        slidesPerView: 4,
+        spaceBetween: 0,
+        speed: 6000,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: true, // ←逆再生を有効に
+        },
+        allowTouchMove: false,
+    });
+});
