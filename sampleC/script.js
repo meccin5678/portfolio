@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     new Swiper('.coachA', {
         loop: true,
-        slidesPerView: 4,
+        slidesPerView: 3,
         spaceBetween: 0,
         speed: 6000, // アニメーション速度を長くして滑らかに
         autoplay: {
@@ -10,12 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         allowTouchMove: false, // ユーザー操作を無効化
         loopAdditionalSlides: 2, // 追加スライドを生成してループを確実に
+        breakpoints: {
+            768: { slidesPerView: 4 }, // 横幅768px以上で4枚表示
 
+        },
     });
 
     new Swiper('.coachB', {
         loop: true,
-        slidesPerView: 4,
+        slidesPerView: 3,
         spaceBetween: 0,
         speed: 6000,
         autoplay: {
@@ -25,6 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         allowTouchMove: false,
         loopAdditionalSlides: 2, // 追加スライドを生成してループを確実に
+        breakpoints: {
+            768: { slidesPerView: 4 }, // 横幅768px以上で4枚表示
 
+        },
     });
 });
