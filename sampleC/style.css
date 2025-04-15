@@ -302,10 +302,10 @@ nav .nav-menu {
 .swiper-container {
     width: 100%;
     overflow: hidden;
-    margin: 0; /* 余白をなくす */
     padding: 0; /* パディングをなくす */
     height: auto;
 }
+
 
 .swiper-slide {
     margin: 0; /* 余白をなくす */
