@@ -60,11 +60,13 @@ section{
   /* background-color: aliceblue; */
 }
 .click{
+  display: inline-block;
   border: 1px solid rgb(204, 204, 204,0.6);
   background-color:rgb(204, 204, 204,0.3) ;
   padding:0.2rem 0.5rem;
   width: 200px;
   text-align: center;
+  margin-top: .8rem;
   }
   .click:hover{
   background-color:rgb(255, 255, 255) ;
@@ -87,7 +89,7 @@ h3 {
   font-size: 1.2rem;
 }
 small{
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .w70{
   width: 70%;
