@@ -1,0 +1,699 @@
+@charset "UTF-8";
+
+/* カスタムプロパティの定義 */
+:root {
+    --primary-blue: #0034ee; /* よく使う青色 */
+    --highlight-yellow: #fbff00; /* 他の色も登録可能 */
+    --font-dark: #25252e; /* 落ち着いたダークグリーン */
+    --font-light: #ffffff; /* 明るいフォント色（白） */
+}
+
+/* --- 自分用の追加リセット・調整 --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+ul, ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* ---------------- 全体デザインcss ---------------- */
+body {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  color: var(--font-dark); /* カスタムプロパティを使用 */
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-size: cover; /* 画像を画面全体に拡大縮小 */
+}
+a {
+  color: inherit
+}
+h1 {
+  font-size: 3rem; /* テキストサイズを調整 */
+  font-weight: 500;
+  margin-bottom: .5rem;
+  color: var(--font-light);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  border-left: 5px solid var(--primary-blue); /* 左側に青い線を追加 */
+  padding-left: 1rem; /* 左側に余白を追加 */
+  line-height: 1; /* 行間を調整 */
+
+}
+h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: .3rem;
+}
+h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: .3rem;
+}
+.small {
+  font-size: .6rem;
+}
+@media (max-width: 768px) {
+  h1 {
+   font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  h4 {
+    font-size: 1.1rem;
+  }
+}
+/*********横幅max1200の中央配置*********/
+.w1200 {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .w1200 {
+    max-width: 768px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+/************************************/
+/* ---------------- ヘッダー　PC---------------- */
+header {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.5); 
+  z-index: 3;
+}
+.header-wrapper {
+  height: 100%;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+  border-bottom: 1px solid var(--primary-blue);
+  padding: 0 3rem;
+}
+.header-logo {
+  height: 100%;
+  width: auto;
+  display: grid;
+  place-items: center;
+}
+.header-logo  img {
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+.header-top-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.header-top-free {
+  background-color: var(--highlight-yellow);
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 0 2rem;
+  font-weight: 400;
+  transition: scale 0.3s ease;
+}
+.header-top-free:hover {
+  scale: 1.03;
+}
+.header-top-login { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  padding: 0 2rem;
+}
+.header-top-login span {
+  transition: transform 0.3s ease;
+}
+.header-top-login:hover span {
+  transform: translateX( 10px);
+}
+.header-bottom{
+  height: 50%;
+  width: 100%;
+  padding: 0 3rem;
+
+}
+.header-bottom ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.hum-free,
+.hum-login {
+  display: none;
+}
+/* ---------------- ハンバーガーメニュー　---------------- */
+.hum {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+}
+.hum .line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--font-dark);
+  transition: all 0.3s ease; /* スムーズなアニメーション */
+}
+/* openクラスが付いたときのスタイル */
+.hum.open .line:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 9px); /* 上の線を斜めに */
+}
+.hum.open .line:nth-child(2) {
+  opacity: 0; /* 真ん中の線を非表示 */
+}
+.hum.open .line:nth-child(3) {
+  transform: rotate(-45deg) translate(10px, -9px); /* 下の線を斜めに */
+}
+
+
+/* レスポンシブでハンバーガーメニューを表示・黄色＆ログインボタンをh-topから消す */
+@media (max-width: 768px) {
+  .hum {
+      display: flex;
+  }
+  .header-top-free,
+  .header-top-login {
+    display: none;
+  }
+  .header-bottom {
+    display: none; /* デフォルトでは非表示 */
+  }
+  .header-bottom.active {
+    display: block;
+  }
+  /* 初期状態で非表示 */
+  .header-bottom ul li {
+    opacity: 0;
+    transform: translateY(-10px); /* 少し下にずらす */
+  }
+
+  /* フェードインアニメーション */
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  .header-bottom ul {
+    background-color: rgba(255, 255, 255, .7); 
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    width: 50%;
+    height: auto;
+    z-index: 10;
+    position: absolute;
+    right: 1rem;
+    padding: 1rem;
+  }
+  .header-bottom ul li {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    border-bottom: 1px solid var(--primary-blue);
+    padding: 1rem;
+  }
+  .header-bottom ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+}
+  .header-bottom ul li:last-child {
+    border-bottom: none;
+  } 
+  .hum-free {
+    display: block;
+    background-color: var(--highlight-yellow);
+    transition: scale 0.3s ease;
+  }
+  .hum-free:hover {
+    scale: 1.03;
+  }
+  .hum-login {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start !important;
+    gap: .3rem;
+  }
+  .hum-login span {
+    transition: transform 0.3s ease;
+  }
+  .hum-login:hover span {
+    transform: translateX( 10px);
+  }
+}
+
+/* ---------------- ヒーロームービー　---------------- */
+.hero {
+  margin-top: 100px; /* ヘッダーの高さ分だけ下げる */
+  position: relative; /* テキストを動画の上に配置するために必要 */
+  width: 100%;
+  height: calc(100vh - 300px ); /* ヒーローエリアの高さを調整 */
+}
+.hero-movie-wrapper {
+  position: absolute; /* 動画を親要素内で絶対位置に配置 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* 動画のレイヤーを設定 */
+}
+.hero-movie-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 動画を親要素全体に拡大縮小 */
+}
+.hero-text-wrapper {
+  position: absolute; /* 動画の上にテキストを配置 */
+  top: 50%; /* 縦方向の中央 */
+  left: 50%; /* 横方向の中央 */
+  transform: translate(-50%, -50%); /* 完全に中央に配置 */
+  z-index: 2; /* 動画より上に表示 */
+  text-align: left; /* テキストを中央揃え */
+  box-sizing: border-box;
+}
+.free-btn {
+  display: inline-block; 
+  background-color: var(--highlight-yellow);
+  padding: 15px 30px; /* ボタンの内側の余白 */
+  border-radius: 5px; /* ボタンの角を丸くする */
+  position: relative; /* 擬似要素の基準位置 */
+  overflow: hidden; /* 擬似要素がはみ出さないようにする */
+}
+.free-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* 初期位置をボタンの外側に設定 */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  transform: skewX(-20deg); /* 傾きをつける */
+  animation: shine 1.5s infinite ease-in-out; /* 常にアニメーションを適用 */
+}
+
+@keyframes shine {
+  0% {
+    left: -100%; /* ボタンの外側からスタート */
+  }
+  100% {
+    left: 100%; /* ボタンの外側に抜ける */
+  }
+}
+/* ---------------- セクション1　---------------- */
+.sec1 {
+  height: 200px;
+}
+.sec1-flex {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .sec1 {
+    height: auto;
+    margin: 2rem auto;;
+  }
+  .sec1-flex {
+    flex-direction: column; /* 縦に並べる */
+    width: 100%; /* 幅を100%に */
+    gap: 2rem; /* セクション間の隙間を調整 */
+  }
+}
+.sec1-flex-left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* 横方向を左揃えにする */
+  gap: 1rem;
+}
+.sec1-flex-left h3 {
+  margin-bottom: 0;
+}
+.sec1-flex-right {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.sec1-flex-right img {
+  height: 150px;
+  max-width: auto;
+  object-fit: contain;
+}
+/* ---------------- swiperエリア　---------------- */
+.swiperArea {
+    width: 100%; /* 全幅に設定 */
+    overflow: hidden; /* スクロールバーを非表示 */
+    margin: 5rem 0; /* 上に5remの余白を追加 */
+}
+.swiper {
+    width: 100%;
+    height: 40px;
+    pointer-events: none;
+}
+.swiper-wrapper {
+  transition-timing-function: linear !important; /* ←これが超重要 */
+}
+.swiper-slide {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.swiper-slide img {
+  height: 35px; /* 高さを一定にして安定表示 */
+  width: auto;
+  object-fit: contain;
+}
+/* ---------------- セクション2　---------------- */
+.sec2 {
+  background-image: 
+    linear-gradient(90deg, rgba(105, 234, 203, 0.5) 0%, rgba(215, 98, 252, 0.5) 67%, rgba(102, 84, 241, 0.5) 100%), 
+    url(./img/sec5-bg.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 5rem;
+  padding-bottom: calc(5rem + 100px); /* 下に100pxの余白を追加 */
+}
+.sec2-inner {
+  background-color: #ffffff;
+  width: 80%;
+  height: auto;
+  padding: 2rem;
+  margin: auto;
+  border-radius: 10px;
+}
+/* ---------------- セクション3　---------------- */
+.sec3 {
+  background: linear-gradient(to bottom, aliceblue 0%, #ffffff 100%);
+  padding: 10rem 0;
+  position: relative;
+}
+.sec3::before {
+  content: ''; /* 疑似要素を表示するために必要 */
+  position: absolute;
+  top: -99px; /* sec3の上部に配置 */
+  left: 0;
+  width: 100%; /* 親要素の幅に合わせる */
+  height: 100px; /* 三角形の高さ */
+  background: linear-gradient(to bottom, rgb(241, 246, 251) 50%,  aliceblue 100%);
+  clip-path: polygon(0 0, 0 100%, 50% 100%, 100% 100%, 100% 0, 50% 100%); /* 下向きの三角形を作成 */
+  z-index: 1;
+}
+.sec3-inner {
+  width: 100%;
+  height: auto;
+  background-color: #e8e8e8;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .sec3-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .sec3-inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+.sec3-card {
+  background-color: #ffffff;
+  border-radius: 6px;
+  height: atuo;
+  padding: 1rem;
+}
+.sec3-card-img {
+  width: 130px;
+  height: 130px;
+  background-color: #e8e8e8;
+  border-radius: 50%;
+  margin: .5rem auto;
+  display: grid;
+  place-items: center;
+}
+/* ---------------- セクション4　---------------- */
+.sec4 {
+  background: linear-gradient(180deg, #ffffff,  #f6f6ff, #ffffff, #f0f1ff, #f0f1ff);
+  padding: 5rem 0 15rem;
+}
+.sec4-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.sec4-card {
+  width: 31%;
+  height: auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  position: relative;
+  border: 1px solid var(--primary-blue);
+}
+@media (max-width: 768px) {
+  .sec4-flex {
+    flex-direction: column; /* 縦に並べる */
+    gap: 1.4rem;
+    align-items: center; /* 中央揃え */
+  }
+  .sec4-card {
+    width: 80%;
+  }
+}
+.sec4-img {
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  border: 1px solid #6a6a8f;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  margin: 1rem auto;
+}
+.sec4-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0; /* 幅を0に設定 */
+  height: 0; /* 高さを0に設定 */
+  border-style: solid;
+  border-width: 30px 20px 0 0; /* 三角形のサイズを設定 */
+  border-color: var(--primary-blue) transparent transparent transparent; /* 色を設定 */
+  transition: border-width 0.3s ease;
+}
+.sec4-card:hover::before {
+  border-width: 50px 30px 0 0; /* ホバー時に三角形を拡大 */
+}
+.hidden {
+  opacity: 0; /* 初期状態で透明 */
+  transform: translateY(20px); /* 少し下にずらす */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* アニメーションの設定 */
+}
+.visible {
+  opacity: 1; /* 表示状態 */
+  transform: translateY(0); /* 元の位置に戻す */
+}
+/* ---------------- セクション5　---------------- */
+.sec5 {
+  position: relative;
+  padding: 5rem 0;
+}
+.sec5::before {
+  content: ''; /* 疑似要素を表示するために必要 */
+  position: absolute;
+  top: -100px; /* sec3の上部に配置 */
+  left: 0;
+  width: 100%; /* 親要素の幅に合わせる */
+  height: 100px; /* 三角形の高さ */
+  background-color: rgb(255, 255, 255);
+  clip-path: polygon(0 0, 0 100%, 50% 100%, 100% 100%, 100% 0, 50% 100%);
+}
+.sec5-table table {
+    width: 100%;
+    border-collapse: collapse; /* 枠線を重ねる */
+}
+.sec5-table thead tr th {
+  background-color: #f9f9f9;
+}
+.sec5-table th,
+.sec5-table td {
+    border: 1px solid #ccc; /* 枠線の色 */
+    padding: 1rem;
+    text-align: center; /* 中央揃え */
+}
+.sec5-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* 偶数行の背景色 */
+}
+
+.sec5-table tr:nth-child(odd) {
+    background-color: #fff; /* 奇数行の背景色 */
+}
+.sec5-table th.th1 {
+  background-color: #ffffff !important; /* 背景色を白に設定 */
+  border: none !important; /* ボーダーを無しに設定 */
+}
+/* ---------------- モーダル　---------------- */
+.modal {
+  display: none; /* 初期状態では非表示 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 背景を半透明に */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal.visible {
+  display: flex; /* 表示時にフレックスボックスで中央揃え */
+}
+.modal-content {
+  background-color: #fff;
+  padding: 2rem 2rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.close-btn {
+  cursor: pointer;
+  text-align: center;
+  background: none;
+  border: none;
+  color: var(--font-dark);
+}
+.modal-btn {
+  padding: .5rem 2rem;
+  color: var(--font-light);
+  font-weight: 500; 
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.modal-line {
+  background-color: #06c755;
+  margin: 1rem auto;
+}
+.modal-line:hover {
+  background-color: #03e762;
+}
+.modal-tell {
+  background-color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+.modal-tell:hover {
+  background-color: #2050ff;
+} 
+
+/* ---------------- フッターfixedボタン　---------------- */
+.fotter-fixed {
+  background-color: rgb(12, 2, 32, 0.5);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 30vw;
+  height: 100px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  opacity: 0; /* 初期状態で非表示 */
+  transform: translateY(20px); /* 少し下に隠す */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* アニメーション設定 */
+}
+.fotter-fixed.visible {
+  opacity: 1; /* 表示状態 */
+  transform: translateY(0); /* 元の位置に戻す */
+}
+@media (max-width: 768px) {
+  .fotter-fixed {
+    width: 100vw; /* 幅を100%に */
+  }
+}
+/* ---------------- フッター　---------------- */
+footer {
+  padding: 2rem 0;
+  background-color: rgb(12, 2, 32);
+  color: var(--font-light);
+}
+.footer-top {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+
+}
+.sns-icon {
+  display: flex;
+  gap: 1rem;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.copy {
+  font-size: .8rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: .3rem;
+  }
+}

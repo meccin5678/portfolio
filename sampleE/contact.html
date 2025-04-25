@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Famm Productの紹介ページです">
+        <meta name="keywords" content="Famm Product, Web制作, デザイン, 映像制作, ブランディング, コンテンツ制作, クリエイティブ, 東京, 恵比寿, snsマーケティング, グラフィックデザイン, パッケージデザイン, 動画制作, 商品開発">
+        <meta property="og:title" content="Famm Product">
+        <meta property="og:description" content="Famm Productの紹介ページです">
+        <meta property="og:image" content="img/company.webp">
+        <meta property="og:url" content="https://meccin5678.github.io/portfolio/index.html">
+        <title>Creative Lab</title>
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <link rel="stylesheet" href="style.css"> 
+        <script src="nav.js" defer></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+        <script src="swiper.js" defer></script>
+        <script src="product.js" defer></script>
+    </head>
+<body>
+<header>
+    <div class="header-wrapper">
+        <h1><a href="index.html">Creative Lab</a></h1>
+        <div class="hum">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Top</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="company.html">Company</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-contact"></div>
+        <p class="page-title-maru">
+            <img src="img/circle.png">
+        </p>
+    </div>
+</div>
+
+
+<section class="section-contact">
+<p class="contact-title"></p>
+
+
+<form id="contact-form" class="form-contact" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScW_jLUa9Qfv4PO1qkjIQnLXPi0Bk040rRHyDJvrhnSQPxRRw/formResponse" method="POST" target="_self">
+    
+    <fieldset class="form-fieldset">
+        <legend class="form-legend text-larger">お問い合わせ種別</legend>
+        <div class="form-radio-group">
+            <label class="form-radio-label">
+                <input type="radio" name="entry.265991989" value="サービスに関するお問い合わせ">
+                <p class="form-radio-text">サービスに関するお問い合わせ</p>
+            </label>
+            <label class="form-radio-label">
+                <input type="radio" name="entry.265991989" value="採用に関するお問い合わせ" required>
+                <p class="form-radio-text">採用に関するお問い合わせ</p>
+            </label>
+            <label class="form-radio-label">
+                <input type="radio" name="entry.265991989" value="その他">
+                <p class="form-radio-text">その他</p>
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+        <label for="name" class="form-label text-larger">お名前</label>
+        <input type="text" id="name" name="entry.1151006376" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="form-label text-larger">メールアドレス</label>
+        <input type="email" id="email" name="entry.981084538" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="message" class="form-label text-larger">お問い合わせ内容</label>
+        <textarea id="message" name="entry.1209720938" class="form-textarea" rows="4" required></textarea>
+    </div>
+    
+    <div class="contact-btn-wrapper">
+        <button type="submit" class="contact-btn">送信する</button>
+    </div>
+    
+</form>
+<p class="hosoku">バックエンドにはGoogleフォームを使用しています<br>
+    実際に送信されますが、デモサイトのため返信は行いません</p>
+
+
+</section>
+
+<footer>
+    <div class="footer-wrapper">
+        <p>Famm Product</p>
+        <p>〒123-4567 東京都渋谷区恵比寿123-4</p>
+        <div class="footer-copy">
+            <p>0123-45-6789</p>
+            <p class="small">&copy;2025 Famm Product Co.,Ltd</p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+        e.preventDefault(); // デフォルトのフォーム送信を防ぐ
+        const form = e.target;
+
+        // フォームを送信
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            mode: 'no-cors', // CORS制限を回避するためにno-corsを設定
+        }).then(() => {
+            // 送信後にthanks.htmlへリダイレクト
+            window.location.href = "thanks.html";
+        }).catch((error) => {
+            console.error("送信エラー:", error);
+        });
+    });
+</script>
+    
+</body>
+</html>
