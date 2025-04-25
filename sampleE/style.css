@@ -116,7 +116,8 @@ header {
 }
 @media (max-width: 768px) {
   .header-top {
-    padding: 0 1rem;
+    padding: 0 2rem 0 1rem;
+  }
 }
 
 .header-logo {
