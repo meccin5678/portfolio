@@ -359,7 +359,6 @@ header {
 @media (max-width: 768px) {
   .sec1 {
     height: auto;
-    margin: 2rem auto;;
   }
   .sec1-flex {
     flex-direction: column; /* 縦に並べる */
