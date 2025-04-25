@@ -114,6 +114,9 @@ header {
   border-bottom: 1px solid var(--primary-blue);
   padding: 0 3rem;
 }
+@media (max-width: 768px) {
+  padding: 0 1rem;
+}
 .header-logo {
   height: 100%;
   width: auto;
