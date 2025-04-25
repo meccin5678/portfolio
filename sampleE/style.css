@@ -361,6 +361,7 @@ header {
     height: auto;
   }
   .sec1-flex {
+    padding: 2rem 0 0;
     flex-direction: column; /* 縦に並べる */
     width: 100%; /* 幅を100%に */
     gap: 2rem; /* セクション間の隙間を調整 */
