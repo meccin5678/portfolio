@@ -94,7 +94,6 @@ p {
   h3 {font-size: 1.6rem;}
 }
 @media (max-width: 480px) {
-  html {font-size: 16px;}
   h1 {font-size: 2rem;}
   h2 {font-size: 1.8rem;}
   h3 {font-size: 1.4rem;}
@@ -107,9 +106,9 @@ p {
   width: 100%;
   margin: 0 auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .inner-width  {
-    max-width: 768px;
+    max-width: 1024px;
     padding: 0 2rem;
   }
 }
@@ -162,7 +161,7 @@ header {
   height: 2px;
   background-color: var(--font-light);
 }
-/* ---------------- heroー---------------- */
+/* ---------------- ヒーロー---------------- */
 .hero {
   position: relative;
   width: 100%;
@@ -253,19 +252,9 @@ header {
   }
 }
 @media (max-width: 480px) {
-  .hero-inner {
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-  .hero-inner-left {
-    padding-top: 0;
+  .hero-fixed-btn {
     width: 100%;
-    height: auto;
-  }
-  .hero-inner-right {
-    padding-top: 0;
-    width: 100%;
-    height: auto;
+    padding: 1rem;
   }
 }
 /* ---------------- セクション1---------------- */
@@ -305,12 +294,15 @@ header {
   justify-content: center;
   align-items: flex-end;
 }
+.sec1-inner-center h3 span {
+  font-size: 1.6rem;
+}
 .sec1-inner-right {
   width: 20%;
   height: 100%;
 }
 /*********レスポンシブ*********/
-@media screen and (max-width: 768px) {
+@media (max-width: 1440px) {
   .sec1 {
     height: auto;
   }
@@ -637,10 +629,18 @@ header {
 .sec9 {
   width: 100%;
   padding: 5rem 0;
+  display: flex;
+  justify-content: center;
 }
 .sec9-inner {
+  width: 85%;
   display: flex;
-  gap: 5rem;
+}
+.sec9-title {
+  flex: 1;
+}
+.sec9-info-wrap {
+  flex: 5;
 }
 .sec9-info {
   border-top: 1px solid var(--middle-green);
@@ -663,8 +663,12 @@ header {
 /*********レスポンシブ*********/
 @media (max-width: 768px) {
   .sec9-inner {
+    width: 90%;
     flex-direction: column;
     gap: 2rem;
+  }
+  .sec9-title  {
+    text-align: center;
   }
 }
 /* ---------------- セクション10 イベント---------------- */
