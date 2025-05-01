@@ -10,18 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroPatterns = [
     {
       bg: './img/open1.webp',
-      text: `<h1>Life Revolution</h1><h2>東宝町PROJECT、始動</h2>`,
-      subtext: `<h3>都会のオアシス</h3><h2>時間のゆとりと自然の豊かさ</h2><h2>利便性という贅沢</h2>`
+      text: `<h1>Life Revolution</h1><h2>東宝町エリア、最後の新築分譲</h2>`,
+      subtext: `<h3>持続可能な街</h3><h2>サステナブルな住環境</h2>`
     },
     {
       bg: './img/open2.webp',
       text: `<h1>Short Access</h1><h2>東京駅直結</h2>`,
-      subtext: `<h3>北西線・高良大線</h3><h2>『東宝町』駅徒歩3分</h2><h2>3駅4線を利用可能</h2>`
+      subtext: `<h3>『東宝町』駅徒歩3分</h3><h2>3駅4線を利用可能</h2>`
     },
     {
       bg: './img/open3.webp',
-      text: `<h1>New Standard</h1><h2>未来を見据えた暮らし</h2>`,
-      subtext: `<h3>サステナブルな生活</h3><h2>緑豊かな環境</h2><h2>自然との共存で得られる幸せ</h2>`
+      text: `<h1>New Standard</h1><h2>利便性という贅沢</h2>`,
+      subtext: `<h3></h3><h2>時間の余裕が生む、人との繋がり</h2>`
     }
   ];
 

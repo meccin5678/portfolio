@@ -218,7 +218,7 @@ header {
 .hero h1,
 .hero h2,
 .hero h3 {
-  text-shadow: var(--dark-green) 0px 7px 7px;
+  text-shadow: #000 3px 7px 7px;
 }
 .hero-fixed-btn {
   position: absolute; 
