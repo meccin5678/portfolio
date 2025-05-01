@@ -94,7 +94,7 @@ p {
   h3 {font-size: 1.6rem;}
 }
 @media (max-width: 480px) {
-  html {font-size: 12px;}
+  html {font-size: 15px;}
 }
 /*********横幅max1200の中央配置*********/
 .inner-width {
