@@ -365,6 +365,9 @@ header {
     flex-direction: column;
     gap: 1rem;
   }
+  .sec2-btn h4 {
+    font-size: 1.2rem;
+  }
 }
 /* ---------------- セクション3---------------- */
 .sec3 {
