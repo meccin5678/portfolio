@@ -60,6 +60,21 @@
 // -----------------------------
 // ✨ ふわっと表示の初期化
 // -----------------------------
+const FadeIn = () => {
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+              // 表示を遅延させる
+              setTimeout(() => {
+                  entry.target.classList.add("visible");
+              }, index * 300); // 各要素に300msずつディレイを追加
+              observer.unobserve(entry.target);
+          }
+      });
+  });
+
+  document.querySelectorAll(".fade").forEach((el) => observer.observe(el)); // idからclassに変更
+};
 
 
 // -----------------------------
@@ -84,8 +99,8 @@
 // ✨ 関数の呼び出し
 // -----------------------------
 document.addEventListener("DOMContentLoaded", () => {
-  showNextHero ();
-//     FadeInEffect();
+    showNextHero();
+    FadeIn(); // 関数名を修正
 //     Swiper();
 //     ModalByTime();
 //     FooterFixedButton();
