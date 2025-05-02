@@ -56,7 +56,7 @@ html {
   padding: 0; /* 余白をリセット */
 }
 body {
-  font-family: 'Merriweather', 'Zen Old Mincho', 'Zen Kaku Gothic New', sans-serif;
+  font-family: 'Merriweather', 'Zen Old Mincho', 'Zen Kaku Gothic New', 'Cormorant', sans-serif;
   font-size: 1rem; /* 基本フォントサイズをremで指定 */
   line-height: 1.7;
   color: var(--font-dark); /* 全体の文字色 */
@@ -72,13 +72,18 @@ a {
   text-decoration: none;
 }
 h1 {
-  font-size:  4rem; /* 見出し1のフォントサイズ */
+  font-size:  5rem; /* 見出し1のフォントサイズ */
+  font-weight: 700;
 }
 h2 {
   font-size: 3rem; /* 見出し2のフォントサイズ */
+  font-weight: 700;
+
 }
 h3 {
   font-size: 2rem; /* 見出し3のフォントサイズ */
+  font-weight: 600;
+
 }
 h4 {
   font-size: 1.5rem; /* 見出し4のフォントサイズ */
@@ -191,7 +196,7 @@ header {
 #heroText, #heroSubtext {
   opacity: 0; /* 初期状態で透明 */
   clip-path: circle(0% at 50% 50%); /* 初期状態: 中央から0% */
-  transition: clip-path 1s ease, opacity 1s ease; /* スムーズなアニメーション */
+  transition: clip-path 2.5s ease, opacity 2.5s ease; /* スムーズなアニメーション */
 }
 
 .hero.active #heroText,
@@ -219,6 +224,9 @@ header {
 .hero h2,
 .hero h3 {
   text-shadow: #000 3px 7px 7px;
+}
+.hero h1 {
+  font-family: 'Cormorant','Merriweather', 'Zen Old Mincho', 'Zen Kaku Gothic New', sans-serif;
 }
 .hero-fixed-btn {
   position: absolute; 

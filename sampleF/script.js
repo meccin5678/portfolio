@@ -1,8 +1,6 @@
 // -----------------------------
 // ✨ ヒーロー画像の関数
 // -----------------------------
-// JavaScript
-document.addEventListener("DOMContentLoaded", () => {
   const hero = document.getElementById('hero');
   const heroText = document.getElementById('heroText');
   const heroSubtext = document.getElementById('heroSubtext');
@@ -10,13 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroPatterns = [
     {
       bg: './img/open1.webp',
-      text: `<h1>Life Revolution</h1><h2>東宝町エリア、最後の新築分譲</h2>`,
-      subtext: `<h3>持続可能な街</h3><h2>サステナブルな住環境</h2>`
+      text: `<h1>Life Revolution</h1><h2>サステナブルな住環境</h2>`,
+      subtext: `<h3>持続可能な街</h3><h2>東宝町エリア、最後の新築分譲</h2>`
     },
     {
       bg: './img/open2.webp',
-      text: `<h1>Short Access</h1><h2>東京駅直結</h2>`,
-      subtext: `<h3>『東宝町』駅徒歩3分</h3><h2>3駅4線を利用可能</h2>`
+      text: `<h1>Short Access</h1><h2>『東宝町』駅徒歩3分</h2>`,
+      subtext: `<h3>東京駅直結</h3><h2>3駅4線を利用可能</h2>`
     },
     {
       bg: './img/open3.webp',
@@ -49,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       heroText.style.clipPath = 'circle(150% at 50% 50%)'; // 最終状態: 全体を覆う
       heroSubtext.style.opacity = '1';
       heroSubtext.style.clipPath = 'circle(150% at 50% 50%)'; // 最終状態: 全体を覆う
-    }, 1000); // 遅延時間を調整
+    }, 1500); // 遅延時間を調整
   
     // 次のパターンへ
     current = (current + 1) % heroPatterns.length;
@@ -58,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 初期表示と定期的な切り替え
   showNextHero();
   setInterval(showNextHero, 5000);
-});
+
 // -----------------------------
 // ✨ ふわっと表示の初期化
 // -----------------------------
@@ -85,11 +83,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // -----------------------------
 // ✨ 関数の呼び出し
 // -----------------------------
-// document.addEventListener("DOMContentLoaded", () => {
-    // heroAction();
+document.addEventListener("DOMContentLoaded", () => {
+  showNextHero ();
 //     FadeInEffect();
 //     Swiper();
 //     ModalByTime();
 //     FooterFixedButton();
 //     HamburgerMenu(); 
-// });
+});
