@@ -56,6 +56,10 @@
   // 初期表示と定期的な切り替え
   showNextHero();
   setInterval(showNextHero, 5000);
+  
+// -----------------------------
+// ✨ ハンバーガーメニューの初期化
+// -----------------------------
 
 // -----------------------------
 // ✨ ふわっと表示の初期化
@@ -76,14 +80,50 @@ const FadeIn = () => {
   document.querySelectorAll(".fade").forEach((el) => observer.observe(el)); // idからclassに変更
 };
 
+// -----------------------------
+// ✨ Swiperの初期化
+// -----------------------------
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 3, // 表示するスライド数を3に設定
+  spaceBetween: 20, // スライド間のスペース
+  loop: true, // ループを有効化
+  navigation: { // ナビゲーションボタンを有効化
+      nextEl: '.swiper-button-next', // 次のスライドボタン
+      prevEl: '.swiper-button-prev', // 前のスライドボタン
+  },
+});
+
+// ポップアップ機能
+const popup = document.getElementById('popup');
+const popupDetail = document.getElementById('popup-detail');
+const popupClose = document.querySelector('.popup-close');
+
+document.querySelectorAll('.sec10-event').forEach(event => {
+  event.addEventListener('click', () => {
+      popupDetail.textContent = event.dataset.detail;
+      popup.classList.add('show'); // クラスを追加してアニメーションをトリガー
+      popup.classList.remove('hidden');
+  });
+});
+
+popupClose.addEventListener('click', () => {
+  popup.classList.remove('show'); // クラスを削除して閉じる
+  setTimeout(() => {
+    popup.classList.add('hidden');
+  }, 500); // アニメーション終了後に非表示
+});
+
+popup.addEventListener('click', (e) => {
+  if (e.target === popup) {
+    popup.classList.remove('show'); // クラスを削除して閉じる
+    setTimeout(() => {
+      popup.classList.add('hidden');
+    }, 500); // アニメーション終了後に非表示
+  }
+});
 
 // -----------------------------
 // ✨ モーダルの初期化
-// -----------------------------
-
-
-// -----------------------------
-// ✨ Swiperの初期化
 // -----------------------------
 
 // -----------------------------
@@ -91,18 +131,16 @@ const FadeIn = () => {
 // -----------------------------
 
 // -----------------------------
-// ✨ ハンバーガーメニューの初期化
-// -----------------------------
-
-
-// -----------------------------
 // ✨ 関数の呼び出し
 // -----------------------------
 document.addEventListener("DOMContentLoaded", () => {
     showNextHero();
     FadeIn(); // 関数名を修正
-//     Swiper();
+    Swiper();
 //     ModalByTime();
 //     FooterFixedButton();
 //     HamburgerMenu(); 
+
+    // Swiperの初期化
+    
 });

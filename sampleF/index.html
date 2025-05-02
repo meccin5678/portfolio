@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/minireset.css/minireset.min.css">
 
   <!-- SwiperのCSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.3/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css?v=1.0">
@@ -39,7 +39,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
   <!-- SwiperのJS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.3/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.js" defer></script>
 
   <!-- 自分のJS -->
   <script src="script.js" defer></script>
@@ -48,7 +48,7 @@
   <header>
     <div class="inner-width header-inner">
       <div>
-        <p>The Owner's Story</p>
+        <p class="font-style-en">The Owner's Story</p>
         <p>アーバンビレッジ東宝町</p>
       </div>
       <div class="hum">
@@ -63,7 +63,7 @@
   <div class="hero" id="hero">
     <div class="inner-width hero-inner">
       <div class="hero-inner-left" id="heroText">
-        <h1>LIFE RENOVATION</h1>
+        <h1 class="font-style-en">LIFE RENOVATION</h1>
         <h2>東宝町PROJECT、始動</h2>
       </div>
       <div class="hero-inner-right" id="heroSubtext">
@@ -100,7 +100,6 @@
 
   <!-- セクション2 -->
   <section class="sec2">
-    <div class="inner-width">
       <h3>内覧会エントリー</h3>
       <p class="icon-flex">
         <a href="dummy.html">現地までの地図はこちら</a>
@@ -114,7 +113,6 @@
           <h4><a href="dummy.html" class="full-link">エントリー済みのお客様限定公開ページ</a></h4>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- セクション3 -->
@@ -148,7 +146,7 @@
 
   <!-- セクション5 プラン-->
   <section class="sec5">
-    <div class="sec5-inner">
+    <div class="sec5-inner fade">
       <div class="sec5-inner-left">
         <img src="img/plan.webp">   
       </div>
@@ -166,7 +164,7 @@
 
     <!-- セクション6 設備-->
     <section class="sec6">
-      <div class="sec6-inner">
+      <div class="sec6-inner fade">
         <div class="sec6-inner-left">
           <p class="title">Facility</p>
               <h3>持続可能な住環境を実現</h3>
@@ -185,7 +183,7 @@
 
   <!-- セクション7 アクセス-->
   <section class="sec7">
-    <div class="sec7-inner">
+    <div class="sec7-inner fade">
       <div class="sec7-inner-left">
         <img src="img/sec7.webp">
       </div>
@@ -229,18 +227,39 @@
     </div>
   </section>
 
-    <!-- セクション10-->
-    <section class="sec10">
-      <p class="sec10-title">Event&Campaing</p>
-        <div class="sec10-inner inner-width">
-          <div class="sec10-event"><p>イベント1</p></div>       
-          <div class="sec10-event"><p>イベント2</p></div>       
-          <div class="sec10-event"><p>イベント3</p></div>       
-          <div class="sec10-event"><p>イベント4</p></div>       
-          <div class="sec10-event"><p>イベント5</p></div>       
+  <!-- セクション10　スワイパー -->
+  <section class="sec10">
+    <p class="sec10-title">イベント情報</p>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide sec10-event" data-detail="イベント1の詳細情報">
+          <p>イベント1</p>
+        </div>
+        <div class="swiper-slide sec10-event" data-detail="イベント2の詳細情報">
+          <p>イベント2</p>
+        </div>
+        <div class="swiper-slide sec10-event" data-detail="イベント3の詳細情報">
+          <p>イベント3</p>
+        </div>
+        <div class="swiper-slide sec10-event" data-detail="イベント4の詳細情報">
+          <p>イベント4</p>
+        </div>
+        <div class="swiper-slide sec10-event" data-detail="イベント5の詳細情報">
+          <p>イベント5</p>
         </div>
       </div>
-    </section>
+      <!-- ナビゲーションボタン -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <span class="popup-close">閉じる</span>
+
+      <p id="popup-detail"></p>
+    </div>
+  </div>
 
   <!-- フッター -->
   <footer>
