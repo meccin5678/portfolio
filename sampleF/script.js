@@ -86,6 +86,8 @@ const swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   spaceBetween: 20,
   loop: true,
+  effect: 'slide', // スライドエフェクトを指定（他に 'fade', 'cube', 'coverflow', 'flip' などが利用可能）
+  speed: 600, // アニメーションの速度（ミリ秒）
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
