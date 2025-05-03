@@ -153,6 +153,7 @@ header {
   justify-content: space-between;
   align-items: center;
   color: var(--font-light);
+
 }
 /* -------------------------------- ハンバーガーアイコン -------------------------------- */
 .hum {
@@ -195,7 +196,6 @@ nav {
 }
 nav.open {
   display: flex;
-  /* z-index: var(--z-modal); */
   transform: translateY(0%); /* 初期状態で隠す */
   transition: transform 0.3s ease; /* スムーズなアニメーション */
 }
@@ -245,7 +245,19 @@ nav.open {
   padding: 1rem 2rem;
   border: 1px solid var(--font-light);  
 }
+/*********レスポンシブ ナビ*********/
+@media (max-width: 1024px) {
+  nav {
+    height: 100vh;
+  }
+  .nav-inner {
+  padding-top: 100px;
 
+    flex-direction: column;
+    width: 80%;
+    gap: 2rem;
+  }
+}
 /* -------------------------------- ヒーロー -------------------------------- */
 .hero {
   position: relative;
