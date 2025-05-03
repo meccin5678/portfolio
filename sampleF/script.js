@@ -54,7 +54,7 @@ const showNextHero = () => {
 };
 
 // 初期表示と定期的な切り替え
-setInterval(showNextHero, 5000);
+// setInterval(showNextHero, 5000);
 
 // -----------------------------
 // ✨ ハンバーガーメニューの初期化
@@ -105,34 +105,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".fade").forEach((el) => observer.observe(el)); // idからclassに変更
 };
 
-// -----------------------------
-// ✨ Swiperの初期化
-// -----------------------------
-const swiper = new Swiper('.swiper-container', {
-slidesPerView: 1,
-spaceBetween: 20,
-loop: true,
-effect: 'slide', // スライドエフェクトを指定（他に 'fade', 'cube', 'coverflow', 'flip' などが利用可能）
-speed: 600, // アニメーションの速度（ミリ秒）
-navigation: {
-  nextEl: '.swiper-button-next',
-  prevEl: '.swiper-button-prev',
-},
-breakpoints: {
-  480: {
-    slidesPerView: 1,
-  },
-  768: {
-    slidesPerView: 2,
-  },
-  1024: {
-    slidesPerView: 3,
-  },
-  1280: {
-    slidesPerView: 4,
-  },
-},
-});
+
 // -----------------------------
 // ✨ モーダルの初期化
 // -----------------------------
@@ -147,10 +120,39 @@ breakpoints: {
 document.addEventListener("DOMContentLoaded", () => {
 
   showNextHero();
+  setInterval(showNextHero, 5000); 
   HumNav(); 
   FadeIn(); // 関数名を修正
-  Swiper();
   // ModalByTime();
   //FooterFixedButton();
+
+// -----------------------------
+// ✨ Swiperの初期化（Domの中に書くのが安全）
+// -----------------------------
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  effect: 'slide', // スライドエフェクトを指定（他に 'fade', 'cube', 'coverflow', 'flip' などが利用可能）
+  speed: 600, // アニメーションの速度（ミリ秒）
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    480: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+    1280: {
+      slidesPerView: 4,
+    },
+  },
+  });
   
 });
