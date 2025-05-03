@@ -53,7 +53,7 @@ const showNextHero = () => {
   current = (current + 1) % heroPatterns.length;
 };
 
-// 初期表示と定期的な切り替え
+// 初期表示と定期的な切り替えは、下に移動
 // setInterval(showNextHero, 5000);
 
 // -----------------------------
