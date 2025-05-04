@@ -19,7 +19,7 @@ const heroPatterns = [
   {
     bg: './img/open3.webp',
     text: `<h1>New Standard</h1><h2>利便性という贅沢</h2>`,
-    subtext: `<h3></h3><h2>時間の余裕が生む、人との繋がり</h2>`
+    subtext: `<h2>時間の余裕が生む、人との繋がり</h2>`
   }
 ];
 
