@@ -13,6 +13,7 @@
   --z-header: 1;
   --z-modal: 2;
   --z-bg: -1;
+  --z-f-btn: 11; /* swiperのナビがデフォルトで10のため */
 }
 /*-------------------------------- 作業用・後で消す --------------------------------*/
 .dumy {
@@ -187,7 +188,7 @@ nav {
   top: 0;
   left: 0;
   transform: translateY(-100%);
-  height: 60vh;
+  height: 80vh;
   width: 100%;
   background: linear-gradient(to bottom, var(--dark-green), var(--dark-green-trans));
   z-index: var(--z-bg);
@@ -202,6 +203,7 @@ nav.open {
 .nav-inner {
   width: 50%;
   padding-top: 160px;
+  padding-bottom: 160px;
   /* background-color: pink; */
   margin: 0 auto;
   display: flex;
@@ -252,10 +254,10 @@ nav.open {
   }
   .nav-inner {
   padding-top: 100px;
-
-    flex-direction: column;
-    width: 80%;
-    gap: 2rem;
+  padding-bottom: 100px;
+  flex-direction: column;
+  width: 90%;
+  gap: 2rem;
   }
 }
 /* -------------------------------- ヒーロー -------------------------------- */
@@ -855,6 +857,32 @@ nav.open {
 .swiper-button-prev:hover {
   scale: .8;
 } 
+/* -------------------------------- フッター固定ボタン -------------------------------- */
+.footer-fixed-btn {
+  position: fixed;
+  bottom: 10%;
+  right: 0;
+  background: linear-gradient(to bottom,  #6e4f2f, #c5a880);
+  color: var(--font-light);
+  padding: .5rem 2rem;
+  z-index: var(--z-top);
+  display: flex;
+  gap: 3rem;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: var(--z-f-btn);
+}
+.footer-fixed-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.footer-fixed-btn-flex {
+display: flex;
+align-items: center;
+gap: .5rem;
+}
 
 /* -------------------------------- フッター -------------------------------- */
 footer {
@@ -862,13 +890,27 @@ footer {
   background-color: var(--dark-green);
   color: var(--font-light);
 }
+.footer-inner {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  margin-bottom: 5rem;
+}
 .sns-icon {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .copy {
   font-size: .7rem;
   text-align: center;
+}
+/*********レスポンシブ*********/
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom:2rem;
+  }
 }
 
 /*********印刷設定*********/

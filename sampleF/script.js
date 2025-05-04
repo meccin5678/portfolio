@@ -115,6 +115,22 @@ document.querySelectorAll(".fade").forEach((el) => observer.observe(el)); // id�
 // -----------------------------
 // ✨ footerのfixedボタン
 // -----------------------------
+const FooterFixedButton = () => {
+  const sec5 = document.querySelector(".sec5");
+  const fixedButton = document.querySelector(".footer-fixed-btn");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+              // フッターが見えたらボタンを表示
+              fixedButton.classList.add("visible");
+              observer.unobserve(sec5); // 一度表示したら監視を解除
+          }
+      });
+  });
+
+  observer.observe(sec5);
+};
 
 // -----------------------------
 // ✨ 関数の呼び出し
@@ -124,9 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
   showNextHero();
   setInterval(showNextHero, 5000); 
   HumNav(); 
-  FadeIn(); // 関数名を修正
+  FadeIn();
+  FooterFixedButton();
   // ModalByTime();
-  //FooterFixedButton();
 
 // -----------------------------
 // ✨ Swiperの初期化（Domの中に書くのが安全）
