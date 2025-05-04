@@ -28,14 +28,16 @@ let current = 0;
 const showNextHero = () => {
   const pattern = heroPatterns[current];
 
-  // 背景画像を先に更新
-  hero.style.backgroundImage = `url(${pattern.bg})`;
-
   // テキストを非表示にして初期状態にリセット
   heroText.style.opacity = '0';
   heroText.style.clipPath = 'circle(0% at 50% 50%)'; // 初期状態: 中央から0%
   heroSubtext.style.opacity = '0';
   heroSubtext.style.clipPath = 'circle(0% at 50% 50%)'; // 初期状態: 中央から0%
+
+  // 背景画像の切り替えを遅延させる
+  setTimeout(() => {
+    hero.style.backgroundImage = `url(${pattern.bg})`; // 背景画像を更新
+  }, 500); // テキストが非表示になるタイミングに合わせる
 
   setTimeout(() => {
     // テキストを更新
@@ -47,7 +49,7 @@ const showNextHero = () => {
     heroText.style.clipPath = 'circle(150% at 50% 50%)'; // 最終状態: 全体を覆う
     heroSubtext.style.opacity = '1';
     heroSubtext.style.clipPath = 'circle(150% at 50% 50%)'; // 最終状態: 全体を覆う
-  }, 1500); // 遅延時間を調整
+  }, 1000); // 背景画像の切り替え後にテキストを表示
 
   // 次のパターンへ
   current = (current + 1) % heroPatterns.length;

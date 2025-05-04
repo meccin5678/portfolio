@@ -266,7 +266,7 @@ nav.open {
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  transition: background-image 1.5s ease-in-out; /* 背景画像の切り替えもゆっくり */
+  transition: background-image 1s ease-in-out; /* 背景画像の切り替えもゆっくり */
 }
 .hero::before {
   content: '';
@@ -288,7 +288,7 @@ nav.open {
 #heroText, #heroSubtext {
   opacity: 0; /* 初期状態で透明 */
   clip-path: circle(0% at 50% 50%); /* 初期状態: 中央から0% */
-  transition: clip-path 2.5s ease, opacity 2.5s ease; /* スムーズなアニメーション */
+  transition: clip-path 2s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 2s ease-in-out; /* アニメーションを滑らかに */
 }
 
 .hero.active #heroText,
