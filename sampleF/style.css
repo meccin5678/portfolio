@@ -10,7 +10,7 @@
   --dark-green: #1d2a21; /* 高級感ある深緑 */
   --dark-green-hover: #364c3b; /* より深い緑でアクセント */
   --dark-green-trans: rgba(60, 84, 68, 0.5); /* トランスパレントも調整 */
-  --z-header: 1;
+  --z-header: 12;
   --z-modal: 2;
   --z-bg: -1;
   --z-f-btn: 11; /* swiperのナビがデフォルトで10のため */
