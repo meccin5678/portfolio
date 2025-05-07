@@ -284,7 +284,7 @@ nav.open {
   height: 100%;
   background: inherit; /* 背景画像を継承 */
   clip-path: circle(0% at 50% 50%); /* 初期状態: 中央から0% */
-  opacity: .6; /* 初期状態で透明 */
+  opacity: 0; /* 初期状態で透明 */
   transition: clip-path 1.5s ease-in-out, opacity 1.5s ease-in-out; /* アニメーション時間を長く設定 */
   z-index: var(--z-bg); /* 背景のz-index */
 }

@@ -136,6 +136,8 @@ const FooterFixedButton = () => {
 // ✨ 関数の呼び出し
 // -----------------------------
 document.addEventListener("DOMContentLoaded", () => {
+  // 初期状態で背景画像を設定
+  hero.style.backgroundImage = `url(${heroPatterns[0].bg})`;
 
   showNextHero();
   setInterval(showNextHero, 5000); 
