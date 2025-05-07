@@ -245,7 +245,12 @@ nav.open {
 }
 .nav-bottom p {
   padding: 1rem 2rem;
-  border: 1px solid var(--font-light);  
+  border: 1px solid var(--font-light); 
+  transition: background-color 0.3s ease; 
+}
+.nav-bottom p:hover {
+  background-color: var(--font-light);
+  color: var(--dark-green);
 }
 /*********レスポンシブ ナビ*********/
 @media (max-width: 1024px) {
