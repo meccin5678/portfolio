@@ -1,0 +1,368 @@
+@charset "UTF-8";
+/*-------------------------------- カスタムプロパティの定義 --------------------------------*/
+:root {
+  --lavender: #BFA2DB;
+  --rosePink: #E8A0BF;
+  --offWhite: #F8F4F9;
+  --darkNavy: #081f2c;
+  --gold: #D4AF37;
+  --z-header: 12;
+  --z-modal: 2;
+  --z-base: 1;
+  --z-bg: -10;
+  --z-f-btn: 11; /* swiperのナビがデフォルトで10のため */
+}
+/*-------------------------------- 作業用・後で消す --------------------------------*/
+
+/*-------------------------------- 自分用の追加リセット・調整 --------------------------------*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+ul, ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*-------------------------------- 全体デザインcss --------------------------------*/
+html {
+  font-size: 17px; /* 基本のフォントサイズ */
+  scroll-behavior: smooth; /* スクロールをスムーズに */
+}
+body {
+  font-family: 'Merriweather', 'Zen Old Mincho', 'Zen Kaku Gothic New', 'Cormorant', sans-serif;
+  font-size: 1rem; /* 基本フォントサイズをremで指定 */
+  line-height: 1.7;
+  color: var(--darkNavy); /* 全体の文字色 */
+}
+html, body {
+  height: 100%; /* ページ全体の高さを100%に設定 */
+  overflow-x: hidden; /* 横スクロールを防止 */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* 縦方向に配置 */
+}
+main {
+  flex: 1;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2.5rem;
+
+}
+h4 {
+  font-size: 1.5rem;
+
+}
+p {
+  font-size: 1rem;
+
+}
+/*********レスポンシブ文字サイズ*********/
+@media (max-width: 768px) {
+  html {font-size: 16px;}
+  h1 {font-size: 3rem;}
+  h2 {font-size: 2rem;}
+  h3 {font-size: 1.6rem;}
+}
+@media (max-width: 480px) {
+  h1 {font-size: 2rem;}
+  h2 {font-size: 1.8rem;}
+  h3 {font-size: 1.4rem;}
+  h4 {font-size: 1.1rem;}
+
+}
+/*********横幅max1200の中央配置*********/
+.inner-width {
+  max-width: 1024px;
+  width: 100%;
+  padding: 0 0;
+  /* border: solid 1.5px var(--darkNavy); */
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .inner-width  {
+    max-width: 768px;
+    padding: 0 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .inner-width  {
+    max-width: 480px;
+    padding: 0 1rem;
+  }
+}
+
+/* -------------------------------- ヘッダー -------------------------------- */
+header {
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-header);
+}
+nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+}
+nav ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* -------------------------------- ヒーロー -------------------------------- */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%), url(./img/hero.webp);
+  background-size: cover;
+  background-position: right center;
+  position: relative; /* z-indexを有効にする */
+  z-index: var(--z-bg) /* 背景画像を背面に配置 */
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(./img/kosen.png);
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  transform: skew(240deg) scale(1.5) translateY(80px);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  animation: heroAnime 10s linear;
+  will-change: transform, opacity;
+  z-index: var(--z-bg) /* 背景画像を背面に配置 */
+}
+@keyframes heroAnime {
+  0% {
+    transform: skew(0deg) scale(2);
+    opacity: 0.2;
+  }
+  25% {
+    transform: skew(90deg) scale(2);
+    opacity: 0.3;
+  }
+  50% {
+    transform: skew(180deg) scale(2);
+    opacity: 0.4;
+  }
+  75% {
+    transform: skew(270deg) scale(2);
+    opacity: 0.2;
+  }
+  100% {
+  transform: skew(240deg) scale(1.5) translateY(80px);
+    opacity: 0.3;
+  }
+}
+.hero-inner {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  z-index: var(--z-base);
+}
+.hero-img {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+.hero-img img {
+  height: auto;
+  width: 130px;
+}
+.hero-text {
+  height: 100%;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 8rem;
+}
+/*********レスポンシブ ヒーロー*********/
+@media (max-width: 768px) {
+}
+/* -------------------------------- main -------------------------------- */
+main {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  overflow: visible;
+  clip-path: inset(-9999px 0 0 0);
+}
+
+/* メイン背景はみ出し（上にはみ出し） */
+main::after {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: 0;
+  left: 0;
+  height: 80%; 
+  background-image: url(./img/kosen.png);
+  background-size: cover;
+  background-position: center center;
+  transform: skew(240deg) scale(1.5);
+  opacity: 0.3;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  animation: mainAnime 10s linear infinite;
+  will-change: transform, opacity;
+  z-index: var(--z-bg);
+}
+
+@keyframes mainAnime {
+  0% {
+    transform: skew(240deg) scale(1.5);
+    opacity: 0.3;
+  }
+  25% {
+    transform: skew(90deg) scale(2);
+    opacity: 0.2;
+  }
+  50% {
+    transform: skew(180deg) scale(2);
+    opacity: 0.2;
+  }
+  75% {
+    transform: skew(270deg) scale(2);
+    opacity: 0.2;
+  }
+  100% {
+  transform: skew(240deg) scale(1.5);
+    opacity: 0.3;
+  }
+}
+/* -------------------------------- セクション1 -------------------------------- */
+.sec1 {
+  padding: 5rem 0 10rem;
+  width: 100%;
+  text-align: center;
+}
+.sec1 h4 {
+  margin-bottom: 2rem;
+}
+.sec1 img {
+  width: 60%;
+  height: auto;;
+}
+
+/* -------------------------------- セクション2〜4 -------------------------------- */
+.secFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+.secFlexImg,
+.secFlexText {
+  width: 50%;
+}
+/* -------------------------------- セクション5 -------------------------------- */
+.sec5 {
+  width: 100%;
+  perspective: 1000px; /* 3D効果を有効化 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(0, 147, 252, 0.3), rgba(231, 255, 216, 0.3), rgba(255, 255, 255, 0.3));
+  padding: 10rem 0;
+}
+.sec5 h3 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.sec5-top,
+.sec5-bottom {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 2rem;
+  width: 90%;
+  margin: 0 auto;
+}
+.sec5-step {
+  padding: 1rem;
+  width: 280px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.2); /* 半透明の白色 */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* 半透明の境界線 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
+  backdrop-filter: blur(10px); /* 背景をぼかす */
+  border-radius: 10px; /* 角を丸くする */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d; /* 3D変換を有効化 */
+  backface-visibility: hidden; /* 背面を非表示にする */
+}
+.sec5-step img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-top: 1rem;
+}
+.sec5-step:nth-child(2) {
+  margin-top: 3rem;
+}
+.sec5-step:nth-child(3) {
+  margin-top: 6rem;
+}
+/* -------------------------------- イベント　スワイパー -------------------------------- */
+
+
+/* -------------------------------- フッター固定ボタン -------------------------------- */
+
+/* -------------------------------- フッター -------------------------------- */
+footer {
+  width: 100%;
+  height: 100px;
+  color: #ffffff;
+  background-color: var(--darkNavy);
+  display: grid;
+  place-items: center;
+  margin-top: auto; 
+}
+
+.copy {
+  font-size: .7rem;
+  text-align: center;
+}
+/*********印刷設定*********/
+@media print {
+  header, footer {
+    display: none; 
+  }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="スキンケアの紹介ページです">
+  <meta name="keywords" content="オールイン, 50歳, しみ">
+  <meta property="og:title" content="Power Age">
+  <meta property="og:description" content="スキンケア商品の紹介ページです">
+  <meta property="og:image" content="./img/product.png">
+  <meta property="og:url" content="https://example.com">
+  <title>美容系</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/minireset.css/minireset.min.css">
+
+  <!-- SwiperのCSS -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css"> -->
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+<!-- GSAPのCDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+  <!-- SwiperのJS -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.js" defer></script> -->
+
+  <!-- 自分のJS -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+<header>      
+    <nav class="inner-width">
+      <img src="./img/logo.svg" alt="ブランドロゴ">
+      <ul>
+        <li>FAQ<span></span></li>
+        <li>ご購入はこちら<span></span></li>
+      </ul>
+    </nav>
+</header>
+
+<!-- ヒーローエリア -->
+<div class="hero">
+  <div class="hero-inner inner-width">
+    <div class="hero-img" id="heroImg">
+      <img src="./img/product.png">      
+    </div>
+    <div class="hero-text" id="heroText">
+      <h4>光サイエンスから生まれたオールイン</h4>
+      <h2>50代からの本格美肌ケア</h2>
+      <h3>Power Age</h3>
+      <p>詳しくみる</p>
+    </div>
+  </div>
+</div> <!-- 正しい位置で閉じる -->
+<!-- mainで囲む -->
+<main>
+  <section class="sec1 inner-width">
+    <h4>コスメランキング受賞</h4>
+    <div>
+      <img src="./img/medal.png" alt="コスメランキング受賞">
+    </div>
+  </section>
+
+  <section class="sec2 secFlex inner-width">
+    <div class="secFlexImg">
+      <img src="./img/sec2.webp" alt="実感イメージ">
+    </div>
+    <div class="secFlexText">
+      <h4>実感レポート</h4>
+      <p>この化粧水を使い始めてから、肌の潤いがしっかりと感じられるようになりました。ベタつかず、さらっとした使用感なのに、朝までしっとり感が続くのが嬉しいです。</p>
+    </div>
+  </section>
+
+  <section class="sec3 secFlex inner-width">
+    <div class="secFlexText">
+      <h4>実感レポート</h4>
+      <p>ベタつかず、さらっとした使用感なのに、朝までしっとり感が続くのが嬉しいです。香りも優しくリラックスできます。毎日が楽しみになりました。</p>
+    </div>
+    <div class="secFlexImg">
+      <img src="./img/sec3.webp" alt="実感イメージ">
+    </div>
+  </section>
+
+  <section class="sec4 secFlex inner-width">
+    <div class="secFlexImg">
+      <img src="./img/sec4.webp" alt="実感イメージ">
+    </div>
+    <div class="secFlexText">
+      <h4>実感レポート</h4>
+      <p>この化粧水を使い始めてから、肌の潤いがしっかりと感じられるようになりました。ベタつかず、さらっとした使用感なのに、朝までしっとり感が続くのが嬉しいです。</p>
+    </div>
+  </section>
+
+
+  <section class="sec5">
+    <h3>原材料は良質な成分</h3>
+    <div class="sec5-top">
+      <div class="sec5-step" id="fade">
+        <h4>天然ハーブ</h4>
+        <p>説明文が入ります説明文が入ります</p>
+        <img src="./img/a1.webp" alt="実感イメージ">
+      </div>
+      <div class="sec5-step" id="fade">
+        <h4>有機素材</h4>
+        <p>説明文が入ります説明文が入ります</p>
+        <img src="./img/a2.webp" alt="実感イメージ">
+      </div>
+      <div class="sec5-step" id="fade">
+        <h4>厳選オイル</h4>
+        <p>説明文が入ります説明文が入ります</p>
+        <img src="./img/a3.webp" alt="実感イメージ">
+      </div>
+    </div>
+    <div class="sec5-bottom">
+      <div class="sec5-step" id="fade">
+        <h4>オーガニック</h4>
+        <p>説明文が入ります説明文が入ります説明文が入ります</p>
+        <img src="./img/a4.webp" alt="実感イメージ">
+      </div>
+      <div class="sec5-step" id="fade">
+        <h4>高純度オイル</h4>
+        <p>説明文が入ります説明文が入ります説明文が入ります</p>
+        <img src="./img/a5.webp" alt="実感イメージ">
+      </div>
+    </div>
+  </section>
+</main>
+  <!-- フッター -->
+<footer>
+  <p class="copy">&copy; 3023 DumyEnglish Co., Ltd. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
