@@ -1,6 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
+  // ✨ ヒーローエリアのアニメーション（画像とテキスト）
+  const heroTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".hero", // ヒーローエリアがトリガー
+      start: "top 80%", // トリガーが画面の80%位置に来たら発火
+    },
+  });
+
+  heroTimeline
+    .from("#heroImg", {
+      scale: 1.2, // 拡大状態から開始
+      opacity: 0, // 透明から開始
+      duration: 1.5, // アニメーション時間
+      ease: "power2.out", // イージング
+    })
+    .from("#heroText", {
+      scale: 1.2, // 拡大状態から開始
+      opacity: 0, // 透明から開始
+      duration: 1.5, // アニメーション時間
+      ease: "power2.out", // イージング
+    }, "-=0.5"); // 前のアニメーションと0.5秒重ねる
+
   // ✨ GSAP 実感レポート
   gsap.utils.toArray(".secFlex").forEach((section) => {
     gsap.from(section, {

@@ -197,6 +197,7 @@ nav ul {
   align-items: flex-end;
   justify-content: center;
   padding-bottom: 3rem;
+  transform-style: preserve-3d; 
 }
 .hero-img img {
   height: auto;
@@ -209,6 +210,7 @@ nav ul {
   flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 8rem;
+  transform-style: preserve-3d; 
 }
 /*********レスポンシブ ヒーロー*********/
 @media (max-width: 768px) {
@@ -350,7 +352,8 @@ main::after {
 /* -------------------------------- フッター -------------------------------- */
 footer {
   width: 100%;
-  height: 100px;
+  flex-shrink: 0; /* Flexboxで高さが縮まないようにする */
+  height: 150px;
   color: #ffffff;
   background-color: var(--darkNavy);
   display: grid;
