@@ -344,7 +344,41 @@ main::after {
 .sec5-step:nth-child(3) {
   margin-top: 6rem;
 }
-/* -------------------------------- イベント　スワイパー -------------------------------- */
+/* -------------------------------- セクション6 -------------------------------- */
+.sec6 {
+  width: 100%;
+  padding: 10rem 0;
+  margin: 0 auto;
+  font-family: Zen Kaku Gothic New, sans-serif;
+}
+.sec6 h3 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.question {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: var(--darkNavy);
+  color: #ffffff;
+  cursor: pointer; /* クリック可能を明示 */
+  display: flex;
+  justify-content: space-between;
+}
+.question:hover {
+  background-color: rgb(8, 31, 44, .9);
+  transition: background-color 0.3s;
+}
+
+.answer {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--darkNavy);
+  max-height: 0; /* 初期は高さ0 */
+  opacity: 0; /* 初期は透明 */
+  overflow: hidden; /* はみ出し防止 */
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  /* 自然な動きのため、トランジション時間は調整可能 */
+}
 
 
 /* -------------------------------- フッター固定ボタン -------------------------------- */

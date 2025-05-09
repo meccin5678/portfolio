@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  // ✨ ヒーローエリアのアニメーション（画像とテキスト）
+// ✨ ヒーローエリアのアニメーション（画像とテキスト）
   const heroTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: ".hero", // ヒーローエリアがトリガー
@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out", // イージング
     }, "-=0.5"); // 前のアニメーションと0.5秒重ねる
 
-  // ✨ GSAP 実感レポート
+// ✨ GSAP 実感レポート
   gsap.utils.toArray(".secFlex").forEach((section) => {
     gsap.from(section, {
       opacity: 0,
       y: 50,
-      duration: 1,
+      duration: .6,
       ease: "power2.out",
       scrollTrigger: {
         trigger: section,
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ✨ GSAP 原材料
+// ✨ GSAP 原材料
   gsap.fromTo(
     "#fade",
     {
@@ -57,4 +57,23 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     }
   );
+
+// ✨ GSAP Q&A
+document.querySelectorAll(".question").forEach((question) => {
+  question.addEventListener("click", () => {
+    const answer = question.nextElementSibling;
+    const isOpen = answer.style.maxHeight && answer.style.maxHeight !== "0px";
+
+    if (isOpen) {
+      // 閉じる
+      answer.style.maxHeight = "0";
+      answer.style.opacity = "0";
+    } else {
+      // 開く
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      answer.style.opacity = "1";
+    }
+  });
+});
+
 });
