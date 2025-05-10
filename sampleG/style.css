@@ -514,6 +514,7 @@ main::after {
   cursor: pointer; /* クリック可能を明示 */
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .question:hover {
   background-color: rgb(8, 31, 44, .9);
