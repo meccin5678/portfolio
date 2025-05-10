@@ -126,14 +126,42 @@ nav {
   display: flex;
   align-items: center;
   gap: 10rem;
+  font-family: Zen Kaku Gothic New, sans-serif;
+  font-size: 1.2rem;;
 }
 nav ul {
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
+}
+nav ul li {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+  position: relative; /* 疑似要素の基準 */
+  cursor: pointer;
+  transition: scale 0.3s;
 }
 
+nav ul li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 1px;
+  background: var(--darkNavy);
+  transform: scaleX(1);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+nav ul li:hover {
+  scale: .9;
+}
+nav ul li:hover::after {
+  transform: scaleX(0);
+}
 /* -------------------------------- ヒーロー -------------------------------- */
 .hero {
   width: 100%;
@@ -306,6 +334,9 @@ main::after {
   text-align: center;
   margin-bottom: 3rem;
 }
+.sec5 p {
+  font-family: Zen Kaku Gothic New, sans-serif;
+}
 .sec5-top,
 .sec5-bottom {
   display: flex;
@@ -368,7 +399,6 @@ main::after {
   background-color: rgb(8, 31, 44, .9);
   transition: background-color 0.3s;
 }
-
 .answer {
   width: 100%;
   padding: 0.5rem 1rem;
@@ -379,7 +409,12 @@ main::after {
   transition: max-height 0.4s ease, opacity 0.4s ease;
   /* 自然な動きのため、トランジション時間は調整可能 */
 }
-
+.question .fa-chevron-down {
+  transition: transform 0.3s;
+}
+.question.open .fa-chevron-down {
+  transform: rotate(180deg);
+}
 
 /* -------------------------------- フッター固定ボタン -------------------------------- */
 

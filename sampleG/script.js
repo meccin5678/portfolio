@@ -68,10 +68,12 @@ document.querySelectorAll(".question").forEach((question) => {
       // 閉じる
       answer.style.maxHeight = "0";
       answer.style.opacity = "0";
+      question.classList.remove("open");
     } else {
       // 開く
       answer.style.maxHeight = answer.scrollHeight + "px";
       answer.style.opacity = "1";
+      question.classList.add("open");
     }
   });
 });
