@@ -23,6 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out", // イージング
     }, "-=0.5"); // 前のアニメーションと0.5秒重ねる
 
+// ✨ GSAP メダルスライダー
+
+  gsap.from(".medal img", {
+    scrollTrigger: {
+      trigger: ".medal",
+      start: "top 80%", // 画面の80%で発火
+      toggleActions: "play none none reverse"
+    },
+    opacity: 0,
+    rotateY: 90,         // Y軸で回転しながら
+    // y: 40,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.2         // 0.2秒ずつずらして
+  });
+
+
 // ✨ GSAP 実感レポート
   gsap.utils.toArray(".secFlex").forEach((section) => {
     gsap.from(section, {
@@ -32,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
       scrollTrigger: {
         trigger: section,
-        start: "top 80%",
+        start: "top 90%",
         toggleActions: "play none none reverse",
       },
     });
@@ -79,3 +96,4 @@ document.querySelectorAll(".question").forEach((question) => {
 });
 
 });
+

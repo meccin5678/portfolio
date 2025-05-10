@@ -350,9 +350,21 @@ main::after {
 .sec1 h4 {
   margin-bottom: 2rem;
 }
-.sec1 img {
-  width: 60%;
-  height: auto;;
+.medal {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 追加 */
+}
+.medal img {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.25)) drop-shadow(0 1.5px 6px rgba(8, 31, 44, 0.15));
+
 }
 
 /* -------------------------------- セクション2〜4 -------------------------------- */
