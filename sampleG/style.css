@@ -333,7 +333,7 @@ main::after {
 }
 /* -------------------------------- セクション1 -------------------------------- */
 .sec1 {
-  padding: 5rem 0 10rem;
+  padding: 5rem 0 5rem;
   width: 100%;
   text-align: center;
   font-family: Zen Kaku Gothic New, sans-serif;
@@ -359,21 +359,48 @@ main::after {
 }
 
 /* -------------------------------- セクション2〜4 -------------------------------- */
+.sec-report {
+  width: 100%;
+  position: relative;
+  padding: 10rem 0;
+}
+.sec-report::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* グラデーションを一番手前に、画像を奥に */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,1) 0%,
+      rgba(0,91,247,0.2) 50%,
+      rgba(255,255,255,.7) 70%,
+      rgba(255,255,255,1) 100%
+    ),
+    url(./img/reoi2.webp);
+  background-size: cover, cover;
+  background-position: center center, center center;
+  opacity: .7;
+  z-index: var(--z-bg);
+  pointer-events: none;
+  /* background-attachment: fixed; */
+}
+
 .secFlex {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 5rem;
   font-family: Zen Kaku Gothic New, sans-serif;
 }
+
 .secFlexImg,
 .secFlexText {
   width: 50%;
 }
 /* -------------------------------- セクション7 私たちの未来-------------------------------- */
 .sec7 {
-  margin: 10rem 0;
+  /* margin: 10rem 0; */
   position: relative;
 }
 .sec7::before {
@@ -398,7 +425,7 @@ main::after {
   padding: 10rem 5rem;
 }
 .sec7-right {
-  background-color: rgb(255, 255, 255, .6);
+  background-color: rgb(255, 255, 255, .8);
   padding: 2rem;
   width: 60%;
 }
@@ -447,7 +474,13 @@ main::after {
 .sec5 {
   width: 100%;
   perspective: 1000px; /* 3D効果を有効化 */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(0, 147, 252, 0.3), rgba(231, 255, 216, 0.3), rgba(255, 255, 255, 0.3));
+  background: 
+  linear-gradient(
+    to bottom, 
+    rgba(255, 255, 255, .1),
+    rgba(0, 147, 252, 0.3), 
+    rgba(231, 255, 216, 0.3), 
+    rgba(255, 255, 255, 0.3));
   padding: 5rem 0;
 }
 .sec5 h3 {
@@ -541,9 +574,7 @@ main::after {
 .sec-btm {
   width: 100%;
   height: 600px;
-  background-image: url(./img/bg2.webp);
-  background-size: cover;
-  background-position: center center;
+
   position: relative;
   z-index: var(--z-bg);
   margin: 0 auto;
@@ -552,10 +583,23 @@ main::after {
   justify-content: space-around;
   align-items: center;
 }
+.sec-btm::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+  linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(0, 91, 247, 0.3), rgba(255, 0, 166, 0.1), rgba(255, 255, 255, 0.7)),
+  url(./img/btmbg.webp);
+  background-size: cover;
+  background-position: center center;
+  opacity: .9;
+  z-index: var(--z-bg);
+}
 .sec-btm .box {
   width: 300px;
   height: 300px;
-  background-color: #D4AF37;
+  background: url(./img/f.webp);
+
 }
 /* -------------------------------- フッター -------------------------------- */
 footer {
