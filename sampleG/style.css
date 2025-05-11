@@ -500,7 +500,9 @@ main {
   width: 100%;
   padding: 5rem 0;
 }
-
+.center {
+  text-align: center;
+}
 .sec-free::before{
   content: '';
   position: absolute;
@@ -519,39 +521,48 @@ main {
   z-index: var(--z-bg);
 }
 .circle-wrap {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 200px); /* 5列にする */
-  gap: 3rem;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  position: relative;
+  width: 400px;   /* 五角形全体のサイズ */
+  height: 400px;
+  margin: 5rem auto 0;
 }
-.circle-wrap .circle {
-  padding: 1rem;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2); /* 半透明の白色 */
+
+.circle {
+  width: 120px;
+  height: 120px;
+  background-color: rgb(255, 241, 241, .3);
   border: 1px solid rgba(255, 255, 255, 0.3); /* 半透明の境界線 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
   backdrop-filter: blur(10px); /* 背景をぼかす */
-  text-align: center;
+  border-radius: 50%;
   display: grid;
   place-items: center;
-  transform-style: preserve-3d; /* 3D変換を有効化 */
-  backface-visibility: hidden; /* 背面を非表示にする */
+  text-align: center;
+  line-height: 1.1rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1rem;
   font-family: Zen Kaku Gothic New, sans-serif;
-  font-size: 1.2rem;
-  font-weight: bold;
 }
 
-.circle-wrap .circle:nth-child(1) { grid-row: 1; grid-column: 1; }
-.circle-wrap .circle:nth-child(2) { grid-row: 1; grid-column: 2; }
-.circle-wrap .circle:nth-child(3) { grid-row: 1; grid-column: 3; }
-.circle-wrap .circle:nth-child(4) { grid-row: 2; grid-column: 1; }
-.circle-wrap .circle:nth-child(5) { grid-row: 2; grid-column: 2; }
-.circle-wrap .circle:nth-child(6) { grid-row: 2; grid-column: 3; }
+/* 正五角形の頂点に配置（半径160px） */
+.circle:nth-child(1) { /* 上 */
+  transform: translate(-50%, -50%) translate(0px, -160px);
+}
+.circle:nth-child(2) { /* 右上 */
+  transform: translate(-50%, -50%) rotate(72deg) translate(0px, -160px) rotate(-72deg);
+}
+.circle:nth-child(3) { /* 右下 */
+  transform: translate(-50%, -50%) rotate(144deg) translate(0px, -160px) rotate(-144deg);
+}
+.circle:nth-child(4) { /* 左下 */
+  transform: translate(-50%, -50%) rotate(-144deg) translate(0px, -160px) rotate(144deg);
+}
+.circle:nth-child(5) { /* 左上 */
+  transform: translate(-50%, -50%) rotate(-72deg) translate(0px, -160px) rotate(72deg);
+}
 
 /* -------------------------------- セクション7 私たちの未来-------------------------------- */
 .sec7 {
@@ -701,15 +712,25 @@ th {
 /* -------------------------------- フッター -------------------------------- */
 footer {
   width: 100%;
-  flex-shrink: 0; /* Flexboxで高さが縮まないようにする */
-  height: 150px;
+  padding: 5rem 0;
   color: #ffffff;
   background-color: var(--darkNavy);
-  display: grid;
-  place-items: center;
-  margin-top: auto; 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
-
+.footer-sns {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.footer-sns a {
+  color: #fff;
+  font-size: 2rem;
+  transition: color 0.2s;
+}
 .copy {
   font-size: .7rem;
   text-align: center;
