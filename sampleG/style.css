@@ -671,33 +671,33 @@ main {
 /* -------------------------------- フッターセクション -------------------------------- */
 .sec-btm {
   width: 100%;
-  height: 600px;
+  font-family: Zen Kaku Gothic New, sans-serif;
+  padding: 5rem 0;
 
-  position: relative;
-  z-index: var(--z-bg);
+}
+.sec-btm h3 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.ingredients-table {
+  width: 100%;
+  border-collapse: collapse;
   margin: 0 auto;
-  padding: 10rem 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  font-size: .8rem;
 }
-.sec-btm::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: 
-  linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(0, 91, 247, 0.3), rgba(255, 0, 166, 0.1), rgba(255, 255, 255, 0.7)),
-  url(./img/btmbg.webp);
-  background-size: cover;
-  background-position: center center;
-  opacity: .9;
-  z-index: var(--z-bg);
+th {
+  font-weight: normal;
 }
-.sec-btm .box {
-  width: 300px;
-  height: 300px;
-  background: url(./img/f.webp);
+.ingredients-table th,
+.ingredients-table td {
+  border: 1px solid #ccc;
+  padding: 0.3em .7rem;
+  text-align: left;
 }
+.ingredients-table th {
+  background: #f8f4f9;
+}
+
 /* -------------------------------- フッター -------------------------------- */
 footer {
   width: 100%;
