@@ -270,54 +270,46 @@ nav.open {
   position: relative;
   width: 100%;
   height: 100vh;
-  background-size: cover;
-  background-position: center;
   overflow: hidden;
-  transition: background-image 1s ease-in-out; /* 背景画像の切り替えもゆっくり */
 }
-.hero::before {
-  content: '';
+.slide {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: inherit; /* 背景画像を継承 */
-  clip-path: circle(0% at 50% 50%); /* 初期状態: 中央から0% */
-  opacity: 0; /* 初期状態で透明 */
-  transition: clip-path 1.5s ease-in-out, opacity 1.5s ease-in-out; /* アニメーション時間を長く設定 */
-  z-index: var(--z-bg); /* 背景のz-index */
 }
-.hero.active::before {
-  clip-path: circle(150% at 50% 50%); /* 最終状態: 全体を覆う */
-  opacity: 1; /* 徐々に表示 */
+.slideA {
+  opacity: 1;
 }
-#heroText, #heroSubtext {
-  opacity: 0; /* 初期状態で透明 */
-  clip-path: circle(0% at 50% 50%); /* 初期状態: 中央から0% */
-  transition: clip-path 2s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 2s ease-in-out; /* アニメーションを滑らかに */
+.slideB,
+.slideC {
+  opacity: 0;
 }
-
-.hero.active #heroText,
-.hero.active #heroSubtext {
-  opacity: 1; /* 表示 */
-  clip-path: circle(150% at 50% 50%); /* 最終状態: 全体を覆う */
-}
-.hero-inner {
+.hero .slide img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+.hero-text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 2rem;
   display: flex;
-  justify-content: space-evenly;
+  color: #ffffff;
+  /* align-items: center; */
+  justify-content: center;
 }
-.hero-inner-left {
-  height: 100%;
-  padding-top: 45%;
-  color: var(--font-light);
+.hero-text1 {
+  width: 50%;
+  padding: 30rem 5rem;
 }
-.hero-inner-right {
-  height: 100%;
-  padding-top: 20%;
-  color: var(--font-light);
+.hero-text2 {
+  width: 50%;
+  padding: 20rem 0;
 }
 .hero h1,
 .hero h2,
@@ -334,6 +326,7 @@ nav.open {
   background-color: var(--dark-green);
   color: var(--font-light);
   padding: 1rem 3rem;
+  z-index: var(--z-f-btn);
 }
 .hero-fixed-btn span {
   transition: transform 0.3s ease;
@@ -343,19 +336,14 @@ nav.open {
 }
 /*********レスポンシブ ヒーロー*********/
 @media (max-width: 768px) {
-  .hero-inner {
+  .hero-text  {
     flex-direction: column;
     justify-content: space-evenly;
   }
-  .hero-inner-left {
-    padding-top: 0;
+  .hero-text1,
+  .hero-text2 {
     width: 100%;
-    height: auto;
-  }
-  .hero-inner-right {
-    padding-top: 0;
-    width: 100%;
-    height: auto;
+    padding: 0 2rem;
   }
 }
 @media (max-width: 480px) {

@@ -20,7 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
   tl.fromTo(
     heroTextA,
     { opacity: 0, scaleX: 0 },
-    { opacity: 1, scaleX: 1, duration: 2.5, ease: "power2.out" }
+    { opacity: 1, scaleX: 1, duration: 1.5, ease: "power2.out" }
+  )
+  .to(
+    heroTextA,
+    { duration: 1 } // 1秒キープ（durationは第2引数に書く）
   )
   // slideAを非表示、slideBを表示
   .to(
