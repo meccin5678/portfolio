@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
   )
   .fromTo('.loading .tagline span',
     { autoAlpha: 0 },
-    { autoAlpha: 1, stagger: 0.15, duration: 0.1, ease: "power3.inOut" },
-    "-=.5"
+    { autoAlpha: 1, stagger: 0.05, duration: 0.05, ease: "power3.inOut" },
+    "-=0.5"
   )
     .to(loadingBg, {
       yPercent: -100,
@@ -82,11 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
       defaults: {
         autoAlpha: 0,
         filter: "blur(15px)",
-        duration: 0.75,
+        duration: 0.5,
       },
       scrollTrigger: {
         trigger: target,
-        start: 'top 45%',
+        start: 'top center',
+        end: 'bottom end',
       },
     });
 
