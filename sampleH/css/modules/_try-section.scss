@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/*===============================〇 セクション 〇===============================*/
+/*===============================〇 特徴 〇===============================*/
+/*===============================〇 料金 〇===============================*/
+section {
+    position: relative;
+    z-index: $layer2;
+    padding: 5% 0;
+    width: 100%;
+}
+.sec-feature {
+    background-color: $white;
+    width: 100%;
+    margin: 0 auto;
+    .box-container {
+        margin-bottom: 10rem;
+        .p2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            z-index: $basic;
+            &::before {
+                content: "STEP1";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); // 完全中央寄せ
+                font-size: 8rem; // お好みで調整（6〜10remくらい）
+                opacity: 0.35;   // 薄めにして主張しすぎない
+                background: linear-gradient(90deg, #dadac4 0%, #ded7a8 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+                pointer-events: none; // テキスト選択やクリックを無効化
+                z-index: $basic-minus;
+                white-space: nowrap; // 長い場合の折り返し防止
+                user-select: none;   // 選択不可
+            }
+        }
+        &:nth-of-type(2) .p2::before { content: "STEP2"; }
+        &:nth-of-type(3) .p2::before { content: "STEP3"; }
+        .box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            .left, .right {
+                width: 50%;
+                height: 500px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+.sec-price {
+    background-color: $white;
+    .menu-wrapper {
+        .menu-item {
+            padding: 1rem;
+            border: 1px solid $grade-slight;
+            box-shadow: $box-shadow;
+            margin-bottom: 5rem;
+            .menu {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                p {
+                    font-size: 1.25rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+/*===============================〇 レスポンシブ 〇===============================*/
+
+@media screen and (max-width: 768px) {
+    .sec-feature {
+        .box-container {
+            .box {
+                flex-direction: column;
+                .left, .right {
+                width: 100%;
+                height: 500px; // ← 例：高さを再指定
+                }
+            }
+        }
+    }
+}   

@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/*===============================〇 HEADER 〇===============================*/
+.header-nav {
+   position: fixed;
+   z-index: $nav;
+   background: rgb(0, 0, 0, .7);
+   color: $white;
+   width: 100%;
+   height: 100px;
+   ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      li {
+         font-weight: 600;
+         font-size: 1.3rem;
+      }
+   }
+}
+main {
+   width: 100%;
+   height: 100vh;
+   background: url("../img/bg-header.webp") no-repeat center center;
+   background-size: cover;
+   position: sticky;
+   top: 0;
+   z-index: $layer1;
+   transform: scale(1.1);
+   filter: blur(10px);
+   .fixed-btn {
+      width: 50vw;
+      padding: 1rem 3rem;
+      background-color: $black34;
+      color: $white;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      a {
+         color: $white;
+         font-size: 1.3rem;
+         font-weight: 600;
+      }
+   }
+   .hero {
+      height: 100vh;
+      width: 100%;
+      // background-color: #fff;
+      position: relative;
+      h2 {
+         font-size: 3rem;
+         position: absolute;
+         top: 50%;
+         left: 3%;
+         transform: translateY(-50%);
+         opacity: 0;
+         visibility: hidden;
+      }
+      h3 {
+         font-size: 2.5rem;
+         position: absolute;
+         top: 55%;
+         left: 3%;
+         opacity: 0;
+         visibility: hidden;
+      }
+   }
+}

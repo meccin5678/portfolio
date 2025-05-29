@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/*===============================〇 フッター 〇===============================*/
+footer {
+    position: relative;
+    z-index: $layer2;
+    background: $gradient-silver;
+    color: $white;
+    padding: 50px 3%;
+    .logo {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        img {
+            width: 200px;
+            height: auto;
+            }
+        }
+    .footer-nav {
+        width: 60%;
+        padding-top: 50px;
+        margin: 0 auto;
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            li {
+                position: relative;
+                padding-right: 3rem;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 1.5rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: $white;
+                    width: .5px;
+                    height: 1.5rem;
+                }
+                &:last-child {
+                    padding-right: 0;
+                    &::after {
+                        display: none;
+                    }
+                }
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: baseline;
+                    gap: .5rem;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+    .privacy {
+        padding: 50px 0;
+        p {
+            text-align: right;
+            a {
+                position: relative;
+                color: #ffffff;
+                font-family: "Cinzel";
+                letter-spacing: 10px;
+                font-size: 16px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: -20px;
+                    top: 50%;
+                    transform: translate(0,-50%);
+                    border-width: 4px 0 4px 8px;
+                    border-style: solid;
+                    border-color: transparent transparent transparent $white;
+                    width: 0;
+                    height: 0;
+                }
+            }
+        }
+    }
+    .copyright {
+        border-top: solid .5px $white;
+        text-align: center;
+        padding: 50px 0 0 0;
+    }
+}
+/*===============================〇 レスポンシブ 〇===============================*/
+
+@media screen and (max-width: 768px) {
+    footer {
+        .footer-nav {
+            width: 100%;
+            ul {
+                width: 100%;
+                margin: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: .5rem;
+                li {
+                    width: 100%;
+                    padding: .5rem 0;
+                    border-bottom: .8px solid $white;
+                    &::after {
+                    display: none;
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                    a {
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        }
+    }
+}

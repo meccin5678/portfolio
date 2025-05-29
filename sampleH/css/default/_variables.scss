@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+/*============================================
+	― 変数設定
+=============================================*/
+$gradient-silver: linear-gradient(170deg, #000000 0%,#868686 75%, #e3e3e3 100%);
+$grade-slight: linear-gradient(30deg, rgba(231, 237, 242, 0.9) 0%, rgba(244, 248, 252, 0.9) 35%, rgba(255, 255, 255, 0.9) 100%);
+$box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+$box-shadow-light: rgba(236, 236, 236, 0.2) 0 7px 29px 0;;
+$black: #000000;
+$black34: #222222;
+$gray: #e0e0e0;
+$white: #ffffff;
+
+$loading: 11000;
+$loading-text: 12000;
+$nav: 10000;
+$layer3: 3000;
+$layer2: 2000;
+$layer1: 1000;
+$basic: 1;
+$basic-minus: -1;
+
+
+
+/*===============================〇 GLOBAL 〇===============================*/
+body {
+	font-family: 'Cinzel','Shippori Mincho', serif, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	color: $black34;
+	margin: 0;
+	padding: 0;
+}
+li {
+	 list-style: none;
+}
+a {
+	 text-decoration: none;
+	 color: inherit;
+	//  &:hover {
+	// 	  color: $main-color;
+	//  }
+}
+.inner-width {
+    padding: 0 3%;
+	 margin: 0 auto;
+	 max-width: 1000px;
+}
+// .title {
+//     font-size: 2rem;
+//     text-align: center;
+//     color: $black34;
+// 	 margin-bottom: 5rem;
+// }
+
+.title {
+	font-size: 3rem;
+	padding-bottom: 1rem;
+	margin-bottom: 10rem;
+	color: $black34;
+	text-align: center;
+	position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: .5px;
+    background: $gradient-silver;
+	// background-color: $black34;
+    position: absolute;
+    left: 50%;
+	 bottom: 0;
+    transform: translateX(-50%);
+  }
+}
+.p-small {
+	font-size: .9rem;
+	letter-spacing: 2px;
+}
+.p-small2 {
+	font-size: .8rem;;
+}
+// .en {
+// 	font-family: 'Cinzel', serif;
+// }
+
+/*===============================〇 レスポンシブ 〇===============================*/
+
+@media screen and (max-width: 768px) {
+    .inner-width  {
+		max-width: 95%;
+		padding: 0 0;
+    }
+}

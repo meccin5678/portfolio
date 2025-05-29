@@ -1,0 +1,496 @@
+@charset "UTF-8";
+/* 基本設定 */
+/*============================================
+	― 変数設定
+=============================================*/
+/*===============================〇 GLOBAL 〇===============================*/
+body {
+  font-family: "Cinzel", "Shippori Mincho", serif, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #222222;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.inner-width {
+  padding: 0 3%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.title {
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  margin-bottom: 10rem;
+  color: #222222;
+  text-align: center;
+  position: relative;
+}
+.title::after {
+  content: "";
+  width: 100%;
+  height: 0.5px;
+  background: linear-gradient(170deg, #000000 0%, #868686 75%, #e3e3e3 100%);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.p-small {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.p-small2 {
+  font-size: 0.8rem;
+}
+
+/*===============================〇 レスポンシブ 〇===============================*/
+@media screen and (max-width: 768px) {
+  .inner-width {
+    max-width: 95%;
+    padding: 0 0;
+  }
+}
+@font-face {
+  font-family: "Shippori Mincho";
+  src: url("../webfonts/Subset-ShipporiMincho-Medium.woff2") format("woff2"), url("../webfonts/Subset-ShipporiMincho-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Shippori Mincho";
+  src: url("../webfonts/Subset-ShipporiMincho-SemiBold.woff2") format("woff2"), url("../webfonts/Subset-ShipporiMincho-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cinzel";
+  src: url("../webfonts/Cinzel-Medium.woff2") format("woff2"), url("../webfonts/Cinzel-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cinzel";
+  src: url("../webfonts/Cinzel-SemiBold.woff2") format("woff2"), url("../webfonts/Cinzel-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/* modules */
+/*===============================〇 ローディング 〇===============================*/
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11000;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.loading .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 200vh;
+  background: linear-gradient(#000 0%, #454545 50%, #606060 100%);
+}
+.loading .text {
+  color: #fff;
+  font-family: "Cinzel";
+  position: relative;
+  z-index: 1;
+}
+.loading .text .main {
+  letter-spacing: 6px;
+  font-size: 24px;
+}
+.loading .text .main span {
+  display: inline-block;
+}
+.loading .text .tagline {
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 16px;
+}
+.loading .text .tagline span {
+  display: inline-block;
+}
+
+/**********************************************************************************
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □  
+
+◆	Stylesheet: 1024px～1280px(iPad縦からiPad横)までのモニタで適用	◆
+
+start----------------------------------------------------------------------------*/
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .loading .container .text .main {
+    letter-spacing: 6px;
+    font-size: 24px;
+  }
+  .loading .container .text .main .line {
+    -webkit-text-stroke: rgb(220, 220, 220) 1px;
+  }
+  .loading .container .text .tagline {
+    letter-spacing: 4px;
+    font-size: 16px;
+  }
+} /* 1024px～1280px responsive-close
+
+
+
+/**********************************************************************************
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □  
+
+◆	Stylesheet: 768px～1023px(iPad縦からiPad横)までのモニタで適用	◆
+
+start----------------------------------------------------------------------------*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .loading .container .text .main {
+    letter-spacing: 6px;
+    font-size: 24px;
+  }
+  .loading .container .text .main .line {
+    -webkit-text-stroke: rgb(220, 220, 220) 1px;
+  }
+  .loading .container .text .tagline {
+    letter-spacing: 4px;
+    font-size: 16px;
+  }
+} /* 768px～1023px responsive-closed */
+/*end ----------------------------------------------------------------------------
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
+**********************************************************************************/
+/**********************************************************************************
+ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
+
+◆	Stylesheet: 767pxまで(スマホ)のモニタで適用	◆
+
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
+start----------------------------------------------------------------------------*/
+@media screen and (max-width: 767px) {
+  .loading .container .text .main {
+    letter-spacing: 5px;
+    font-size: 5vw;
+  }
+  .loading .container .text .main .line {
+    -webkit-text-stroke: rgb(220, 220, 220) 1px;
+  }
+  .loading .container .text .tagline {
+    letter-spacing: 4px;
+    font-size: 4vw;
+  }
+} /* 767px responsive-closed */
+/*end ----------------------------------------------------------------------------
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
+**********************************************************************************/
+/**********************************************************************************
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □   
+
+◆	Stylesheet: さらに刻んで320pxまでのモニタで適用	◆
+
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
+start----------------------------------------------------------------------------*/
+/* 320px responsive-closed */
+/*end ----------------------------------------------------------------------------
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
+**********************************************************************************/
+/*===============================〇 HEADER 〇===============================*/
+.header-nav {
+  position: fixed;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  width: 100%;
+  height: 100px;
+}
+.header-nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.header-nav ul li {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/bg-header.webp") no-repeat center center;
+  background-size: cover;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transform: scale(1.1);
+  filter: blur(10px);
+}
+main .fixed-btn {
+  width: 50vw;
+  padding: 1rem 3rem;
+  background-color: #222222;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+}
+main .fixed-btn a {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+main .hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+main .hero h2 {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+}
+main .hero h3 {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 55%;
+  left: 3%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*===============================〇 セクション 〇===============================*/
+/*===============================〇 特徴 〇===============================*/
+/*===============================〇 料金 〇===============================*/
+section {
+  position: relative;
+  z-index: 2000;
+  padding: 5% 0;
+  width: 100%;
+}
+
+.sec-feature {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+}
+.sec-feature .box-container {
+  margin-bottom: 10rem;
+}
+.sec-feature .box-container .p2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.sec-feature .box-container .p2::before {
+  content: "STEP1";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  opacity: 0.35;
+  background: linear-gradient(90deg, #dadac4 0%, #ded7a8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  pointer-events: none;
+  z-index: -1;
+  white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.sec-feature .box-container:nth-of-type(2) .p2::before {
+  content: "STEP2";
+}
+.sec-feature .box-container:nth-of-type(3) .p2::before {
+  content: "STEP3";
+}
+.sec-feature .box-container .box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.sec-feature .box-container .box .left, .sec-feature .box-container .box .right {
+  width: 50%;
+  height: 500px;
+}
+.sec-feature .box-container .box .left img, .sec-feature .box-container .box .right img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.sec-price {
+  background-color: #ffffff;
+}
+.sec-price .menu-wrapper .menu-item {
+  padding: 1rem;
+  border: 1px solid linear-gradient(30deg, rgba(231, 237, 242, 0.9) 0%, rgba(244, 248, 252, 0.9) 35%, rgba(255, 255, 255, 0.9) 100%);
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  margin-bottom: 5rem;
+}
+.sec-price .menu-wrapper .menu-item .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sec-price .menu-wrapper .menu-item .menu p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/*===============================〇 レスポンシブ 〇===============================*/
+@media screen and (max-width: 768px) {
+  .sec-feature .box-container .box {
+    flex-direction: column;
+  }
+  .sec-feature .box-container .box .left, .sec-feature .box-container .box .right {
+    width: 100%;
+    height: 500px;
+  }
+}
+/*===============================〇 フッター 〇===============================*/
+footer {
+  position: relative;
+  z-index: 2000;
+  background: linear-gradient(170deg, #000000 0%, #868686 75%, #e3e3e3 100%);
+  color: #ffffff;
+  padding: 50px 3%;
+}
+footer .logo {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+footer .logo img {
+  width: 200px;
+  height: auto;
+}
+footer .footer-nav {
+  width: 60%;
+  padding-top: 50px;
+  margin: 0 auto;
+}
+footer .footer-nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+footer .footer-nav ul li {
+  position: relative;
+  padding-right: 3rem;
+}
+footer .footer-nav ul li::after {
+  content: "";
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  width: 0.5px;
+  height: 1.5rem;
+}
+footer .footer-nav ul li:last-child {
+  padding-right: 0;
+}
+footer .footer-nav ul li:last-child::after {
+  display: none;
+}
+footer .footer-nav ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+}
+footer .privacy {
+  padding: 50px 0;
+}
+footer .privacy p {
+  text-align: right;
+}
+footer .privacy p a {
+  position: relative;
+  color: #ffffff;
+  font-family: "Cinzel";
+  letter-spacing: 10px;
+  font-size: 16px;
+}
+footer .privacy p a::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translate(0, -50%);
+  border-width: 4px 0 4px 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ffffff;
+  width: 0;
+  height: 0;
+}
+footer .copyright {
+  border-top: solid 0.5px #ffffff;
+  text-align: center;
+  padding: 50px 0 0 0;
+}
+
+/*===============================〇 レスポンシブ 〇===============================*/
+@media screen and (max-width: 768px) {
+  footer .footer-nav {
+    width: 100%;
+  }
+  footer .footer-nav ul {
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  footer .footer-nav ul li {
+    width: 100%;
+    padding: 0.5rem 0;
+    border-bottom: 0.8px solid #ffffff;
+  }
+  footer .footer-nav ul li::after {
+    display: none;
+  }
+  footer .footer-nav ul li:last-child {
+    border-bottom: none;
+  }
+  footer .footer-nav ul li a {
+    justify-content: flex-start;
+  }
+}/*# sourceMappingURL=style.css.map */
