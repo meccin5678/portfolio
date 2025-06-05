@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/*===============================〇 共通・初期 〇===============================*/
+/* 事前指定 CSS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+  color: #2f2f2f;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}
+/*===============================〇 スプライドtype01 〇===============================*/
+.splide-container.type-01 {
+  overflow: hidden;
+  height: 100vh;
+}
+.splide-container.type-01 .splide {
+  position: relative;
+  display: block;
+  height: 100vh;
+}
+.splide-container.type-01 .splide .splide__track {
+  height: 100%;
+}
+.splide-container.type-01 .splide .splide__track .splide__list {
+  height: 100%;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide {
+  height: 100%;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide .thumb {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide .thumb img {
+  display: block;
+  transform: scale(1);
+  transition: transform 8s ease;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide .thumb::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: -50%;
+  top: -100%;
+  transform: rotate(35deg);
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  transition: left 1.2s ease-in-out, top 1.2s ease-in-out;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide .thumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(0, 102, 255, 0.3);
+  transition: opacity 0.3s ease 1.2s, top 0.5s ease 1.2s;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide .text {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide .text .copy {
+  color: #fff;
+  text-align: center;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide .text .copy p.en {
+  opacity: 0;
+  transform: translateY(30px);
+  letter-spacing: 0.2rem;
+  transition: all 0.8s ease 1.2s;
+  font-size: 5rem;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide .text .copy p.jp {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 1.5s;
+  font-size: 3rem;
+  margin: 0.24rem 0 0;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide:hover {
+  cursor: pointer;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide.is-active .thumb img {
+  transform: scale(1.2);
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide.is-active .thumb::before {
+  left: 100%;
+  top: 100%;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide.is-active .thumb::after {
+  opacity: 1;
+  top: 0;
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide.is-active .copy p:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+}
+.splide-container.type-01 .splide .splide__track .splide__list .splide__slide.is-active .copy p:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+}
+.splide-container.type-01 .splide .splide__arrows {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100%;
+}
+.splide-container.type-01 .splide .splide__arrows .splide__arrow {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 6.4rem;
+  height: 6.4rem;
+  background: none;
+  color: inherit;
+  border-radius: 0;
+  /*===============================〇 レスポンシブ 〇===============================*/
+}
+@media screen and (max-width: 1024px) {
+  .splide-container.type-01 .splide .splide__arrows .splide__arrow {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.splide-container.type-01 .splide .splide__arrows .splide__arrow .arrow-shape {
+  line-height: 0;
+}
+.splide-container.type-01 .splide .splide__arrows .splide__arrow .arrow-shape img {
+  width: 35%;
+}
+.splide-container.type-01 .splide .splide__arrows .splide__arrow.splide__arrow--prev {
+  left: 3.2rem;
+  /*===============================〇 レスポンシブ 〇===============================*/
+}
+@media screen and (max-width: 1024px) {
+  .splide-container.type-01 .splide .splide__arrows .splide__arrow.splide__arrow--prev {
+    left: 2rem;
+  }
+}
+.splide-container.type-01 .splide .splide__arrows .splide__arrow.splide__arrow--next {
+  right: 3.2rem;
+  /*===============================〇 レスポンシブ 〇===============================*/
+}
+@media screen and (max-width: 1024px) {
+  .splide-container.type-01 .splide .splide__arrows .splide__arrow.splide__arrow--next {
+    right: 2rem;
+  }
+}
+.splide-container.type-01 .splide .splide__arrows .splide__arrow.splide__arrow--next .arrow-shape img {
+  transform: rotate(180deg);
+}
+.splide-container.type-01 .splide .splide__arrows .splide__arrow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: rotate(45deg);
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+.splide-container.type-01 .splide .splide__arrows .splide__arrow:hover {
+  background: none;
+}/*# sourceMappingURL=style.css.map */
