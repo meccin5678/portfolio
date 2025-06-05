@@ -169,6 +169,9 @@ small{
   width: 160px;
   height: auto;
 }
+.category {
+    font-size: 1.25rem;
+}
 /*--------------- サイドナビゲーション----------------- */
 aside {
   padding: 1rem;
