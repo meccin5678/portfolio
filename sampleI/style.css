@@ -335,6 +335,15 @@ ol {
   cursor: pointer;
   z-index: 1;
 }
+.trial .try-try-btn .modal-try-btn:hover::before {
+  animation: try-btn 1.6s ease-out;
+}
+.trial .try-try-btn .modal-try-btn:hover::after {
+  animation: try-btn 1.6s ease-out 0.4s;
+}
+.trial .try-try-btn .modal-try-btn:hover .triangle {
+  transform: translateX(1rem);
+}
 .trial .try-try-btn .modal-try-btn::before, .trial .try-try-btn .modal-try-btn::after {
   content: "";
   position: absolute;
@@ -350,15 +359,6 @@ ol {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-}
-.trial .try-try-btn .modal-try-btn:hover::before {
-  animation: try-btn 1.6s ease-out;
-}
-.trial .try-try-btn .modal-try-btn:hover::after {
-  animation: try-btn 1.6s ease-out 0.4s;
-}
-.trial .try-try-btn .modal-try-btn:hover .triangle {
-  transform: translateX(1rem);
 }
 .trial .modal-try-content {
   position: absolute;
@@ -505,6 +505,9 @@ ol {
   height: 100%;
   font-size: 1.2rem;
   color: #fff;
+}
+.trial .modal-try-content .try-bottom .reserve:hover .triangle {
+  transform: translateX(1rem);
 }
 
 /* ボタンの影が広がるアニメーション */
