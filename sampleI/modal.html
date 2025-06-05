@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モーダル | サンプル</title>
+
+<!-- CSS -->
+<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-------------------------- ▼ modal練習 // start -------------------------->
+<section class="trial">
+    <div class="overlay"></div>
+    <div class="items">
+        <div class="item"><p>コンテンツ1</p></div>
+        <div class="item"><p>コンテンツ2</p></div>
+        <div class="item"><p>コンテンツ3</p></div>
+    </div>
+
+
+
+    <button class="try-try-btn">
+        <p class="try-sub">簡単1分！今すぐチェック</p>
+        <p class="modal-try-btn">Web予約をする<span class="triangle"></span></p>
+    </button>
+<!-------------------------- ▼ modal練習コンテンツ // start -------------------------->
+    <div class="modal-try-content">
+        <button class="btn-try-top-close tryClose" aria-label="モーダルを閉じる">×</button>
+            <p class="message"><span class="p-pink">御社の課題解決</span>に寄り添います
+            </p>
+            <h2>
+                <span class="p-pink">無料相談会</span>実施中
+            </h2>
+
+            <div class="try-content-img">
+                <img src="./img/splidea3.webp" alt="*">
+            </div><!-- /.thumb -->
+
+            
+            <div class="try-content-sentence">
+                <p>
+                    プロのコンサルタントが御社の課題をヒアリングし、
+                    <span class="p-pink">その場で具体的な施策で設計</span>、
+                    具体的な展開までをその場で知ることができます！
+                    <span class="p-pink">全国オンライン対応！</span>
+                    ぜひ気軽にお申し込みください。
+                </p>
+            </div>
+
+            <div class="try-bottom">
+                <button class="batu tryClose">
+                    <span class="icon">✕</span>
+                    <span class="text">今は閉じる</span><!-- /.text -->
+                </button>
+                <button class="reserve">
+                    <a href="#" target="_blank">
+                        <span class="icon"><img src="./img/modal-content-action-button-primary-icon.svg" alt="*"></span>
+                        <span class="text"> 無料相談を予約する</span>
+                        <span class="triangle"></span>
+                    </a>
+                </button>
+            </div>
+    </div>
+</section>
+
+
+
+
+<script src="./js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="./js/splide-setting.js"></script>
+</body>
+</html> 
