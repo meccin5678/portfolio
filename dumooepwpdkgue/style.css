@@ -591,15 +591,15 @@ h5 {
 @keyframes bgMove {
   0% {
     transform: scale(1.05);
-    filter: blur(8px);
+    opacity: 0.1;
   }
   50% {
     transform: scale(1);
-    filter: blur(2px);
+    opacity: 1;
   }
   100% {
     transform: scale(1.05);
-    filter: blur(8px);
+    opacity: 0.1;
   }
 }
 @keyframes arrowDownMove {
