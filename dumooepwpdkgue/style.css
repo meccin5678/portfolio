@@ -460,6 +460,7 @@ h5 {
   background-image: url(./img/reserve-bg.webp);
   background-size: cover;
   background-position: center;
+  overflow: hidden;
   animation: bgMove 10s linear infinite;
 }
 .sec-reserve .reserve {
