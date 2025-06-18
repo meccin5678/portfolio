@@ -45,6 +45,18 @@
 </head>
 
 <body>
+<!-- 固定ナビ -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="#top">top</a></li>
+      <li><a href="#menu">メニュー</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#reserve">ご予約</a></li>
+      <li><a href="#map">店舗情報</a></li>
+    </ul>
+  </nav>
+</header>
 <!-- ヒーロービジュアル -->
 <div class="first" id="top">
   <div class="cover">
@@ -78,8 +90,8 @@
   </div>
 </div>
 
-<section class="sec-menu">
-  <h3 class="title">メニュー</h3>
+<section class="sec-menu" id="menu">
+  <h3>メニュー</h3>
   <p class="lead inner-width">当サロンは中目黒駅から徒歩5分の<span class="highlight">女性限定</span><span class="highlight">完全予約制</span><span class="highlight">都度払い</span>のプライベートサロンです。
   </p>
   <div class="menuA inner-width">
@@ -102,8 +114,8 @@
   </div>
 </section>
 
-<section class="sec-menu">
-  <h3 class="title">About Us</h3>
+<section class="sec-menu" id="about">
+  <h3>About Us</h3>
   <p class="lead inner-width">美容は、外見を変えるだけのものではなく、心を満たし、日常を前向きに保ってくれる力があると私たちは信じています。忙しくても自分を大切にしたい。無理なく、でも確実に変わりたい、そんな女性たちの日常のリズムに寄り添えるサロンでありたいと願っています。都度払いで通いやすい。ちょっと気になる小さなお悩みも気軽に相談できる。いつでも安心してきていただける、お客様一人ひとりの“美容のホーム“のような存在を目指しています。
   </p>
   <div class="menuA inner-width">
@@ -130,7 +142,7 @@
   </div>
 </section>
 
-<section class="sec-reserve">
+<section class="sec-reserve" id="reserve">
   <div class="reserve-bg"></div>
   <div class="reserve">
     <div class="web-reserve">
@@ -167,26 +179,40 @@
   </div>
 </section>
 
-<section class="sec-map">
+<section class="sec-map" id="map">
   <div class="access inner-width">
-    <h3 class="title">アクセス</h3>
-    <div class="access-text">
-      <p>〒153-0051 東京都目黒区上目黒３-1-13 ACE中目黒3F</p>
+    <h3>店舗情報</h3>
+    <div class="salon">
+      <div class="salon-img">
+        <img src="./img/salon2.webp" alt="サロン">
+      </div>
+      <p>
+        当サロンでは、徹底した衛生管理のもと、ご安心してお過ごしいただけるよう清潔な環境を整えております。<br>
+        また、サロン内は落ち着いた空間づくりにこだわっております。<br>
+        日常から離れ、ゆったりとした癒しの時間をお過ごしください。
+      </p>
     </div>
+    <ul class="access-info">
+      <li><p class="label"><span>住</span><span>所</span></p><span>東京都目黒区上目黒3-1-13 ACE中目黒3F</span></li>
+      <li><p class="label"><span>営</span><span>業</span><span>時</span><span>間</span></p><span>10:00 - 20:00</span></li>
+      <li><p class="label"><span>定</span><span>休</span><span>日</span></p><span>水曜日</span></li>
+      <li><p class="label"><span>最</span><span>寄</span><span>り</span><span>駅</span></p><span>中目黒駅 徒歩5分</span></li>
+      <li><p class="label"><span>駐</span><span>車</span><span>場</span></p><span>無し：近隣のコインパーキングをご利用ください</span></li>
+      <li><p class="label"><span>駐</span><span>輪</span><span>場</span></p><span>無し：近隣の駐輪場をご利用ください</span></li>
+    </ul>
     <div class="map">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202.6431472427589!2d139.69718749999998!3d35.6452173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bb7b7b30b11%3A0x3a9a3e4258d1024!2zSVNMQSBCRUFVVFkg5Lit55uu6buS44CQRVlFTEFTSOOAkQ!5e0!3m2!1sja!2sjp!4v1749169314184!5m2!1sja!2sjp" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    <div>
-      <p>営業時間: 10:00 - 20:00</p>
-      <p>定休日: 水曜日</p>
-      <p>最寄り駅: 中目黒駅 徒歩5分</p>
-      <p>駐車場: なし</p><br>
-      <p>アクセス方法: 中目黒駅から徒歩5分、目黒川沿いを進むと左手にあります。</p>
-      <p>お車でお越しの方は、近隣のコインパーキングをご利用ください。</p>
-      <p>バスでお越しの方は、目黒駅から東急バス「中目黒駅行き」に乗車し、「中目黒駅前」で下車してください。</p>
-      <p>自転車でお越しの方は、近隣の駐輪場をご利用ください。</p>
-      <p>お問合せは、電話またはメールでお気軽にどうぞ。</p>
-    </div>
+    <ul class="access-note">
+      <li>
+        <p class="label2"><span>ア</span><span>ク</span><span>セ</span><span>ス</span><span>方</span><span>法</span></p>
+        <p>中目黒駅から徒歩5分、目黒川沿いを進むと左手にあります。</p>
+      </li>
+      <li>
+        <p class="label2"><span>バ</span><span>ス</span><span>で</span><span>お</span><span>越</span><span>し</span><span>の</span><span>方</span></p>
+        <p>目黒駅から東急バス「中目黒駅行き」に乗車し、「中目黒駅前」で下車してください。</p>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -210,11 +236,19 @@
   
 <footer>
     <div class="footer-info">
-      <p>プライバシーポリシー</p>
+      <p><a href="privacy-policy.html#privacy">プライバシーポリシー</a></p>
       <p>|</p>
-      <p>会社概要</p>
+      <p><a href="privacy-policy.html#company">会社情報</a></p>
       <p>|</p>
-      <p>店舗情報</p>
+      <p><a href="#map" aria-label="店舗情報へ">店舗情報</a></p>
+    </div>
+        
+    <div class="footer-info footer-smartphone">
+      <p><a href="#menu" aria-label="メニューへ">メニュー</a></p>
+      <p>|</p>
+      <p><a href="#about" aria-label="About Usへ">About Us</a></p>
+      <p>|</p>
+      <p><a href="#reserve" aria-label="ご予約へ">ご予約</a></p>
     </div>
     <div class="footer-tel">
       <p>
