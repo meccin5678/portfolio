@@ -160,8 +160,8 @@ header nav ul li a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: left;
-     object-position: left;
+  -o-object-position: top center;
+     object-position: top center;
 }
 .first .cover {
   position: absolute;
@@ -445,12 +445,12 @@ main .sec-menu .menu-img img {
   aspect-ratio: 4/3;
 }
 main .sec-menu .menu-text {
-  margin-top: -10rem;
+  margin-top: 5rem;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem;
   position: relative;
   z-index: var(--z-base-over);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
 }
 main .sec-menu .menu-text h5 {
   padding: 0.1rem 0.5rem;
@@ -461,6 +461,25 @@ main .sec-menu .menu-text h5 {
   background-color: #ffffff;
 }
 
+.sec-concept {
+  padding: 10rem 0;
+  overflow: hidden;
+  position: relative;
+}
+.sec-concept::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/stone-blue1.png);
+  filter: brightness(1.2);
+  background-size: cover;
+  background-position: top left;
+  animation: conceptBgMove 10s linear infinite;
+  z-index: var(--z-bg);
+}
 .sec-concept .title::before {
   content: "CONCEPT";
 }
@@ -469,31 +488,11 @@ main .sec-menu .menu-text h5 {
     font-size: 8rem;
   }
 }
-.sec-concept .concept-inner {
-  padding: 10rem 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
-.sec-concept .concept-inner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(./img/stone-blue.webp);
-  background-size: cover;
-  background-position: center;
-  animation: conceptBgMove 10s linear infinite;
-  z-index: var(--z-bg);
-}
-.sec-concept .concept-inner .lead {
+.sec-concept .lead {
   font-family: var(--font-en);
   line-height: 2rem;
 }
-.sec-concept .concept-inner .concept {
+.sec-concept .concept {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -505,37 +504,49 @@ main .sec-menu .menu-text h5 {
   margin-bottom: 8rem;
 }
 @media screen and (max-width: 1024px) {
-  .sec-concept .concept-inner .concept {
+  .sec-concept .concept {
     flex-direction: column;
     height: auto;
+    width: 100%;
   }
 }
 @media screen and (max-width: 1024px) {
-  .sec-concept .concept-inner .concept:nth-of-type(2) {
+  .sec-concept .concept:nth-of-type(2) {
     flex-direction: column-reverse;
   }
 }
-.sec-concept .concept-inner .concept::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  z-index: var(--z-bg);
-}
-.sec-concept .concept-inner .concept > * {
+.sec-concept .concept > * {
   flex: 1;
 }
-.sec-concept .concept-inner .concept .concept-text {
+.sec-concept .concept .concept-text {
   padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  margin-right: -10rem;
+  z-index: var(--z-base-over);
 }
-.sec-concept .concept-inner .concept .concept-img {
+@media screen and (max-width: 1024px) {
+  .sec-concept .concept .concept-text {
+    margin-right: 0;
+    margin-bottom: -5rem;
+    width: 80%;
+  }
+}
+.sec-concept .concept .concept-text:nth-child(2) {
+  margin-left: -10rem;
+  margin-right: 0;
+}
+@media screen and (max-width: 1024px) {
+  .sec-concept .concept .concept-text:nth-child(2) {
+    margin-left: 0;
+    margin-bottom: -5rem;
+  }
+}
+.sec-concept .concept .concept-img {
   width: 100%;
   height: 100%;
 }
-.sec-concept .concept-inner .concept .concept-img img {
+.sec-concept .concept .concept-img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -571,9 +582,9 @@ main .sec-menu .menu-text h5 {
   position: absolute;
   inset: 0;
   z-index: var(--z-bg);
-  background-image: url(./img/reserve-bg.webp);
   background-size: cover;
   background-position: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
   animation: bgMove 10s linear infinite;
 }
 .sec-reserve .reserve {
@@ -700,7 +711,7 @@ main .sec-menu .menu-text h5 {
 
 @keyframes bgMove {
   0% {
-    transform: scale(1.07);
+    transform: scale(1.05);
     opacity: 0.09;
   }
   50% {
@@ -708,7 +719,7 @@ main .sec-menu .menu-text h5 {
     opacity: 0.9;
   }
   100% {
-    transform: scale(1.07);
+    transform: scale(1.05);
     opacity: 0.09;
   }
 }

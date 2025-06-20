@@ -159,7 +159,7 @@ header {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: left;
+      object-position: top center;
     }
   }
 
@@ -444,12 +444,12 @@ main {
       }
     }
     .menu-text {
-      margin-top: -10rem;
+      margin-top: 5rem;
       background-color: rgb(255, 255, 255, 0.8);
       padding: 2rem;
       position: relative;
       z-index: var(--z-base-over);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
 
       h5 {
         padding: .1rem .5rem;
@@ -467,6 +467,24 @@ main {
 // コンセプト 
 //--------------------------------
 .sec-concept {
+  padding: 10rem 0;
+  overflow: hidden;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/stone-blue1.png);
+    // filter: brightness(1.1) saturate(1.2) hue-rotate(160deg) opacity(0.7);
+    filter: brightness(1.2);
+    background-size: cover;
+    background-position: top left;
+    animation: conceptBgMove 10s linear infinite;
+    z-index: var(--z-bg);
+  }
   .title {
     &::before {
       content: "CONCEPT";
@@ -475,25 +493,6 @@ main {
       }
     }
   }
-  .concept-inner {
-    padding: 10rem 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url(./img/stone-blue.webp);
-      background-size: cover;
-      background-position: center;
-      animation: conceptBgMove 10s linear infinite;
-      z-index: var(--z-bg);
-    }
 
     .lead {
       font-family: var(--font-en);
@@ -513,28 +512,35 @@ main {
       @media screen and (max-width: 1024px) {
         flex-direction: column;
         height: auto;
+        width: 100%;
       }
       &:nth-of-type(2) {
         @media screen and (max-width: 1024px) {
           flex-direction: column-reverse;
         }
       }
-
-      &::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(255, 255, 255, .5);
-        z-index: var(--z-bg);
-      }
       > * {
       flex: 1;
       }
       .concept-text {
         padding: 2rem;
+        background-color: rgb(255, 255, 255, 0.7);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+        margin-right: -10rem;
+        z-index: var(--z-base-over);
+        @media screen and (max-width: 1024px) {
+          margin-right: 0;
+          margin-bottom: -5rem;
+          width: 80%;
+        }
+        &:nth-child(2) {
+          margin-left: -10rem;
+          margin-right: 0;
+          @media screen and (max-width: 1024px) {
+          margin-left: 0;
+          margin-bottom: -5rem;
+        }
+        }
       }
       .concept-img {
         width: 100%;
@@ -548,7 +554,7 @@ main {
     }
   }
 
-}
+
 @keyframes conceptBgMove {
   0%   { transform: scale(1.2); opacity: .4;}
   50%  { transform: scale(1); opacity: .2;}
@@ -570,9 +576,14 @@ main {
     position: absolute;
     inset: 0;
     z-index: var(--z-bg);
-    background-image: url(./img/reserve-bg.webp);
+    // background-image: url(./img/reserve-bg.webp);
     background-size: cover;
     background-position: center;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.5)
+    ),;
     animation: bgMove 10s linear infinite;
   }
   .reserve {
@@ -689,9 +700,9 @@ main {
 }
 
 @keyframes bgMove {
-  0%   { transform: scale(1.07); opacity: .09;}
+  0%   { transform: scale(1.05); opacity: .09;}
   50%   { transform: scale(1); opacity: .9;}
-  100% { transform: scale(1.07); opacity: .09;}
+  100% { transform: scale(1.05); opacity: .09;}
 }
 @keyframes arrowDownMove {
   0%   { transform: translateY(0) scaleY(1);}
