@@ -124,14 +124,29 @@ button {
 header {
   position: fixed;
   top: 0rem;
-  right: 1rem;
+  right: 0rem;
   z-index: var(--z-header);
+  width: fit-content;
   nav {
-    padding: 1rem 0;
-    background-color: rgb(34, 40, 49, .2);
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(./img/stone.webp) no-repeat center center;
+      z-index: var(--z-bg);
+      opacity: 0.8;
+    }
     ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
       li {
-        // color: var(--white-gray);
+        font-family: var(--font-en);
         color: var(--main-text);
         a {
           padding: .25rem 1.5rem;
@@ -140,9 +155,7 @@ header {
       }
     }
   }
-@media (max-width: 768px) {
-  display: none;
-}
+
 }
 //-------------------------------- 
 // ファーストビュー 
@@ -224,7 +237,6 @@ header {
             padding: .25rem 4rem;
             color: var(--main-text);
             position: relative;
-
             clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
          }
       }
@@ -355,12 +367,6 @@ header {
     }
   }
 }
-.title2 {
-  font-size: 3rem;
-  font-family: var(--font-en);
-  color: var(--main-text);
-  text-align: center;
-}
 .lead {
   width: fit-content;
   margin: 0 auto 5rem;
@@ -376,40 +382,124 @@ header {
     margin: 0 .3rem;
   }
 }
-.link-hotpepper {
-  margin: 0 auto;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  .arrow-down{
-    i,
-    svg {
-      display: inline-block;
-      animation: arrowDown 1.2s infinite cubic-bezier(0.4,0,0.2,1);
-    }
-  }
-  .link-logo {
-    display: inline-block;
-    width: 200px;
-    height: auto;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-}
 @keyframes arrowDown {
   0%   { transform: translateY(0) scaleY(1);}
   30%  { transform: translateY(10px) scaleY(1.4);}
   60%  { transform: translateY(0) scaleY(1);}
   100% { transform: translateY(0) scaleY(1);}
 }
-.under-line {
-  // background: linear-gradient(360deg, var(--main-text), #ffffff);
+//-------------------------------- 
+// Hotopepperへのリンクボタン
+//--------------------------------
+.btn-link-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+      width: 100%;
+  }
+  .btn-lead {
+    width: fit-content;
+    background-color: #ffffff;
+    color: var(--main-text);
+    padding: .15rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    position: relative;
+    z-index: var(--z-base-over);
+    margin-bottom: -.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  .btn-link{
+    padding: 1rem 5rem;
+    background-color: var(--main-text);
+    color: var(--white-gray);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    pointer-events: auto;
+    width: fit-content;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0) 100%
+      );
+      transform: translateX(-100%) skewX(-20deg);
+      pointer-events: none;
+      animation: shine 3s linear infinite;
+      animation-delay: 1.5s;    
+    }
+  }
+//-------------------------------- 
+// 矢印
+//--------------------------------
+  .link-arrow {
+    position: relative;
+    display: inline-block;
+  }
+  .link-arrow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: .5px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+  }
+}
+  .link-arrow::before {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: .5px;
+    background-color: #ffffff;
+    transform: rotate(35deg);
+    transform-origin: right bottom;
+    transition: transform 0.3s ease;
+  }
+
+.btn-link-menu:hover .link-arrow::after {
+  width: 60px;
+}
+.btn-link-menu:hover .link-arrow::before {
+  transform: translateX(20px) rotate(35deg); // 伸ばしたい長さに調整
+}
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(100%) skewX(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(100%) skewX(-20deg);
+    opacity: 0;
+  }
 }
 //-------------------------------- 
 // 共通　終わり
@@ -422,45 +512,86 @@ main {
   width: 100%;
   .sec-menu {
     width: 100%;
-    margin: 0 auto 10rem;
-    .menu-img {
-      width: 100%;
-      background-color: #ffffff;
-      margin: 0 auto;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      @media screen and (max-width: 480px) {
-        width: 100%;
-        height: 200px;
+    height: 100%;
+    display: flex;
+    gap: 2.5rem;
+    justify-content: space-between;
+    padding: 0 5rem;
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+      padding: 0 1rem;
+    }
+    .under-lay {
+      background: url(./img/002.jpeg);
+      padding: 2rem;
+      @media screen and (max-width: 1024px) {
+        padding: 1.5rem;
       }
-      img {
+      .menu-item {
+        padding: 4rem;
+        background-color: rgb(255, 255, 255, .4);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.5rem;
+        align-items: center;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        object-position: center;
-        aspect-ratio: 4/3;
-      }
-    }
-    .menu-text {
-      margin-top: 5rem;
-      background-color: rgb(255, 255, 255, 0.8);
-      padding: 2rem;
-      position: relative;
-      z-index: var(--z-base-over);
-      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+        @media screen and (max-width: 1024px) {
+          padding: 2rem;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 5%;
+          left: 5%;
+          width: 90%;
+          height: 90%;
+          border: solid .5px var(--main-text);
+          opacity: .25;
+          @media screen and (max-width: 1024px){
+            opacity: 0;
+          }
+        }
+        .title2 {
+          font-size: 2.4rem;
+          margin: 0 auto;
+          width: fit-content;
+          padding: 0 1rem 0 1rem;
+          border-bottom: .5px solid var(--main-text);
+          border-right: .5px solid var(--main-text);
+          font-family: var(--font-en);
+          background-color: rgb(255, 255, 255, .3);
+        }
+        h5 {
+          font-size: 1.4rem;
+          border-bottom: .5px solid var(--main-text);
+          width: fit-content;
+          // background-color: rgb(255, 255, 255, .4);
+          // padding: 0 .5rem;
 
-      h5 {
-        padding: .1rem .5rem;
-        margin-bottom: 1rem;
-        border: .5px solid var(--main-text);
-        width: fit-content;
-        background-color: #ffffff;
-        // box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-
-      }
+        }
+        .menu-img {
+          overflow: hidden;
+          width: 100%;
+          height: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            flex: 1 1 0;
+            min-width: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 4/3;
+          }
+        }
+      } 
     }
+
   }
 }
 //-------------------------------- 
@@ -477,14 +608,16 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(./img/stone-blue1.png);
+    background: url(./img/stone.webp);
     // filter: brightness(1.1) saturate(1.2) hue-rotate(160deg) opacity(0.7);
-    filter: brightness(1.2);
+    filter: brightness(1.1);
     background-size: cover;
-    background-position: top left;
-    animation: conceptBgMove 10s linear infinite;
+    // background-position: top left;
+    // animation: conceptBgMove 10s linear infinite;
     z-index: var(--z-bg);
+    animation: bgMove 10s linear infinite;
   }
+
   .title {
     &::before {
       content: "CONCEPT";
@@ -503,11 +636,11 @@ main {
       justify-content: space-between;
       align-items: center;
       width: 80%;
-      height: 30rem;
+      height: 25rem;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
-      margin-bottom: 8rem;
+      margin-bottom: 10rem;
       
       @media screen and (max-width: 1024px) {
         flex-direction: column;
@@ -524,14 +657,14 @@ main {
       }
       .concept-text {
         padding: 2rem;
-        background-color: rgb(255, 255, 255, 0.7);
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+        background-color: rgb(255, 255, 255, .9);
         margin-right: -10rem;
+        position: relative;
         z-index: var(--z-base-over);
         @media screen and (max-width: 1024px) {
           margin-right: 0;
           margin-bottom: -5rem;
-          width: 80%;
+          width: 90%;
         }
         &:nth-child(2) {
           margin-left: -10rem;
@@ -539,12 +672,20 @@ main {
           @media screen and (max-width: 1024px) {
           margin-left: 0;
           margin-bottom: -5rem;
+          }
         }
+        h4 {
+          font-size: 1.6rem;
+          border-bottom: .1px solid var(--main-text);
+          border-right: .5px solid var(--main-text);
+          padding-right: 1rem;;
         }
       }
       .concept-img {
         width: 100%;
         height: 100%;
+        position: relative;
+        z-index: var(--z-base);
         img {
           width: 100%;
           height: 100%;
@@ -554,43 +695,54 @@ main {
     }
   }
 
-
 @keyframes conceptBgMove {
-  0%   { transform: scale(1.2); opacity: .4;}
-  50%  { transform: scale(1); opacity: .2;}
-  100% { transform: scale(1.2); opacity: .4;}
-}
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: .09;
+  }
+  100% {
+    transform:  scale(1);
+    opacity: 0.4;
 
+  }
+}
 //-------------------------------- 
 // ホットペッパー予約 
 //--------------------------------
 .sec-reserve {
   width: 100%;
-  padding: 5rem 5rem;
+  padding: 10rem 5rem 2rem;
   position: relative;
   overflow: hidden;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     padding: 5rem 2rem;
   }
   .reserve-bg {
     position: absolute;
     inset: 0;
     z-index: var(--z-bg);
-    // background-image: url(./img/reserve-bg.webp);
     background-size: cover;
     background-position: center;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5)
-    ),;
+    background: url(./img/stone.webp);
+    filter: brightness(1.1);
     animation: bgMove 10s linear infinite;
+  }
+  .title {
+    &::before {
+      content: "RESERVE";
+      @media (max-width: 768px) {
+        font-size: 8rem;
+      }
+    }
   }
   .reserve {
     display: flex;
-    width: 100%;
-    justify-content: center;
-    gap: 5rem;
+    justify-content: space-between;
+    gap: 2.5rem;
     @media screen and (max-width: 1024px) {
       flex-direction: column;
     }
@@ -598,6 +750,7 @@ main {
       width: 50%;
       padding: 2rem;
       background-color: #ffffff;
+      border: solid .5px var(--red);
       position: relative;
       display: flex;
       flex-direction: column;
@@ -617,38 +770,56 @@ main {
         // opacity: .3;
         z-index: var(--z-bg);
       }
-      .reserve-btn {
-        display: grid;
-        place-items: center;
-          .arrow {
+      .reserve-btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        @media (max-width: 1024px) {
+          flex-direction: column;
+          gap: 5rem;
+        }
+        .reserve-btn {
+          display: grid;
+          place-items: center;
+            .arrow {
               display: flex;
               flex-direction: column;
               align-items: center;
               justify-content: center;
               width: max-content;
+              .arrow-text {
+                padding: .5rem 1rem;
+                background-color: var(--red);
+                color: var(--white-gray);
+                font-size: 1.1rem;
+              }
               .arrow-down {
+              margin-top: -1rem;
               display: inline-block;
               animation: arrowDownMove 1.2s infinite cubic-bezier(0.4,0,0.2,1);
               margin-bottom: 1rem;
               }
-          }
-          .hot-pepper {
-              display: block;
-              width: 200px;
-              height: auto;
-              cursor: pointer;
-              img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-              }
-          }
+            }
+            .hot-pepper {
+                display: block;
+                width: 150px;
+                height: auto;
+                cursor: pointer;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: contain;
+                }
+            }
+        }
       }
     }
     .tel-reserve {
       width: 50%;
       padding: 2rem;
       background-color: #ffffff;
+      border: solid .5px var(--main-text);
       position: relative;
       display: flex;
       flex-direction: column;
@@ -695,6 +866,23 @@ main {
           object-fit: cover;
           margin: 2rem auto;
         }
+    }
+  }
+  .footer-logo {
+    margin-top: 10rem;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    .logo {
+      width: 100px;
+      height: auto;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
   }
 }
@@ -812,48 +1000,7 @@ main {
 //-------------------------------- 
 // フッター 
 //--------------------------------
-.footer-logo {
-  width: 100%;
-  display: grid;
-  place-items: center;
-  .logo {
-    width: 100px;
-    height: auto;
-    cursor: pointer;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-  .link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    margin: 3rem 0 5rem;
-    .hot-pepper-footer {
-      width: auto;
-      height: 50px;
-      cursor: pointer;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-    .insta {
-      width: auto;
-      height: 50px;
-      cursor: pointer;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-  }
-}
+
 footer {
   width: 100%;
   background-color: var(--main-text);
@@ -869,29 +1016,34 @@ footer {
       gap: 1rem;
     }
   }
-  .footer-smartphone {
-    @media screen and (min-width: 768px) {
-      display: none;
-    }
-  }
+  // .footer-smartphone {
+  //   @media screen and (min-width: 768px) {
+  //     display: none;
+  //   }
+  // }
   .footer-tel {
     width: fit-content;
     margin: 3rem auto;
-    p {
+    ul {
         display: flex;
+        justify-content: space-between;
         align-items: center;
         gap: .5rem;
+      li {
+        font-size: 1.1rem;;
+      }
       .label {
         width: 8rem;
       }
       .number {
         display: flex;
         align-items: center;
+        width: 12rem;
         gap: .1rem;
         letter-spacing: 0.1em;
-        i {
-          font-size: .9rem;
-        }
+      }
+      .icon-insta {
+        font-size: 2rem;
       }
     }
   }
