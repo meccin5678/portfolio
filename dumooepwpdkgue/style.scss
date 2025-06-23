@@ -644,6 +644,9 @@ main {
       @media (max-width: 768px) {
         font-size: 8rem;
       }
+      @media (max-width: 480px) {
+        font-size: 6rem;
+      }
     }
   }
 
@@ -757,8 +760,12 @@ main {
       @media (max-width: 768px) {
         font-size: 8rem;
       }
+      @media (max-width: 480px) {
+        font-size: 6rem;
+      }
     }
   }
+  
   .reserve {
     display: flex;
     justify-content: space-between;
@@ -927,9 +934,12 @@ main {
   .title {
     &::before {
       content: "SALON";
-      // @media (max-width: 768px) {
-      //   font-size: 8rem;
-      // }
+    @media (max-width: 768px) {
+      font-size: 8rem;
+    }
+    @media (max-width: 480px) {
+      font-size: 6rem;
+    }
     }
   }
   .salon {
@@ -994,6 +1004,7 @@ main {
   .title {
     &::before {
       content: "PRIVACY";
+      font-size: 10rem;
       @media (max-width: 768px) {
         font-size: 8rem;
       }
@@ -1018,7 +1029,8 @@ main {
   padding: 10rem 0 0;
   margin-bottom: 5rem;
   .title {
-  &::before {
+    &::before {
+    font-size: 10rem;
     content: "COMPANY";
     @media (max-width: 768px) {
       font-size: 8rem;
@@ -1029,11 +1041,14 @@ main {
   }
   }
   .company {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     background-color: var(--white-gray);
     padding: 3rem;
+    p {
+      .left {
+        width: 3rem;
+        display: inline-block;
+      }
+    }
   }
 }
 

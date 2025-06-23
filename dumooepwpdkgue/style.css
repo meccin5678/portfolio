@@ -160,23 +160,6 @@ header nav ul li a {
   display: block;
 }
 
-.header-logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.header-logo .logo {
-  width: 120px;
-  height: auto;
-  padding: 1rem;
-}
-.header-logo .logo img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 .first {
   width: 100%;
   height: 100vh;
@@ -644,6 +627,11 @@ main .sec-menu .under-lay .menu-item .menu-img img {
     font-size: 8rem;
   }
 }
+@media (max-width: 480px) {
+  .sec-concept .title::before {
+    font-size: 6rem;
+  }
+}
 .sec-concept .lead {
   font-family: var(--font-en);
   line-height: 2rem;
@@ -758,6 +746,11 @@ main .sec-menu .under-lay .menu-item .menu-img img {
 @media (max-width: 768px) {
   .sec-reserve .title::before {
     font-size: 8rem;
+  }
+}
+@media (max-width: 480px) {
+  .sec-reserve .title::before {
+    font-size: 6rem;
   }
 }
 .sec-reserve .reserve {
@@ -956,6 +949,16 @@ main .sec-menu .under-lay .menu-item .menu-img img {
 .sec-map .title::before {
   content: "SALON";
 }
+@media (max-width: 768px) {
+  .sec-map .title::before {
+    font-size: 8rem;
+  }
+}
+@media (max-width: 480px) {
+  .sec-map .title::before {
+    font-size: 6rem;
+  }
+}
 .sec-map .salon .salon-info {
   background-color: var(--white-gray);
   padding: 2rem;
@@ -1013,6 +1016,7 @@ main .sec-menu .under-lay .menu-item .menu-img img {
 }
 .sec-privacy .title::before {
   content: "PRIVACY";
+  font-size: 10rem;
 }
 @media (max-width: 768px) {
   .sec-privacy .title::before {
@@ -1037,6 +1041,7 @@ main .sec-menu .under-lay .menu-item .menu-img img {
   margin-bottom: 5rem;
 }
 .sec-company .title::before {
+  font-size: 10rem;
   content: "COMPANY";
 }
 @media (max-width: 768px) {
@@ -1050,11 +1055,12 @@ main .sec-menu .under-lay .menu-item .menu-img img {
   }
 }
 .sec-company .company {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
   background-color: var(--white-gray);
   padding: 3rem;
+}
+.sec-company .company p .left {
+  width: 3rem;
+  display: inline-block;
 }
 
 footer {
