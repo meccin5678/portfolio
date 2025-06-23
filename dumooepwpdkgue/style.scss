@@ -129,14 +129,14 @@ header {
   pointer-events: auto; // ← 追加
   @media (max-width: 768px) {
     width: 100vw;
-    z-index: 31;
+    // z-index: 31;
   }
   nav {
     position: relative;
     pointer-events: auto; // ← 追加
     @media (max-width: 768px) {
     width: 100%;
-    z-index: 31;
+    // z-index: 31;
     }
     &::after {
       position: absolute;
@@ -167,12 +167,12 @@ header {
   }
 }
 
-// #menu,
-// #concept,
-// #map,
-// #reserve {
-//   scroll-margin-top: 60px; // ヘッダーの高さに合わせて調整
-// }
+#menu,
+#concept,
+#map,
+#reserve {
+  scroll-margin-top: 7rem; // ← headerの高さに合わせて調整
+}
 
 //-------------------------------- 
 // ヘッダーロゴ 
