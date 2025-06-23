@@ -145,6 +145,7 @@ header {
       background: url(./img/stone.webp) no-repeat center center;
       z-index: var(--z-bg);
       opacity: 0.8;
+      pointer-events: none;
     }
     ul {
       display: flex;
