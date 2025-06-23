@@ -125,12 +125,20 @@ button {
 
 header {
   position: absolute;
-  top: 0rem;
-  right: 0rem;
+  bottom: 0;
+  right: 0;
   z-index: var(--z-header);
   height: auto;
   width: auto;
   pointer-events: auto;
+}
+@media screen and (min-width: 1024px) {
+  header {
+    top: 0;
+    bottom: auto;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 }
 header .header-bg {
   position: absolute;
@@ -157,13 +165,6 @@ header nav ul li {
 header nav ul li a {
   padding: 0.25rem 1.5rem;
   display: block;
-}
-
-#menu,
-#concept,
-#map,
-#reserve {
-  scroll-margin-top: 7rem;
 }
 
 .first {
@@ -1081,6 +1082,11 @@ footer {
   color: var(--white-gray);
   padding: 3rem 1rem 1rem;
   margin: 0 auto;
+}
+@media screen and (max-width: 1023px) {
+  footer {
+    padding-bottom: 3rem;
+  }
 }
 footer .footer-info {
   display: flex;

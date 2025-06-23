@@ -123,12 +123,17 @@ button {
 //--------------------------------
 header {
   position: absolute;
-  top: 0rem;
-  right: 0rem;
+  bottom: 0;
+  right: 0;
   z-index: var(--z-header);
   height: auto;
   width: auto;
   pointer-events: auto; // ← 追加
+  @media screen and (min-width: 1024px) {
+    top: 0;
+    bottom: auto;
+    width: fit-content;
+  }
   .header-bg {
     position: absolute;
     top: 0;
@@ -157,12 +162,12 @@ header {
   }
 }
 
-#menu,
-#concept,
-#map,
-#reserve {
-  scroll-margin-top: 7rem; // ← headerの高さに合わせて調整
-}
+// #menu,
+// #concept,
+// #map,
+// #reserve {
+//   scroll-margin-top: 7rem; // ← headerの高さに合わせて調整
+// }
 
 //-------------------------------- 
 // ヘッダーロゴ 
@@ -1076,6 +1081,9 @@ footer {
   color: var(--white-gray);
   padding: 3rem 1rem 1rem;
   margin: 0 auto;
+  @media screen and (max-width: 1023px) {
+    padding-bottom: 3rem;
+  }
   .footer-info {
     display: flex;
     justify-content: center;
