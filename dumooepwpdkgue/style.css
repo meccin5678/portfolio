@@ -128,9 +128,12 @@ header {
   top: 0rem;
   right: 0rem;
   z-index: var(--z-header);
-  width: -moz-fit-content;
-  width: fit-content;
   pointer-events: auto;
+}
+@media (max-width: 768px) {
+  header {
+    width: 100vw;
+  }
 }
 header nav {
   position: relative;

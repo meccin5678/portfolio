@@ -126,12 +126,10 @@ header {
   top: 0rem;
   right: 0rem;
   z-index: var(--z-header);
-  width: fit-content;
   pointer-events: auto; // ← 追加
-  // @media (max-width: 768px) {
-  //   top: auto;
-  //   bottom: 0;
-  // }
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
   nav {
     position: relative;
     pointer-events: auto; // ← 追加
