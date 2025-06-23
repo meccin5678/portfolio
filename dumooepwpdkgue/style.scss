@@ -129,6 +129,7 @@ header {
   pointer-events: auto; // ← 追加
   @media (max-width: 768px) {
     width: 100vw;
+    z-index: 31;
   }
   nav {
     position: relative;
