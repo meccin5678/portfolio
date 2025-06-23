@@ -142,7 +142,7 @@ header nav {
 }
 @media (max-width: 768px) {
   header nav {
-    width: 100vw;
+    width: 100%;
     z-index: 31;
   }
 }
