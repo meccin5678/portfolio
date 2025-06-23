@@ -127,8 +127,10 @@ header {
   right: 0rem;
   z-index: var(--z-header);
   width: fit-content;
+  pointer-events: auto; // ← 追加
   nav {
     position: relative;
+    pointer-events: auto; // ← 追加
     &::after {
       position: absolute;
       content: "";

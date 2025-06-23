@@ -130,9 +130,11 @@ header {
   z-index: var(--z-header);
   width: -moz-fit-content;
   width: fit-content;
+  pointer-events: auto;
 }
 header nav {
   position: relative;
+  pointer-events: auto;
 }
 header nav::after {
   position: absolute;
