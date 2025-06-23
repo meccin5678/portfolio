@@ -200,6 +200,12 @@ header nav ul li a {
   height: 50%;
   animation: whiteLeft 2s forwards 1s;
 }
+.first .cover.hide {
+  opacity: 0;
+  z-index: var(--z-bg);
+  pointer-events: none;
+  transition: opacity 0.5s, z-index 0s 0.5s;
+}
 .first .message {
   position: absolute;
   right: 2rem;

@@ -218,6 +218,12 @@ header {
       height: 50%;
       animation: whiteLeft 2s forwards 1s;
     }
+    &.hide {
+      opacity: 0; // 要素を透明にする（フェードアウト）
+      z-index: var(--z-bg); // -1; // 他の要素の背面に移動
+      pointer-events: none; // クリックやタップを無効化
+      transition: opacity 0.5s, z-index 0s 0.5s; // opacityは0.5秒で変化、z-indexは0.5秒後に即座に変化
+    }
   }
 
   .message {
