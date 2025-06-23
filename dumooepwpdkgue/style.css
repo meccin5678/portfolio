@@ -162,6 +162,13 @@ header nav ul li a {
   display: block;
 }
 
+#menu,
+#concept,
+#map,
+#reserve {
+  scroll-margin-top: 60px;
+}
+
 .first {
   width: 100%;
   height: 100vh;
