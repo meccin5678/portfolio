@@ -1,0 +1,5 @@
+```css
+.target {
+  transform-origin: center center; /* または left top, right bottom など */
+}
+```

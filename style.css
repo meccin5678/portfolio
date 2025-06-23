@@ -417,3 +417,8 @@ header .hmb span {
     transform: rotate(-45deg) translate(10px, -10px);
   }
 }
+
+.parent {
+  overflow: hidden;
+  /* 背景画像や子要素がはみ出さない */
+}
