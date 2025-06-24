@@ -21,7 +21,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
@@ -123,33 +122,27 @@ button {
 }
 
 header {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  position: fixed;
+  top: 0rem;
+  right: 0rem;
   z-index: var(--z-header);
-  height: auto;
-  width: auto;
   pointer-events: auto;
 }
-@media screen and (min-width: 1024px) {
-  header {
-    top: 0;
-    bottom: auto;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
+header nav {
+  position: relative;
+  pointer-events: auto;
+  position: relative;
 }
-header .header-bg {
+header nav .nav-bg {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
   background: url(./img/stone.webp) no-repeat center center;
   z-index: var(--z-bg);
-}
-header nav {
-  pointer-events: auto;
+  opacity: 0.8;
+  pointer-events: none;
 }
 header nav ul {
   display: flex;
@@ -164,6 +157,8 @@ header nav ul li {
 header nav ul li a {
   padding: 0.25rem 1.5rem;
   display: block;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .first {
@@ -180,8 +175,8 @@ header nav ul li a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  -o-object-position: top center;
+     object-position: top center;
 }
 .first .cover {
   position: absolute;
@@ -536,7 +531,7 @@ main .sec-menu {
   }
 }
 main .sec-menu .under-lay {
-  background: url(./img/concept-bg2.webp);
+  background: url(./img/002.jpeg);
   padding: 2rem;
 }
 @media screen and (max-width: 1024px) {
@@ -1081,11 +1076,6 @@ footer {
   color: var(--white-gray);
   padding: 3rem 1rem 1rem;
   margin: 0 auto;
-}
-@media screen and (max-width: 1023px) {
-  footer {
-    padding-bottom: 3rem;
-  }
 }
 footer .footer-info {
   display: flex;
