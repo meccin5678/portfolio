@@ -167,12 +167,12 @@ header {
   }
 }
 
-// #menu,
-// #concept,
-// #map,
-// #reserve {
-//   scroll-margin-top: 7rem; // ← headerの高さに合わせて調整
-// }
+#menu,
+#concept,
+#map,
+#reserve {
+  scroll-margin-top: 7rem; // ← headerの高さに合わせて調整
+}
 
 //-------------------------------- 
 // ヘッダーロゴ 
