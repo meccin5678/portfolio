@@ -1019,14 +1019,18 @@ main .sec-menu .under-lay .menu-item .menu-img img {
   align-items: center;
 }
 .sec-map .salon .map {
-  max-width: 100%;
-  overflow-x: auto;
+  width: 100%;
 }
 .sec-map .salon .map iframe {
   width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+  height: 600px;
+  border: 0;
   display: block;
+}
+@media (max-width: 768px) {
+  .sec-map .salon .map iframe {
+    height: 400px;
+  }
 }
 
 .sec-privacy {
