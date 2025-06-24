@@ -296,11 +296,26 @@ header nav ul li a {
   animation: shine 3s linear infinite;
   animation-delay: 1.5s;
 }
-.first .message .btn .arrow {
-  transition: transform 0.3s;
+.first .message .btn .arrow-shin {
+  width: 55px;
+  height: 0.5px;
+  background-color: #ffffff;
+  position: relative;
+  transition: width 0.3s ease;
 }
-.first .message .btn:hover .arrow {
-  transform: translateX(1rem);
+.first .message .btn .arrow-shin::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(35deg);
+  width: 15px;
+  height: 0.5px;
+  background-color: #ffffff;
+  transform-origin: right bottom;
+}
+.first .message .btn:hover .arrow-shin {
+  width: 70px;
 }
 
 @keyframes shine {
