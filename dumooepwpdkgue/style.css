@@ -297,6 +297,11 @@ header nav ul li a {
   animation: shine 3s linear infinite;
   animation-delay: 1.5s;
 }
+@media screen and (max-width: 640px) {
+  .first .message .btn {
+    margin-bottom: 2rem;
+  }
+}
 .first .message .btn .arrow-shin {
   width: 55px;
   height: 0.5px;

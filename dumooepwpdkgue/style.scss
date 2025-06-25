@@ -331,6 +331,9 @@ header {
          animation: shine 3s linear infinite;
          animation-delay: 1.5s;    
       }
+      @media screen and (max-width: 640px) {
+        margin-bottom: 2rem;
+      }
       .arrow-shin {
         width: 55px;
         height: .5px;
