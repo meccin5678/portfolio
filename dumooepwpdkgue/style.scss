@@ -25,11 +25,7 @@
   box-sizing: border-box;
 }
 html {
-  scroll-behavior: smooth;
   overflow-x: hidden;
-  @media screen and (max-width: 640px) {
-    scroll-behavior: auto; // noneは不可、autoが正解
-  }
 }
 ul, ol {
   list-style: none;
@@ -52,8 +48,11 @@ html, body {
   font-size: 17px;
   line-height: 1.8;
   color: var(--main-text);
-  // scroll-behavior: smooth;
+  scroll-behavior: smooth;
   font-family: var(--font);
+  @media screen and (max-width: 640px) {
+    scroll-behavior: auto; // noneは不可、autoが正解
+  }
 }
 .en {
    font-family: 'Cormorant', serif;
