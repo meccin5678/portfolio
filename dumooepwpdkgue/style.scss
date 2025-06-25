@@ -197,7 +197,8 @@ header {
 //--------------------------------
 .first {
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
+  height: 100vh; 
   position: relative;
 
 
@@ -546,11 +547,10 @@ header {
     position: absolute;
     left: 30px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(35deg);
     width: 10px;
     height: .5px;
     background-color: #ffffff;
-    transform: rotate(35deg);
     transform-origin: right bottom;
     transition: transform 0.3s ease;
   }
