@@ -1,7 +1,3 @@
-// -----------------------------
-// ✨ ヒーロー画像の関数
-// -----------------------------
-
 document.addEventListener("DOMContentLoaded", () => {
   const slideA = document.querySelector('.slideA');
   const heroTextA = document.querySelector('.hero-textA');
@@ -10,55 +6,41 @@ document.addEventListener("DOMContentLoaded", () => {
   const slideC = document.querySelector('.slideC');
   const heroTextC = document.querySelector('.hero-textC');
 
-  const tl = gsap.timeline({
-    repeat: -1,        // 無限リピート
-    repeatDelay: .5     // 1秒待ってから再スタート（お好みで調整）
-  });
+  const tl = gsap.timeline({ repeat: -1 });
 
-  // slideA表示は初回では表示状態
+  tl
+    // --- Slide A ---
+    .fromTo(slideA,
+      { opacity: .7 }, 
+      { opacity: 1, duration: 1.5, ease: "power2.out" })
+    .fromTo(heroTextA,
+      { opacity: 0, scale: 1.1 },
+      { opacity: 1, scale: 1, duration: 1.5, ease: "power2.out" },
+      ">-0.5")
+    .to(heroTextA, { duration: 1.5 }) // 表示キープ
+    .to(slideA, { opacity: 0, scaleX: 0, transformOrigin: "left", duration: 1.5, ease: "power2.in" })
 
-  tl.fromTo(
-    heroTextA,
-    { opacity: 0, scaleX: 0 },
-    { opacity: 1, scaleX: 1, duration: 1.5, ease: "power2.out" }
-  )
-  .to(
-    heroTextA,
-    { duration: 1 } // 1秒キープ（durationは第2引数に書く）
-  )
-  // slideAを非表示、slideBを表示
-  .to(
-    slideA,
-    { scaleX: 0, opacity: 0, duration: 1, ease: "power2.in", transformOrigin: "center center" }
-  )
-  .fromTo(
-    slideB,
-    { scaleY: 0, opacity: 0, transformOrigin: "center center" },
-    { scaleY: 1, opacity: 1, duration: 1, ease: "power2.out" }
-  )
-  .fromTo(
-    heroTextB,
-    { opacity: 0 },
-    { opacity: 1, duration: 2.5, ease: "power2.out" }
-  )
-  // slideBを非表示、slideCを表示
-  .to(
-    slideB,
-    { scaleX: 0, opacity: 0, duration: 1, ease: "power2.in", transformOrigin: "center center" }
-  )
-  .fromTo(
-    slideC,
-    { scaleY: 0, opacity: 0, transformOrigin: "center center" },
-    { scaleY: 1, opacity: 1, duration: 1, ease: "power2.out" }
-  )
-  .fromTo(
-    heroTextC,
-    { opacity: 0},
-    { opacity: 1, duration: 2, ease: "power2.out" }
-  )
-  .to(
-    slideC,
-    { scaleY: 0, opacity: 0, duration: 1, ease: "power2.in", transformOrigin: "center center" }
-  );
+    // --- Slide B ---
+    .fromTo(slideB, { opacity: 0,  }, 
+      { opacity: 1, duration: 1.5, ease: "power2.out" }, "-=1")
+    .fromTo(heroTextB,
+      { opacity: 0, scale: 1.1 },
+      { opacity: 1, scale: 1, duration: 1.5, ease: "power2.out" },
+      ">-0.5"
+    )
+    .to(heroTextB, { duration: 1.5 })
+    .to(slideB, { opacity: 0, scaleX: 0, transformOrigin: "left", duration: 1.5, ease: "power2.in" })
 
+    // --- Slide C ---
+    .fromTo(slideC, { opacity: 0,  }, 
+      { opacity: 1, duration: 1.5, ease: "power2.out" }, "-=1")
+    .fromTo(heroTextC,
+      { opacity: 0, scale: 1.1 },
+      { opacity: 1, scale: 1, duration: 1.5, ease: "power2.out" },
+      ">-0.5"
+    )
+    .to(heroTextC, { duration: 1.5 })
+    .to(slideC, { opacity: 0, scaleX: 0, transformOrigin: "left", duration: 1.5, ease: "power2.in" })
+    .set(slideA, { opacity: .7, scaleX: 1 }, "-=1.5")
+    .set(heroTextA, { opacity: 0, scale: 1.1 }, "-=1.5")
 });
