@@ -1,30 +1,36 @@
 // ScrollTriggerプラグインを登録
 gsap.registerPlugin(ScrollTrigger);
 
-// スマホ対応の設定を追加
-ScrollTrigger.config({
-  autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" // スマホでのリフレッシュイベントを追加
-});
+// ページ内リンクでのジャンプを検知する関数
+function handlePageJump() {
+  // 現在のURLにハッシュがある場合（ページ内リンク）
+  if (window.location.hash) {
+    setTimeout(() => {
+      ScrollTrigger.refresh(); // ScrollTriggerを再計算
+      
+      // 画面内にある要素のアニメーションを即座に完了
+      gsap.utils.toArray(".fadeLeft, .fadeRight, .fade").forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        // 要素が画面内にある場合、アニメーションを完了状態にする
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          gsap.set(element, { opacity: 1, x: 0, y: 0 });
+        }
+      });
+    }, 100);
+  }
+}
 
 // .fadeLeftクラスの要素を左からフェードインアニメーション
 gsap.utils.toArray(".fadeLeft").forEach((element) => {
   gsap.from(element, {
     x: -100,              
-    opacity: 0,
-    duration: 1.2,
-    ease: "power2.out",
-    force3D: false,       
+    opacity: 0,           
+    duration: 1.2,        
+    ease: "power2.out",   
     scrollTrigger: {
       trigger: element,
-      start: "top 85%",   // スマホ用に少し早めに
-      end: "bottom 20%",  // 終了位置を明示
-      toggleActions: "play none none reverse",
-      refreshPriority: -90, // リフレッシュ優先度を下げる
-      invalidateOnRefresh: true, // リフレッシュ時に再計算
-      // スマホ用の追加設定
-      onRefresh: function() {
-        ScrollTrigger.refresh();
-      }
+      start: "top 85%",   // 少し早めに発火
+      toggleActions: "play none none reverse"
     }
   });
 });
@@ -33,53 +39,39 @@ gsap.utils.toArray(".fadeLeft").forEach((element) => {
 gsap.utils.toArray(".fadeRight").forEach((element) => {
   gsap.from(element, {
     x: 100,               
-    opacity: 0,
-    duration: 1.2,
-    ease: "power2.out",
-    force3D: false,       
+    opacity: 0,           
+    duration: 1.2,        
+    ease: "power2.out",   
     scrollTrigger: {
       trigger: element,
-      start: "top 85%",   // スマホ用に少し早めに
-      end: "bottom 20%",  
-      toggleActions: "play none none reverse",
-      refreshPriority: -90,
-      invalidateOnRefresh: true,
-      onRefresh: function() {
-        ScrollTrigger.refresh();
-      }
+      start: "top 85%",   // 少し早めに発火
+      toggleActions: "play none none reverse"
     }
   });
 });
 
-// 通常の.fadeクラス（上からフェードイン）
+// .fadeクラスの要素を下からふわっとフェードインアニメーション
 gsap.utils.toArray(".fade").forEach((element) => {
   gsap.from(element, {
     y: 50,                
-    opacity: 0,
-    duration: 1.2,
-    ease: "power2.out",
-    force3D: false,
+    opacity: 0,           
+    duration: 1.2,        
+    ease: "power2.out",   
     scrollTrigger: {
       trigger: element,
-      start: "top 85%",   
-      end: "bottom 20%",  
-      toggleActions: "play none none reverse",
-      refreshPriority: -90,
-      invalidateOnRefresh: true,
-      onRefresh: function() {
-        ScrollTrigger.refresh();
-      }
+      start: "top 85%",   // 少し早めに発火
+      toggleActions: "play none none reverse"
     }
   });
 });
 
-// スマホでのリサイズ・向き変更対応
-window.addEventListener('resize', () => {
-  ScrollTrigger.refresh();
-});
+// ページ読み込み時とハッシュ変更時に実行
+window.addEventListener('load', handlePageJump);
+window.addEventListener('hashchange', handlePageJump);
 
-window.addEventListener('orientationchange', () => {
-  setTimeout(() => {
-    ScrollTrigger.refresh();
-  }, 500);
+// ナビゲーションリンクがクリックされた時の処理
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', () => {
+    setTimeout(handlePageJump, 300); // スムーススクロール完了後に実行
+  });
 });
