@@ -20,46 +20,50 @@ function handlePageJump() {
   }
 }
 
-// .fadeLeftクラスの要素を左からフェードインアニメーション
+// レスポンシブ設定
+const isMobile = window.innerWidth < 768;
+const triggerStart = isMobile ? "top 99%" : "top 85%";
+
+// .fadeLeft
 gsap.utils.toArray(".fadeLeft").forEach((element) => {
   gsap.from(element, {
-    x: -100,              
-    opacity: 0,           
-    duration: 1.2,        
-    ease: "power2.out",   
+    x: -100,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power2.out",
     scrollTrigger: {
       trigger: element,
-      start: "top 85%",   // 少し早めに発火
+      start: triggerStart,
       toggleActions: "play none none reverse"
     }
   });
 });
 
-// .fadeRightクラスの要素を右からフェードインアニメーション
+// .fadeRight
 gsap.utils.toArray(".fadeRight").forEach((element) => {
   gsap.from(element, {
-    x: 100,               
-    opacity: 0,           
-    duration: 1.2,        
-    ease: "power2.out",   
+    x: 100,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power2.out",
     scrollTrigger: {
       trigger: element,
-      start: "top 85%",   // 少し早めに発火
+      start: triggerStart,
       toggleActions: "play none none reverse"
     }
   });
 });
 
-// .fadeクラスの要素を下からふわっとフェードインアニメーション
+// .fade
 gsap.utils.toArray(".fade").forEach((element) => {
   gsap.from(element, {
-    y: 50,                
-    opacity: 0,           
-    duration: 1.2,        
-    ease: "power2.out",   
+    y: 50,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power2.out",
     scrollTrigger: {
       trigger: element,
-      start: "top 95%",   // 少し早めに発火
+      start: triggerStart,
       toggleActions: "play none none reverse"
     }
   });
