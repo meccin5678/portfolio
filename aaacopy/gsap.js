@@ -59,7 +59,7 @@ gsap.utils.toArray(".fade").forEach((element) => {
     ease: "power2.out",   
     scrollTrigger: {
       trigger: element,
-      start: "top 85%",   // 少し早めに発火
+      start: "top 95%",   // 少し早めに発火
       toggleActions: "play none none reverse"
     }
   });
