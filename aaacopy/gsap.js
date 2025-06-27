@@ -23,7 +23,7 @@ function handlePageJump() {
 // レスポンシブ設定
 const isMobile = window.innerWidth < 768;
 const triggerStart = isMobile ? "top 99%" : "top 85%";
-const DEBUG = false;
+const DEBUG = true;
 
 // .fadeLeft
 gsap.utils.toArray(".fadeLeft").forEach(element => {
