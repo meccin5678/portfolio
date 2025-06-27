@@ -9,7 +9,7 @@ function handlePageJump() {
       ScrollTrigger.refresh(); // ScrollTriggerを再計算
       
       // 画面内にある要素のアニメーションを即座に完了
-      gsap.utils.toArray(".fadeLeft, .fadeRight, .fade").forEach((element) => {
+      gsap.utils.toArray(".fadeLeft, .fadeRight, .fade").forEach(element => {
         const rect = element.getBoundingClientRect();
         // 要素が画面内にある場合、アニメーションを完了状態にする
         if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -23,9 +23,10 @@ function handlePageJump() {
 // レスポンシブ設定
 const isMobile = window.innerWidth < 768;
 const triggerStart = isMobile ? "top 99%" : "top 85%";
+const DEBUG = false;
 
 // .fadeLeft
-gsap.utils.toArray(".fadeLeft").forEach((element) => {
+gsap.utils.toArray(".fadeLeft").forEach(element => {
   gsap.from(element, {
     x: -100,
     opacity: 0,
@@ -34,13 +35,14 @@ gsap.utils.toArray(".fadeLeft").forEach((element) => {
     scrollTrigger: {
       trigger: element,
       start: triggerStart,
-      toggleActions: "play none none reverse"
+      toggleActions: "play none none reverse",
+      markers: DEBUG
     }
   });
 });
 
 // .fadeRight
-gsap.utils.toArray(".fadeRight").forEach((element) => {
+gsap.utils.toArray(".fadeRight").forEach(element => {
   gsap.from(element, {
     x: 100,
     opacity: 0,
@@ -55,7 +57,7 @@ gsap.utils.toArray(".fadeRight").forEach((element) => {
 });
 
 // .fade
-gsap.utils.toArray(".fade").forEach((element) => {
+gsap.utils.toArray(".fade").forEach(element => {
   gsap.from(element, {
     y: 50,
     opacity: 0,
