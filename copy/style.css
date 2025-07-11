@@ -6,7 +6,6 @@
   --silver: #c0c0c0;
   --z-bg: -1;
   --z-base: 1;
-  --z-zero: 0;
   --z-base-over: 2;
   --z-header: 20;
   --z-hero: 30;
@@ -820,12 +819,21 @@ main .sec-menu .under-lay .menu-item .menu-img img {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 10px 10px 0 var(--red);
 }
 @media screen and (max-width: 1024px) {
   .sec-reserve .reserve .web-reserve {
     width: 100%;
   }
+}
+.sec-reserve .reserve .web-reserve::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--red);
+  z-index: var(--z-bg);
 }
 .sec-reserve .reserve .web-reserve .reserve-btns {
   display: flex;
@@ -885,12 +893,21 @@ main .sec-menu .under-lay .menu-item .menu-img img {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 10px 10px 0 var(--main-text);
 }
 @media screen and (max-width: 1024px) {
   .sec-reserve .reserve .tel-reserve {
     width: 100%;
   }
+}
+.sec-reserve .reserve .tel-reserve::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-text);
+  z-index: var(--z-bg);
 }
 .sec-reserve .reserve .tel-reserve .tel-list .tel-12 {
   font-size: 1.2rem;

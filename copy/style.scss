@@ -11,7 +11,6 @@
 
   --z-bg: -1;
   --z-base: 1;
-  --z-zero: 0;
   --z-base-over: 2;
   --z-header: 20;
   --z-hero: 30; 
@@ -26,7 +25,7 @@
   box-sizing: border-box;
 }
 html {
-  // overflow-x: hidden;
+  overflow-x: hidden;
 }
 ul, ol {
   list-style: none;
@@ -640,7 +639,7 @@ main {
 
         }
         .menu-img {
-          // overflow: hidden;
+          overflow: hidden;
           width: 100%;
           height: 150px;
           display: flex;
@@ -666,7 +665,7 @@ main {
 //--------------------------------
 .sec-concept {
   padding: 10rem 0;
-  // overflow: hidden;
+  overflow: hidden;
   position: relative;
   &::after {
     content: "";
@@ -709,7 +708,7 @@ main {
       height: 25rem;
       margin: 0 auto;
       position: relative;
-      // overflow: hidden;
+      overflow: hidden;
       margin-bottom: 10rem;
       
       @media screen and (max-width: 1024px) {
@@ -787,7 +786,7 @@ main {
   width: 100%;
   padding: 10rem 5rem 0;
   position: relative;
-  // overflow: hidden;
+  overflow: hidden;
   @media screen and (max-width: 768px) {
     padding: 10rem 2rem 0;
   }
@@ -812,8 +811,7 @@ main {
       }
     }
   }
-
-
+  
   .reserve {
     display: flex;
     justify-content: space-between;
@@ -831,20 +829,20 @@ main {
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 10px 10px 0 var(--red);
       @media screen and (max-width: 1024px) {
         width: 100%;
       }
-      // &::after {
-      //   content: "";
-      //   position: absolute;
-      //   top: 10px;
-      //   left: 10px;
-      //   width: 100%;
-      //   height: 100%;
-      //   background-color: var(--red);
-      //   z-index: var(--z-bg);
-      // }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+        background-color: var(--red);
+        // opacity: .3;
+        z-index: var(--z-bg);
+      }
       .reserve-btns {
         display: flex;
         justify-content: center;
@@ -900,22 +898,19 @@ main {
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 10px 10px 0 var(--main-text);
-
-
       @media screen and (max-width: 1024px) {
         width: 100%;
       }
-      // &::after {
-      //   content: "";
-      //   position: absolute;
-      //   top: 10px;
-      //   left: 10px;
-      //   width: 100%;
-      //   height: 100%;
-      //   background-color: var(--main-text);
-      //   z-index: var(--z-bg);
-      // }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+        background-color: var(--main-text);
+        z-index: var(--z-bg);
+      }
         .tel-list {
           .tel-12 {
             font-size: 1.2rem;
