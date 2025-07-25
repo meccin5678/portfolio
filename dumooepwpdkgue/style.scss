@@ -847,7 +847,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        // align-items: center;
         gap: 2rem;
         @media (max-width: 1024px) {
           flex-direction: column;

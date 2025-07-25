@@ -836,7 +836,6 @@ main .sec-menu .under-lay .menu-item .menu-img img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 2rem;
 }
 @media (max-width: 1024px) {
