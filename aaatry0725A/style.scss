@@ -168,7 +168,18 @@ header {
     }
   }
 }
-
+.header-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: var(--z-header);
+  img {
+    width: 120px;
+    height: auto;
+    padding: 1rem;
+    object-fit: contain;
+  }
+}
 // #menu,
 // #concept,
 // #map,
@@ -212,7 +223,7 @@ header {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top center;
+      object-position: bottom left;
     }
   }
 
