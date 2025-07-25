@@ -621,7 +621,7 @@ main {
           }
         }
         .title2 {
-          font-size: 2.4rem;
+          font-size: 2rem;
           margin: 0 auto;
           width: fit-content;
           padding: 0 1rem 0 1rem;
@@ -827,7 +827,7 @@ main {
       position: relative;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      // justify-content: space-between;
       align-items: center;
       @media screen and (max-width: 1024px) {
         width: 100%;
@@ -850,41 +850,45 @@ main {
         gap: 2rem;
         @media (max-width: 1024px) {
           flex-direction: column;
-          gap: 5rem;
+          gap: 1rem;
         }
         .reserve-btn {
-          display: grid;
-          place-items: center;
+          // display: grid;
+          // place-items: center;
             .arrow {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              width: max-content;
+              // display: flex;
+              // flex-direction: column;
+              // align-items: center;
+              // justify-content: center;
+              // width: max-content;
               .arrow-text {
                 padding: .5rem 1rem;
                 background-color: var(--red);
                 color: var(--white-gray);
                 font-size: 1.1rem;
-              }
-              .arrow-down {
-              margin-top: -1rem;
-              display: inline-block;
-              animation: arrowDownMove 1.2s infinite cubic-bezier(0.4,0,0.2,1);
-              margin-bottom: 1rem;
-              }
-            }
-            .hot-pepper {
-                display: block;
-                width: 150px;
-                height: auto;
-                cursor: pointer;
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: contain;
+                transition: background-color 0.3s ease;
+                &:hover {
+                  background-color: #cc326a;
                 }
+              }
+              // .arrow-down {
+              // margin-top: -1rem;
+              // display: inline-block;
+              // animation: arrowDownMove 1.2s infinite cubic-bezier(0.4,0,0.2,1);
+              // margin-bottom: 1rem;
+              // }
             }
+            // .hot-pepper {
+            //     display: block;
+            //     width: 150px;
+            //     height: auto;
+            //     cursor: pointer;
+            //     img {
+            //       width: 100%;
+            //       height: 100%;
+            //       object-fit: contain;
+            //     }
+            // }
         }
       }
     }
