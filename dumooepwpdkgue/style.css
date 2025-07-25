@@ -834,6 +834,7 @@ main .sec-menu .under-lay .menu-item .menu-img img {
 }
 .sec-reserve .reserve .web-reserve .reserve-btns {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
