@@ -190,8 +190,14 @@ header nav ul li a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  -o-object-position: left center;
+     object-position: left center;
+}
+@media screen and (max-width: 768px) {
+  .first .first-img img {
+  -o-object-position: left center;
+     object-position: left center;
+  }
 }
 .first .cover {
   position: absolute;
