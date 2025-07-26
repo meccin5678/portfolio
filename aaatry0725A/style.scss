@@ -168,43 +168,8 @@ header {
     }
   }
 }
-.header-logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: var(--z-header);
-  img {
-    width: 120px;
-    height: auto;
-    padding: 1rem;
-    object-fit: contain;
-  }
-}
-// #menu,
-// #concept,
-// #map,
-// #reserve {
-//   scroll-margin-top: 7rem; // ← headerの高さに合わせて調整
-// }
 
-//-------------------------------- 
-// ヘッダーロゴ 
-//--------------------------------
-// .header-logo {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   .logo {
-//     width: 120px;
-//     height: auto;
-//     padding: 1rem;
-//     img {
-//       width: 100%;
-//       height: 100%;
-//       object-fit: contain;
-//     }
-//   }
-// }
+
 //-------------------------------- 
 // ファーストビュー 
 //--------------------------------
@@ -255,7 +220,22 @@ header {
       transition: opacity 0.5s, z-index 0s 0.5s; // opacityは0.5秒で変化、z-indexは0.5秒後に即座に変化
     }
   }
-
+  .header-logo {
+  position: absolute;
+  top: 2.5rem;
+  right: .5rem;
+  z-index: var(--z-header);
+    img {
+      width: 120px;
+      height: auto;
+      padding: 1rem;
+      object-fit: contain;
+    }
+    @media screen and (max-width: 461px) {
+      position: absolute;
+      top: 6rem;
+    }
+  }
   .message {
     position: absolute;
     right: 2rem;
