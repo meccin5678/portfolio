@@ -299,6 +299,12 @@ header nav ul li a {
   padding: 0.25rem 2rem;
   font-size: 1.2rem;
 }
+@media (max-width: 390px) {
+  .first .message .line .box:nth-child(2) p {
+    padding: 0.25rem 2rem;
+    font-size: 1.2rem;
+  }
+}
 .first .message .btn {
   padding: 1rem 2rem;
   background-color: var(--main-text);
@@ -720,8 +726,7 @@ main .sec-menu .under-lay .menu-item .menu-img img {
 }
 @media screen and (max-width: 1024px) {
   .sec-concept .concept-card {
-    margin: 0 auto 4rem;
-    width: 95%;
+    width: 90%;
   }
 }
 .sec-concept .concept-card .box-shadow {
@@ -731,6 +736,7 @@ main .sec-menu .under-lay .menu-item .menu-img img {
   width: 100%;
   height: 100%;
   background-color: var(--silver);
+  opacity: 0.3;
   z-index: var(--z-bg);
 }
 .sec-concept .concept-card h4 {
@@ -743,6 +749,11 @@ main .sec-menu .under-lay .menu-item .menu-img img {
 @media screen and (max-width: 768px) {
   .sec-concept .concept-card h4 {
     font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .sec-concept .concept-card h4 {
+    font-size: 1.2rem;
   }
 }
 .sec-concept .concept-card .concept {
