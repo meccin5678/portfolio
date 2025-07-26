@@ -190,8 +190,8 @@ header nav ul li a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: bottom left;
-     object-position: bottom left;
+  -o-object-position: top left;
+     object-position: top left;
 }
 .first .cover {
   position: absolute;
