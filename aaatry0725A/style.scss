@@ -240,7 +240,6 @@ header {
     position: absolute;
     right: 2rem;
     bottom: 2rem;
-    font-size: 2rem;
 
     @media (max-width: 768px) {
       left: 50%;
@@ -248,7 +247,6 @@ header {
       right: auto;
       transform: translateX(-50%);
       width: 95%;
-      font-size: 1.5rem;
     }
 
    .line {
@@ -272,24 +270,30 @@ header {
          p {
             background-color: #ffffff;
             padding: .25rem 4rem;
+            font-size: 2rem;
             color: var(--main-text);
             position: relative;
             clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+            @media (max-width: 768px) {
+               padding: .25rem 2rem;
+               font-size: 1.4rem;
+            }
          }
+
       }
       .box:nth-child(3) {        
          p {
             background-color: var(--main-text);
-            color: #fff;
+            color: #ffffff;
          }
          .box-shadow {
-            background-color: #fff;
+            background-color: #ffffff;
          }
       }
       .box:nth-child(1) {
          p {
             padding: .25rem 2rem;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
          }
       }
    }
@@ -620,6 +624,11 @@ main {
           border-right: .5px solid var(--main-text);
           font-family: var(--font-en);
           background-color: rgb(255, 255, 255, .3);
+          @media screen and (max-width: 768px) {
+            width: 100%;
+            text-align: center;
+            
+          }
         }
         h5 {
           font-size: 1.4rem;
@@ -665,14 +674,16 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(./img/stone.webp);
+    // background: url(./img/stone.webp);
+    background: url(./img/003.jpeg);
     // filter: brightness(1.1) saturate(1.2) hue-rotate(160deg) opacity(0.7);
-    filter: brightness(1.1);
+    // filter: brightness(1.1);
     background-size: cover;
+    filter: blur(5px);
     // background-position: top left;
-    // animation: conceptBgMove 10s linear infinite;
+    animation: conceptBgMove 10s linear infinite;
     z-index: var(--z-bg);
-    animation: bgMove 10s linear infinite;
+    // animation: bgMove 10s linear infinite;
   }
 
   .title {
@@ -694,29 +705,50 @@ main {
     .concept-card {
       width: 60%;
       margin: 0 auto 5rem;
-      background-color: rgb(255, 255, 255, .5);
+      background-color: rgb(255, 255, 255);
       padding: 2rem;
       border: solid .1px var(--main-text);
+      position: relative;
       @media screen and (max-width: 1024px) {
-        height: auto;
-        width: 100%;
+        margin: 0 auto 4rem;
+        width: 95%;
+      }
+      .box-shadow {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 100%;
+            height: 100%;
+            background-color: var(--silver);
+
+            z-index: var(--z-bg);
       }
       h4 {
         font-size: 1.6rem;
+        width: fit-content;
+        margin-left: 0;
         border-bottom: .1px solid var(--main-text);
+        @media screen and (max-width: 768px) {
+          font-size: 1.4rem;
+        }
       }
       .concept {
         display: flex;
         gap: 3rem;
         justify-content: space-between;
         align-items: center;
-        
         width: 100%;
+
+
         @media screen and (max-width: 1024px) {
-          width: 90%;
+          flex-direction: column;
+          gap: 1rem;
         }
         .concept-text {
           width: 80%;
+          @media screen and (max-width: 1024px) {
+            width: 100%;
+          }
         }
 
       }
@@ -736,7 +768,7 @@ main {
 @keyframes conceptBgMove {
   0% {
     transform: scale(1);
-    opacity: 0.4;
+    opacity: 0.3;
   }
   60% {
     transform: scale(1.1);
@@ -744,7 +776,7 @@ main {
   }
   100% {
     transform:  scale(1);
-    opacity: 0.4;
+    opacity: 0.3;
 
   }
 }
