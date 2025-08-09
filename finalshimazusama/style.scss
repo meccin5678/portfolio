@@ -236,6 +236,10 @@ header {
       height: auto;
       padding: 1rem;
       object-fit: contain;
+      @media screen and (max-width: 480px) {
+      width:  80px;
+      padding: 0.5rem;
+      }
     }
     @media screen and (max-width: 480px) {
       top: 6rem;

@@ -246,6 +246,12 @@ header nav ul li a {
      object-fit: contain;
 }
 @media screen and (max-width: 480px) {
+  .first .header-logo img {
+    width: 80px;
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
   .first .header-logo {
     top: 6rem;
     left: auto;
