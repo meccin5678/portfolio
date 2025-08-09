@@ -129,14 +129,14 @@ header {
   right: 0rem;
   z-index: var(--z-header);
   pointer-events: auto; // ← 追加
-  @media (max-width: 490px) {
+  @media (max-width: 480px) {
     width: 100vw;
     // z-index: 31;
   }
   nav {
     position: relative;
     pointer-events: auto; // ← 追加
-    @media (max-width: 490px) {
+    @media (max-width: 480px) {
     width: 100%;
     // z-index: 31;
     }
@@ -189,8 +189,11 @@ header {
       height: 100%;
       object-fit: cover;
       object-position: center center;
+      @media screen and (max-width: 640px) {
+        object-position: 20% center;
+      }
       @media screen and (max-width: 480px) {
-        object-position: center left;
+        object-position: 30% center;
       }
     }
   }
@@ -234,11 +237,8 @@ header {
       padding: 1rem;
       object-fit: contain;
     }
-    @media screen and (max-width: 490px) {
-      position: absolute;
+    @media screen and (max-width: 480px) {
       top: 6rem;
-      right: .5rem;
-      left: auto;
     }
   }
   .message {
