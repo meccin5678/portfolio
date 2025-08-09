@@ -263,7 +263,7 @@ header nav ul li a {
   right: 2rem;
   bottom: 2rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .first .message {
     left: 50%;
     bottom: 3%;
@@ -301,7 +301,7 @@ header nav ul li a {
   position: relative;
   clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .first .message .line .box p {
     padding: 0.25rem 2rem;
     font-size: 1.4rem;
