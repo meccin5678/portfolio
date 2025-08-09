@@ -129,14 +129,14 @@ header {
   right: 0rem;
   z-index: var(--z-header);
   pointer-events: auto; // ← 追加
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     width: 100vw;
     // z-index: 31;
   }
   nav {
     position: relative;
     pointer-events: auto; // ← 追加
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
     width: 100%;
     // z-index: 31;
     }
@@ -231,9 +231,11 @@ header {
       padding: 1rem;
       object-fit: contain;
     }
-    @media screen and (max-width: 461px) {
+    @media screen and (max-width: 480px) {
       position: absolute;
       top: 6rem;
+      right: .5rem;
+      left: auto;
     }
   }
   .message {
