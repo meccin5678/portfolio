@@ -239,6 +239,8 @@ header {
     }
     @media screen and (max-width: 480px) {
       top: 6rem;
+      left: auto;
+      right: .5rem;
     }
   }
   .message {

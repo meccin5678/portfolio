@@ -248,6 +248,8 @@ header nav ul li a {
 @media screen and (max-width: 480px) {
   .first .header-logo {
     top: 6rem;
+    left: auto;
+    right: 0.5rem;
   }
 }
 .first .message {
