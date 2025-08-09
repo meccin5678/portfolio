@@ -222,8 +222,8 @@ header nav ul li a {
 }
 .first .header-logo {
   position: absolute;
-  top: 2.5rem;
-  right: 0.5rem;
+  top: 0.5rem;
+  left: 0.5rem;
   z-index: var(--z-header);
 }
 .first .header-logo img {
