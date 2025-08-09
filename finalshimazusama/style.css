@@ -193,6 +193,12 @@ header nav ul li a {
   -o-object-position: center center;
      object-position: center center;
 }
+@media screen and (max-width: 480px) {
+  .first .first-img img {
+    -o-object-position: center left;
+       object-position: center left;
+  }
+}
 .first .cover {
   position: absolute;
   top: 0;
