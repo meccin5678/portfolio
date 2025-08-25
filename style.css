@@ -117,6 +117,10 @@ small{
 .skill{
   padding-bottom: 30px;
 }
+.megumi {
+  width: 100px;
+  height: auto;
+}
 /*--------------- バナー----------------- */
 .banner{
   margin-bottom: 5rem;
