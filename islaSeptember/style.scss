@@ -456,11 +456,8 @@ header {
   }
   .highlight {
     display: inline-block;
-    background-color: var(--main-text);
-    padding: 0 .7rem;
-    color: var(--white-gray);
-    margin: 0 .3rem;
-    font-size: .9rem;
+    color: var(--red);
+    margin: 0 .2rem;
   }
 }
 @keyframes arrowDown {
@@ -484,7 +481,7 @@ header {
   width: fit-content;
   background-color: #ffffff;
   color: var(--main-text);
-  padding: .15rem 1rem;
+  padding: .15rem .5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -636,7 +633,7 @@ main {
           }
         }
         .title2 {
-          font-size: 1.85rem;
+          font-size: 1.6rem;
           margin: 0 auto;
           width: fit-content;
           padding: 0 1rem 0 1rem;

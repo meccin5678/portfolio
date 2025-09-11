@@ -467,11 +467,8 @@ header nav ul li a {
 }
 .lead .highlight {
   display: inline-block;
-  background-color: var(--main-text);
-  padding: 0 0.7rem;
-  color: var(--white-gray);
-  margin: 0 0.3rem;
-  font-size: 0.9rem;
+  color: var(--red);
+  margin: 0 0.2rem;
 }
 
 @keyframes arrowDown {
@@ -504,7 +501,7 @@ header nav ul li a {
   width: fit-content;
   background-color: #ffffff;
   color: var(--main-text);
-  padding: 0.15rem 1rem;
+  padding: 0.15rem 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -659,7 +656,7 @@ main .sec-menu .under-lay .menu-item::before {
   }
 }
 main .sec-menu .under-lay .menu-item .title2 {
-  font-size: 1.85rem;
+  font-size: 1.6rem;
   margin: 0 auto;
   width: -moz-fit-content;
   width: fit-content;
