@@ -794,12 +794,6 @@ main .sec-menu .under-lay .menu-item .menu-img img {
     width: 100%;
   }
 }
-.sec-concept .concept-card .concept .concept-text .concept-text-sub {
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 1.2rem;
-  border-bottom: 0.1px solid var(--main-text);
-}
 .sec-concept .concept-card .concept .concept-img {
   width: 300px;
   height: 200px;
@@ -811,29 +805,43 @@ main .sec-menu .under-lay .menu-item .menu-img img {
      object-fit: cover;
   border-radius: 20px;
 }
-.sec-concept .concept-card .concept-top .concept-top-text {
-  width: 100%;
-}
-.sec-concept .concept-card .concept-top .concept-top-img {
-  margin: 2rem auto 0;
-  height: auto;
+.sec-concept .concept-card .concept-top {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
 }
-@media screen and (max-width: 768px) {
-  .sec-concept .concept-card .concept-top .concept-top-img {
+.sec-concept .concept-card .concept-top:last-child {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 1024px) {
+  .sec-concept .concept-card .concept-top {
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
   }
 }
-.sec-concept .concept-card .concept-top .concept-top-img img {
+.sec-concept .concept-card .concept-top .concept-top-text {
+  width: 80%;
+}
+@media screen and (max-width: 1024px) {
+  .sec-concept .concept-card .concept-top .concept-top-text {
+    width: 100%;
+  }
+}
+.sec-concept .concept-card .concept-top .concept-top-img {
   width: 300px;
   height: 200px;
+}
+.sec-concept .concept-card .concept-top .concept-top-img img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px;
 }
+
 @keyframes conceptBgMove {
   0% {
     transform: scale(1);
