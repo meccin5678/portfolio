@@ -204,6 +204,10 @@ small{
 .category {
     font-size: 1.25rem;
 }
+.click-studio {
+width: auto;
+padding:0.2rem 1rem;
+}
 /*--------------- サイドナビゲーション----------------- */
 aside {
   padding: 1rem;
