@@ -1,115 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ポートフォリオ megumi Lab</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="nav.js" defer></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8R8H0HG7H0"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-8R8H0HG7H0');
-    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DX支援とWebクリエーションで、課題を整理し、現場に馴染む仕組み作りをサポートします">
+  <meta name="theme-color" content="#FAD2D2">
+  <title>ポートフォリオ — DX支援とWebクリエーション</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="menu.js" defer></script>
+  <script src="hero.js" defer></script>
 </head>
-<body>
-<header>
-    <p class="top"><a href="index.html">My Portfolio</a></p>
-    <div class="hmb" id="hmb">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div> 
-</header>
-<aside>
-<!-- nav.htmlの内容が表示される -->
-</aside> 
-
-<main>
-<section>
-    <h2>スキル</h2>
-        <div class="skill">
-        <ul>
-            <h3>DX推進スキル</h3>
-            <li>AppSheet</li>
-            <li>Google Apps Script</li>
-            <li>Looker Studio</li>
-            <li>Google Sites</li>
-            <li>Python</li>
-        </ul>
+<body class="home-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-symbol">P.</span><span>megumi Lab<small>ポートフォリオ</small></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く"><span></span><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+        <a href="dx.html">DX支援</a><a href="web.html">Web制作</a><a href="works.html">受注歴・職歴</a><a href="skills.html">スキル</a><a href="profile.html">プロフィール</a><a href="blog.html">ブログ</a><a class="nav-contact" href="contact.html">お問い合わせ <span>↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="home-hero-services">
+      <div class="hero-art hero-art-wide" aria-hidden="true">
+        <canvas class="hero-canvas"></canvas>
+      </div>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">My Approach</p>
+          <h1>組織のポテンシャルを、<br>確実に機能する<br class="mobile-break">「かたち」へ。</h1>
         </div>
-        <div class="skill">
-        <ul>
-            <h3>Web制作スキル</h3>
-            <li>HTML</li>
-            <li>CSS（SCSS）</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Git</li>
-            <li>Photoshop</li>
-            <li>Figma</li>
-            <li>XD</li>
-            <li>STUDIO</li>
-            <li>WordPress</li>
-            <li>SEO</li>
-            <li>Google Analytics 4（GA4）</li>
-        </ul>
+      </section>
+      <section class="section services" id="services">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="eyebrow">What I Do</p><h2>サービス内容</h2></div>
+          </div>
+          <div class="service-grid">
+            <a class="service-card card-dx" href="dx.html">
+              <span class="card-label">01 / DX Support</span>
+              <span class="card-symbol" aria-hidden="true">
+                <svg viewBox="0 0 48 40" focusable="false">
+                  <path class="chart-grid" d="M4 8.5h40M4 19.5h40M4 30.5h40" />
+                  <path class="chart-bar" d="M9 35V26m9 9V20m9 15V24m9 11V13" />
+                  <path class="chart-line" d="m6 24 11-7 9 4 15-12" />
+                  <circle cx="41" cy="9" r="2" />
+                </svg>
+              </span>
+              <h3>DX支援 <span class="service-card-arrow" aria-hidden="true">→</span></h3>
+              <p>まだ言葉になっていない課題から。<br>
+                <mark class="text-marker">AI活用にとどまらず、現場に馴染んで、</mark>確実に機能する仕組みをつくります。</p>
+            </a>
+            <a class="service-card card-web" href="web.html">
+              <span class="card-label">02 / Web Creation</span>
+              <span class="card-bg-art" aria-hidden="true">
+                <svg viewBox="0 0 220 150" focusable="false">
+                  <rect class="screen-frame" x="10" y="8" width="200" height="116" rx="3" />
+                  <path class="screen-detail" d="M10 25h200M20 17h.1M27 17h.1M34 17h.1" />
+                  <rect class="code-panel" x="20" y="35" width="82" height="78" rx="1" />
+                  <path class="code-lines" d="M28 45h28m-20 9h40m-40 9h30m-22 9h38m-38 9h24m-16 9h32m-32 9h20" />
+                  <rect class="layout-panel" x="112" y="35" width="88" height="78" rx="1" />
+                  <rect class="layout-block" x="120" y="43" width="72" height="21" rx="1" />
+                  <rect class="layout-block" x="120" y="72" width="32" height="32" rx="1" />
+                  <rect class="layout-block" x="160" y="72" width="32" height="32" rx="1" />
+                  <path class="monitor-stand" d="M91 124v10m38-10v10m-48 5h58" />
+                </svg>
+              </span>
+              <span class="card-symbol" aria-hidden="true">
+                <svg class="design-icon" viewBox="0 0 48 40" focusable="false">
+                  <rect class="design-frame" x="5" y="5" width="38" height="30" rx="2" />
+                  <path class="design-layout" d="M5 12h38M11 8.5h.01M14.5 8.5h.01M18 8.5h.01M10 18h13v11H10zM27 18h10M27 23.5h10M27 29h7" />
+                  <path class="design-pen" d="m28 33 10-10 4 4-10 10-5 1zM35 26l4 4" />
+                  <circle class="design-node" cx="28" cy="33" r="1" />
+                  <circle class="design-node" cx="42" cy="27" r="1" />
+                </svg>
+              </span>
+              <h3>Web制作 <span class="service-card-arrow" aria-hidden="true">→</span></h3>
+              <p>組織のポテンシャルを整理し、<mark class="text-marker">ご予算や公開後の運用も考え、自走できる</mark>Webサイトを制作します。</p>
+            </a>
+          </div>
         </div>
-
-
-
-        <div class="skill">    
-        <ul>
-            <h3>会計スキル</h3>
-            <li>TKC会計ソフト</li>
-            <li>日本商工会議所簿記検定2級</li>
-        </ul>
+      </section>
+    </div>
+    <section class="section about">
+      <div class="container about-inner">
+        <div>
+          <p class="eyebrow">A Little About Me</p>
+          <h2>経営も、現場も知る。<br>だから、確かな伴走を。</h2>
+          <p>ITベンチャーを13年間経営し、SIerでの実務や派遣社員として組織の現場に携わってきました。経営と現場、双方の視点を生かし、現在は業務委託としてお客様と二人三脚で課題に向き合っています。</p>
+          <div class="about-actions">
+            <a class="button button-profile" href="profile.html">プロフィールを見る <span>↗</span></a>
+            <a class="button button-contact" href="contact.html">ご相談・お問い合わせ <span>↗</span></a>
+          </div>
         </div>
-</section>
-<!-- <section>
-    <h2>資格</h2>
-        <ul>
-            <li>日本商工会議所簿記検定2級</li>
-            <li>Batic（国際会計検定）score400 (2011年受験)</li>
-        </ul>
-</section> -->
-<section>
-    <h2>自己紹介</h2>
-    <div class="w70">
-        <p>
-            <img class="megumi" src="img/megumi.webp" alt="webデザイナーmegumi">
-        </p>
-        <p>
-        はじめまして、megumi Labです。<br><br>
-        これまで、<br>
-
-        ♦︎︎IT企業での企画・営業（6年・正社員）<br>
-        ♦︎︎業界最大手食品メーカーでWebマスターサポート業務（3年・常駐契約社員）<br>
-        ♦︎︎ITベンチャーの代表取締役（13年）<br>
-        ♦︎︎業務委託（3年）<br><br>
-
-        と、IT領域において、さまざまな立場から仕事に携わってまいりました。<br>
-
-        現在は業務委託という形で、フルリモートで、Google Workspaceを横断的に活用した業務改善・DX支援を行っております。AI活用に留まらず、業務として確実に機能する形へ落とし込み、現場運用まで見据えた設計・改善を得意としております。<br><br>
-
-        具体的には、非エンジニアの方を含む関係者とのお打ち合わせを通じて、業務上の課題や要件を整理し、数日でプロトタイプを作成。試運転から運用、保守まで一貫してサポートしております。<br><br>
-
-        Web制作においては、更新・運用のしやすさや短納期での対応を重視し、STUDIOなどのCMSを活用した制作を提案しております。一方で、HTML・CSS・JavaScriptによるコーディングにも対応可能です。<br><br>
-
-        これまで、さまざまなクライアント様、制作会社様、代理店様とプロジェクトを進めてきた経験を活かし、相手の意図や状況を汲み取りながら、コミュニケーションを大切に、柔軟かつ円滑に業務を進めてまいります。<br><br>
-        
-        <!-- <a href="career.html">これまでの仕事の詳細はこちら→</a> -->        
-        </p>
-    </div>  
-</section>
-</main>
-<footer>
-    <p>&copy; 2023 megumi Lab. All rights reserved.</p>
-</footer>    
+        <div class="footer-bottom about-footer">
+          <span>©2023-<span data-year></span> megumi Lab. All rights reserved.</span><a href="#">Back to Top ↑</a>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

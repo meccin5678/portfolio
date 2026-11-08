@@ -1,43 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ポートフォリオ megumi Lab</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="nav.js" defer></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8R8H0HG7H0"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-8R8H0HG7H0');
-    </script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ご相談やお仕事のご依頼など、お気軽にお問い合わせください。">
+  <meta name="theme-color" content="#FAD2D2"><title>お問い合わせ | PORTFOLIO</title>
+  <link rel="stylesheet" href="style.css"><script src="menu.js" defer></script>
 </head>
-<body>
-<header>
-    <h2 href="index.html">My Portfolio</h2>
-    <div class="hmb" id="hmb">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div> 
-</header>
-<aside>
-<!-- nav.htmlの内容が表示される -->
-</aside> 
-<main>
-<section>
-    <h2>お問合せ</h2>
-        <p>お問合せ内容をご記入の上、送信してください。2営業日以内に折り返しご連絡させて頂きます。</p><br>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexplAXwSIxPwhPFePtQnqivIxQ7-Ljc5S5lCzv_AlrojrV8w/viewform?embedded=true" width="680" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-</section>
-</main>
-<footer>
-    <p>&copy; 2023 megumi Lab. All rights reserved.</p>
-</footer>    
-</body>
-</html>
+<body class="contact-page">
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="index.html"><span class="brand-symbol">P.</span><span>megumi Lab<small>ポートフォリオ</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く"><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション"><a href="dx.html">DX支援</a><a href="web.html">Web制作</a><a href="works.html">受注歴・職歴</a><a href="skills.html">スキル</a><a href="profile.html">プロフィール</a><a href="blog.html">ブログ</a><a class="nav-contact" aria-current="page" href="contact.html">お問い合わせ <span>↗</span></a></nav>
+  </div></header>
+  <div class="contact-page-background">
+    <main>
+      <section class="page-hero container"><p class="eyebrow">Contact</p><h1>お問い合わせ</h1><p class="lead">業務委託・契約社員としてのお仕事をお受けしています。<br>ご依頼やご相談はお気軽にお問い合わせください。</p></section>
+      <section class="section content-section">
+        <div class="container door-card">
+          <span class="door-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"></rect><path d="m4.5 7 7.5 6 7.5-6"></path></svg></span>
+          <p class="eyebrow">Contact Form</p>
+          <p>お問い合わせはGoogleフォームで受け付けています。<br>内容を確認のうえ、折り返しご連絡いたします。</p>
+          <a class="button button-contact" href="https://docs.google.com/forms/d/e/1FAIpQLSexplAXwSIxPwhPFePtQnqivIxQ7-Ljc5S5lCzv_AlrojrV8w/viewform?usp=dialog">Googleフォームへ進む <span>↗</span></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-bottom"><span>©2023-<span data-year></span> megumi Lab. All rights reserved.</span><a href="#">Back to Top ↑</a></div></footer>
+  </div>
+</body></html>
