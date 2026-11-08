@@ -1869,7 +1869,14 @@ button {
 }
 
 .project-history-section .section-title {
-  margin-bottom: 32px;
+  margin-bottom: 12px;
+}
+
+.project-history-note {
+  margin: 0 0 32px;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.8;
 }
 
 .project-history {
@@ -1889,6 +1896,13 @@ button {
   color: var(--accent);
   font: 400 0.875rem/1.6 var(--font-latin);
   letter-spacing: 0.04em;
+}
+
+.project-location {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
 }
 
 .project-details h3 {
