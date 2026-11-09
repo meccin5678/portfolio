@@ -445,10 +445,11 @@ button {
   justify-content: center;
   gap: 5px;
   border-radius: 50%;
-  background: var(--white);
-  color: var(--expo-dark-gray);
-  font: 600 1.3125rem var(--font-latin);
-  letter-spacing: -0.06em;
+  border: 0;
+  background: rgba(var(--accent-rgb), 0.3);
+  color: var(--white);
+  font: 600 5rem/1 var(--font-latin);
+  letter-spacing: -0.08em;
   transform: translate(-50%, -50%);
 }
 
@@ -475,6 +476,36 @@ button {
   top: 10%;
   right: 9%;
   color: var(--accent);
+}
+
+.dx-hero-art .vertex-label,
+.web-hero-art .vertex-label {
+  position: absolute;
+  z-index: 3;
+  color: rgba(var(--accent-rgb), 0.72);
+  font: 500 0.75rem/1.2 var(--font-latin);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.dx-hero-art .vertex-label-top,
+.web-hero-art .vertex-label-top {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dx-hero-art .vertex-label-right,
+.web-hero-art .vertex-label-right {
+  right: 0;
+  bottom: 7%;
+  text-align: right;
+}
+
+.dx-hero-art .vertex-label-left,
+.web-hero-art .vertex-label-left {
+  bottom: 7%;
+  left: 0;
 }
 
 /* TOP: two service cards */
@@ -2429,7 +2460,7 @@ button {
 
   .art-disc {
     width: 105px;
-    font-size: 1.125rem;
+    font-size: 4rem;
   }
 
   .section-heading {
