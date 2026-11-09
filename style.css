@@ -910,12 +910,26 @@ button {
   padding-block: 93px 70px;
 }
 
+.page-hero-secondary {
+  box-sizing: border-box;
+  display: flex;
+  min-height: 350px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page-hero-secondary + .section {
+  padding-top: 85px;
+}
+
 /* DX/WEB hero with the circular illustration */
 .page-hero.has-art {
   display: grid;
+  min-height: 590px;
   grid-template-columns: 1fr 0.9fr;
   align-items: center;
   gap: 30px;
+  padding-block: 65px 95px;
 }
 
 .page-hero.has-art .hero-art {
@@ -1980,18 +1994,6 @@ button {
   gap: 45px;
 }
 
-.skills-section {
-  padding-top: 85px;
-}
-
-.skills-heading {
-  margin-bottom: 38px;
-}
-
-.skills-heading .eyebrow {
-  margin-bottom: 10px;
-}
-
 .skill-category-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2514,9 +2516,19 @@ button {
     padding-block: 64px 48px;
   }
 
+  .page-hero-secondary {
+    min-height: 300px;
+  }
+
+  .page-hero-secondary + .section {
+    padding-top: 72px;
+  }
+
   .page-hero.has-art {
+    min-height: 0;
     grid-template-columns: 1fr;
     gap: 30px;
+    padding-block: 58px 78px;
   }
 
   .page-hero.has-art .page-hero-copy,
