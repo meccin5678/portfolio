@@ -1958,6 +1958,10 @@ button {
   border-top: 1px solid var(--line);
 }
 
+.project-history.career-timeline {
+  border-top: none;
+}
+
 .project-entry {
   display: grid;
   grid-template-columns: 190px minmax(0, 1fr);
@@ -2504,19 +2508,21 @@ button {
   line-height: 1.7;
 }
 
-.profile-career-timeline {
+.profile-career-timeline,
+.career-timeline {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.profile-career-timeline::before {
+.profile-career-timeline::before,
+.career-timeline::before {
   position: absolute;
   top: 24px;
   bottom: 24px;
-  left: 23px;
-  width: 2px;
+  left: 24px;
+  width: 1px;
   background: var(--line);
   content: "";
 }
@@ -2591,23 +2597,108 @@ button {
 .timeline-achievements {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px 10px;
   margin-top: 14px;
   padding-top: 14px;
   border-top: 1px dashed var(--line);
 }
 
 .timeline-achievements span {
-  padding: 4px 10px;
-  border: 1px solid rgba(230, 0, 18, 0.15);
-  background: rgba(230, 0, 18, 0.05);
-  color: var(--text);
+  display: inline-flex;
+  align-items: baseline;
+  padding: 6px 12px;
+  border: 1px solid rgba(var(--accent-rgb), 0.16);
+  border-radius: 2px;
+  background: rgba(var(--accent-rgb), 0.05);
+  color: var(--muted);
   font-size: 0.8125rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 .timeline-achievements strong {
+  margin-left: 4px;
   color: var(--accent);
+  font-family: var(--font);
+  font-size: 1.0625rem;
   font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Timeline card interactions & project meta */
+.career-timeline .timeline-content {
+  box-shadow: 0 2px 8px rgba(34, 36, 38, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.career-timeline .timeline-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(34, 36, 38, 0.08);
+}
+
+.career-timeline .project-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.career-timeline .project-location {
+  margin: 0;
+  padding: 0 6px;
+  border-left: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.career-timeline .project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px dashed var(--line);
+  list-style: none;
+}
+
+.career-timeline .project-skills li {
+  padding: 3px 9px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: rgba(130, 132, 135, 0.08);
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Project history specific timeline styles */
+.project-history .timeline-header h3 {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.timeline-item-more .timeline-badge {
+  border-style: dashed;
+}
+
+.timeline-item-more .timeline-step {
+  color: var(--muted);
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.timeline-content-more {
+  border-style: dashed;
+  background: var(--paper);
+}
+
+.timeline-content-more p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.8;
 }
 
 .profile-career-footer {
@@ -3245,8 +3336,9 @@ button {
     font-size: 0.75rem;
   }
 
-  .profile-career-timeline::before {
-    left: 17px;
+  .profile-career-timeline::before,
+  .career-timeline::before {
+    left: 18px;
   }
 
   .timeline-content {
