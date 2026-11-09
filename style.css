@@ -1521,7 +1521,7 @@ button {
   gap: 4px;
   padding: 4px 11px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--accent-soft) 45%, white);
+  background: rgba(130, 132, 135, 0.1);
   color: var(--accent);
   font-size: 0.75rem;
   font-weight: 600;
@@ -1841,6 +1841,20 @@ button {
 .web-project-grid .web-project-category::before {
   content: "#";
   font-family: var(--font-latin);
+}
+
+.career-meta {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  margin: 4px 0 4px;
+  padding: 0px 6px;
+  background: rgba(130, 132, 135, 0.1);
+  /* background: color-mix(in srgb, var(--accent-soft) 45%, white); */
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  /* letter-spacing: 0.03em; */
 }
 
 .web-project-grid .web-project-copy > p:last-child {
