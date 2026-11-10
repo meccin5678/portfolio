@@ -2566,6 +2566,42 @@ button {
   font-size: 0.75rem;
 }
 
+/* Badge: NOW */
+.timeline-badge-now {
+  background: linear-gradient(135deg, #ff4d36, var(--expo-red)) !important;
+  border-color: var(--expo-red) !important;
+  color: var(--white) !important;
+  box-shadow: 0 3px 12px rgba(230, 0, 18, 0.32);
+}
+
+/* Badge: DX (Red accent matching site theme) */
+.timeline-badge-dx {
+  border-color: rgba(230, 0, 18, 0.35);
+  background: rgba(230, 0, 18, 0.04);
+}
+
+.timeline-badge-dx .timeline-step {
+  color: var(--expo-red);
+  font-family: var(--font-latin);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Badge: WEB (Blue accent matching site theme) */
+.timeline-badge-web {
+  border-color: rgba(0, 104, 183, 0.35);
+  background: rgba(0, 104, 183, 0.04);
+}
+
+.timeline-badge-web .timeline-step {
+  color: var(--expo-blue);
+  font-family: var(--font-latin);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .timeline-content {
   padding: 24px 28px;
   border: 1px solid var(--line);
@@ -2673,9 +2709,36 @@ button {
 }
 
 /* Project history specific timeline styles */
+.project-history .timeline-header {
+  align-items: flex-start;
+}
+
+.project-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.project-client {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 1px 7px;
+  border: 1px solid rgba(130, 132, 135, 0.16);
+  border-radius: 2px;
+  background: rgba(130, 132, 135, 0.08);
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
 .project-history .timeline-header h3 {
+  margin: 0;
+  color: var(--text);
   font-size: 1.0625rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.6;
 }
 
