@@ -1484,12 +1484,10 @@ button {
 .dx-feature {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  align-items: center;
-  gap: clamp(28px, 5vw, 64px);
-}
-
-.dx-feature-copy {
-  width: 100%;
+  grid-template-rows: auto auto auto;
+  align-items: start;
+  column-gap: clamp(28px, 5vw, 64px);
+  row-gap: 0;
   padding: clamp(22px, 3vw, 36px);
   border: 1px solid rgba(34, 36, 38, 0.1);
   border-radius: 16px;
@@ -1497,22 +1495,80 @@ button {
   box-shadow: 0 12px 32px rgba(34, 36, 38, 0.05);
 }
 
-.dx-feature-copy .eyebrow {
-  margin-bottom: 14px;
+.dx-feature-copy {
+  width: 100%;
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+  margin-top: 18px;
 }
 
-.dx-feature-copy h2 {
-  margin: 0 0 14px;
+.dx-feature-heading h2 {
+  margin: 0;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   line-height: 1.5;
 }
 
-.dx-feature-copy > p:not(.eyebrow) {
-  margin: 18px 0 0;
+.dx-feature-heading .eyebrow {
+  margin-bottom: 14px;
+}
+
+.dx-feature-heading {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.dx-feature-copy > .dx-skill-tags:first-child {
+  margin-top: 0;
+}
+
+.dx-feature .dx-app-preview {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  margin-top: 18px;
+  width: min(100%, 440px);
+  justify-self: end;
+  padding: clamp(14px, 2.5vw, 24px);
+}
+
+.dx-feature-message-group {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.dx-feature-message-group > p {
+  margin: 0;
   color: var(--text);
   font-size: 0.95rem;
   line-height: 2;
+}
+
+.dx-feature-message-group > p.dx-feature-message {
+  position: relative;
+  margin: 0;
+  padding-left: 32px;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.dx-feature-message-group > p.dx-feature-message::before {
+  position: absolute;
+  top: -0.12em;
+  left: 0;
+  display: block;
+  color: var(--expo-red);
+  content: "✓";
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.dx-feature-message-group > p.dx-feature-message + p {
+  margin-top: 5px;
 }
 
 .dx-point-card {
@@ -1570,9 +1626,9 @@ button {
 }
 
 .dx-skill-tags-caption {
-  margin: 12px 0 0;
+  margin: 24px 0 0;
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   line-height: 1.4;
 }
 
@@ -3339,16 +3395,27 @@ button {
 
   .dx-feature {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 24px;
+  }
+
+  .dx-feature-heading,
+  .dx-feature-copy,
+  .dx-feature .dx-app-preview,
+  .dx-feature-message-group {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .dx-feature-copy,
+  .dx-feature .dx-app-preview,
+  .dx-feature-message-group {
+    margin-top: 0;
   }
 
   .dx-feature .dx-app-preview {
     width: min(100%, 440px);
     justify-self: center;
-  }
-
-  .dx-feature-copy {
-    max-width: none;
   }
 
   .banner-gallery {
