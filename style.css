@@ -643,6 +643,11 @@ button {
   stroke-width: 2;
 }
 
+.ai-art {
+  width: min(40%, 165px);
+  opacity: 0.2;
+}
+
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 28px rgba(34, 36, 38, 0.12), 0 3px 8px rgba(34, 36, 38, 0.06);
@@ -2235,7 +2240,7 @@ button {
 }
 
 .skill-category-accounting {
-  grid-column: 1;
+  grid-column: 2;
 }
 
 .card-accounting {
@@ -2243,6 +2248,13 @@ button {
   --card-accent-rgb: 130, 132, 135;
 
   background: linear-gradient(145deg, var(--white) 5%, rgba(210, 215, 218, 0.55) 100%);
+}
+
+.card-ai {
+  --card-accent: #7357a6;
+  --card-accent-rgb: 115, 87, 166;
+
+  background: linear-gradient(145deg, var(--white) 5%, rgba(224, 216, 240, 0.7) 100%);
 }
 
 .accounting-art .accounting-number {
@@ -2293,6 +2305,13 @@ button {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.65;
+}
+
+.skill-category-description {
+  margin: -8px 0 16px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 .skill-tags {
@@ -3464,6 +3483,10 @@ button {
 
   .skill-category-grid {
     grid-template-columns: 1fr;
+  }
+
+  .skill-category-accounting {
+    grid-column: auto;
   }
 
   .skill-list article {
