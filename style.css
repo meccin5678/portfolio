@@ -1533,9 +1533,32 @@ button {
   letter-spacing: 0.03em;
 }
 
+.dx-skill-tags:not(.dx-skill-tags-outdated) li {
+  background: color-mix(in srgb, var(--expo-pale-red) 72%, var(--white));
+  color: var(--expo-red);
+}
+
 .dx-skill-tags li::before {
   content: "#";
   font-family: var(--font-latin);
+}
+
+.dx-skill-tags-caption {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.dx-skill-tags-outdated {
+  margin-top: 6px;
+}
+
+.dx-skill-tags-outdated li {
+  background: rgba(130, 132, 135, 0.08);
+  color: #858585;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
 }
 
 .dx-development-work {
