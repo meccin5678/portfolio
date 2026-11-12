@@ -782,7 +782,7 @@ button {
   line-height: 1.9;
 }
 
-.service-card .text-marker {
+.text-marker {
   padding-inline: 0.06em;
   color: inherit;
   background: linear-gradient(transparent 50%, rgba(255, 225, 95, 0.72) 50%);
@@ -1515,17 +1515,23 @@ button {
   line-height: 2;
 }
 
-.dx-feature-copy > p.dx-feature-message {
-  margin-top: 22px;
-  padding: 13px 16px;
-  border-left: 3px solid var(--expo-red);
-  border-radius: 0 8px 8px 0;
-  background: rgba(var(--accent-rgb), 0.05);
-  line-height: 1.8;
-}
-
-.dx-feature-message strong {
-  font-weight: 600;
+.dx-point-card {
+  position: relative;
+  padding: 18px 20px;
+  border: 1px solid rgba(var(--accent-rgb), 0.16);
+  border-radius: 4px;
+  background-color: rgba(var(--accent-rgb), 0.025);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 23px,
+      rgba(var(--accent-rgb), 0.035) 23px 24px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 23px,
+      rgba(var(--accent-rgb), 0.035) 23px 24px
+    );
 }
 
 .dx-skill-tags {
@@ -1583,9 +1589,6 @@ button {
 
 .dx-development-work {
   margin-top: 26px;
-  padding: 18px 20px;
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--expo-gray) 18%, var(--white));
 }
 
 .dx-development-work > h3 {
