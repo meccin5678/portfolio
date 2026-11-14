@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ megumi Lab</title>
+    
+    <!-- SEOメタタグ -->
+    <meta name="description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="keywords" content="ポートフォリオ, Web制作, JavaScript, デザイン, megumi Lab">
+    <meta name="author" content="megumi Lab">
+    
+    <!-- Open Graph メタタグ -->
+    <meta property="og:title" content="ポートフォリオ megumi Lab">
+    <meta property="og:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta property="og:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    <meta property="og:url" content="https://meccin5678.github.io/portfolio/index.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitterカード メタタグ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ポートフォリオ megumi Lab">
+    <meta name="twitter:description" content="megumi Labのポートフォリオサイトです。Web制作、JavaScript、デザインなどのスキルを紹介しています。">
+    <meta name="twitter:image" content="https://meccin5678.github.io/portfolio/img/trip.jpg">
+    
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="portfolio-style.css">
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="nav.js" defer></script>
+
+    <!-- Googleタグマネージャー -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8R8H0HG7H0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8R8H0HG7H0');
+    </script>
+</head>
+<body>
+<style>
+.swiper1,
+.swiper2
+{
+    width: 100%;
+    height: 200px;
+}
+.swiper-slide {
+    margin: 0; /* マージンをリセット */
+    padding: 0; /* パディングをリセット */
+    width: 300px;
+    height: 200px;
+}
+.swiper-slide img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.swiper-wrapper
+{
+    transition-timing-function: linear;
+}
+</style>
+<header>
+    <p class="top"><a href="swiper2.html">JavaScriptサンプル集</a></p>
+    <div class="hmb" id="hmb">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> 
+</header>
+
+<aside>
+<!-- nav.htmlの内容が表示される -->
+</aside>
+<main>
+    <section>
+        <h2>ループ再生・逆再生</h2>
+    </section>
+    <div class="swiper1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/35.jpg"></div>
+        <div class="swiper-slide"><img src="img/36.jpg"></div>
+        <div class="swiper-slide"><img src="img/37.jpg"></div>
+        <div class="swiper-slide"><img src="img/38.jpg"></div>
+        <div class="swiper-slide"><img src="img/39.jpg"></div>
+        <div class="swiper-slide"><img src="img/40.jpg"></div>
+        <div class="swiper-slide"><img src="img/41.jpg"></div>
+        <div class="swiper-slide"><img src="img/42.jpg"></div>
+        <div class="swiper-slide"><img src="img/43.jpg"></div>
+      </div>
+    </div>
+    <div class="swiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/35.jpg"></div>
+        <div class="swiper-slide"><img src="img/36.jpg"></div>
+        <div class="swiper-slide"><img src="img/37.jpg"></div>
+        <div class="swiper-slide"><img src="img/38.jpg"></div>
+        <div class="swiper-slide"><img src="img/39.jpg"></div>
+        <div class="swiper-slide"><img src="img/40.jpg"></div>
+        <div class="swiper-slide"><img src="img/41.jpg"></div>
+        <div class="swiper-slide"><img src="img/42.jpg"></div>
+        <div class="swiper-slide"><img src="img/43.jpg"></div>
+      </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2023 megumi Lab. All rights reserved.</p>
+</footer>   
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+'use strict'
+// -------------------------自動再生-----------------------------
+document.addEventListener('DOMContentLoaded', () => {
+const swiper = new Swiper('.swiper1', {
+  direction: 'horizontal',
+  // effect: 'cube',
+  loop: true,
+  // loopAdditionalSlides:2,
+  speed: 2000,
+
+
+  autoplay: {
+    delay: 0,
+    // ループの進行方向を逆
+    // reverseDirection: true 
+  },
+
+  breakpoints:{
+    800: {
+      slidesPerView: 6,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    480: {
+      slidesPerView: 1,
+    }
+  },
+});
+// -------------------------逆再生-----------------------------
+const swiper2 = new Swiper('.swiper2', {
+  direction: 'horizontal',
+  loop: true,
+  // loopAdditionalSlides:2,
+  speed: 2000,
+
+  autoplay: {
+    delay: 0,
+    // ループの進行方向を逆
+    reverseDirection: true 
+  },
+
+  breakpoints:{
+    800: {
+      slidesPerView: 6,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    480: {
+      slidesPerView: 1,
+    }
+  },
+});
+});
+</script> 
+</body>
+</html>

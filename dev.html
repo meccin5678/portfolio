@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ReactやPythonを使った個人開発のプロジェクトをご紹介します。"
+    />
+    <meta name="theme-color" content="#EEE8F7" />
+    <title>開発 | PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="menu.js" defer></script>
+    <script src="hero.js" defer></script>
+  </head>
+
+  <body class="theme-dev">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html"
+          ><span class="brand-symbol">P.</span
+          ><span>megumi Lab<small>ポートフォリオ</small></span></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="メニューを開く"
+        >
+          <span></span><span></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+          <a href="dx.html">DX推進</a><a href="web.html">Web制作</a
+          ><a aria-current="page" href="dev.html">開発</a
+          ><a href="works.html">受注歴・職歴</a><a href="skills.html">スキル</a
+          ><a href="profile.html">プロフィール</a><a href="blog.html">ブログ</a
+          ><a class="nav-contact" href="contact.html"
+            >お問い合わせ <span>↗</span></a
+          >
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero has-art container">
+        <div class="page-hero-copy">
+          <p class="eyebrow">03 / Development</p>
+          <h1>開発</h1>
+          <!-- <p class="lead">
+            ReactやPythonを使って、アイデアを小さなアプリやWebサービスにする個人開発に取り組んでいます。
+          </p> -->
+           <p class="lead">
+            準備中..
+          </p>
+        </div>
+        <div class="hero-art web-hero-art" aria-hidden="true">
+          <svg class="light-triangle" viewBox="0 0 400 340" focusable="false">
+            <path class="triangle-fill" d="M200 38 355 292 45 292Z"></path>
+            <path class="triangle-outline" d="M200 38 355 292 45 292Z"></path>
+            <g class="triangle-rays">
+              <path d="M200 38 200 0M200 38 178 0M200 38 222 0"></path>
+              <path d="M355 292 400 269M355 292 400 292M355 292 400 315"></path>
+              <path d="M45 292 0 269M45 292 0 292M45 292 0 315"></path>
+            </g>
+            <g class="moving-rays">
+              <line
+                class="moving-ray ray-one"
+                x1="200"
+                y1="38"
+                x2="200"
+                y2="0"
+              ></line>
+              <line
+                class="moving-ray ray-two"
+                x1="200"
+                y1="38"
+                x2="178"
+                y2="0"
+              ></line>
+              <line
+                class="moving-ray ray-three"
+                x1="200"
+                y1="38"
+                x2="222"
+                y2="0"
+              ></line>
+            </g>
+            <circle class="light-halo" cx="200" cy="38" r="26"></circle>
+            <circle class="light-point" cx="200" cy="38" r="3"></circle>
+          </svg>
+          <div class="art-disc">DEV</div>
+          <span class="vertex-label vertex-label-top">BUILD & LEARN</span
+          ><span class="vertex-label vertex-label-right">REACT</span
+          ><span class="vertex-label vertex-label-left">PYTHON</span>
+        </div>
+      </section>
+      <section class="dev-skills" aria-label="使用技術">
+        <div class="container dev-skills-inner">
+          <p class="eyebrow">What I use</p>
+          <ul class="dev-skill-list">
+            <li>React</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+          </ul>
+        </div>
+      </section>
+      <section class="section web-project-section dev-project-section">
+        <div class="container">
+          <p class="eyebrow">My Projects</p>
+          <h2 class="section-title web-projects-title">開発事例</h2>
+          <!-- <div class="web-project-grid">
+            <article
+              class="web-project-card dev-project-card dev-project-card--react"
+            >
+              <div class="web-project-copy">
+                <div class="web-project-heading">
+                  <h3>ポケモン図鑑</h3>
+                  <p class="web-project-category">React</p>
+                </div>
+                <p>
+                  AIを使用せず、Reactの基礎とAPI通信の実践学習を目的に開発。useState
+                  / useEffect
+                  による状態管理、非同期データ取得、エラーハンドリング、UIのコンポーネント分割など、フロントエンド開発の基本技術を一通り網羅して実装しています。
+                </p>
+                <p>
+                  <small>
+                    このポケモン図鑑は、非公式のPokeAPI を利用して作成しました
+                    Pokémon は Nintendo, Game Freak, The Pokémon Company
+                    の登録商標であり、本サイトはそれらの企業とは一切関係ありません
+                  </small>
+                </p>
+                <a
+                  class="dev-demo-link"
+                  href="https://meccin5678.github.io/react/card/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >デモサイトを見る<span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+            <article
+              class="web-project-card dev-project-card dev-project-card--react"
+            >
+              <div class="web-project-copy">
+                <div class="web-project-heading">
+                  <h3>コーポレートサイト</h3>
+                  <p class="web-project-category">React</p>
+                </div>
+                <p>
+                  このWebサイトはReactの基本的なHooksを使用して実装しました
+                  お問い合わせフォームのバックエンドにはGoogle Formsを使用し、
+                  自動返信メールはGoogle Apps Scriptで設定しています
+                </p>
+                <a
+                  class="dev-demo-link"
+                  href="https://meccin5678.github.io/reactB/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >デモサイトを見る<span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+            <article
+              class="web-project-card dev-project-card dev-project-card--python"
+            >
+              <div class="web-project-copy">
+                <div class="web-project-heading">
+                  <h3>KPIダッシュボード</h3>
+                  <p class="web-project-category">Python</p>
+                </div>
+                <p>
+                  お手元のCSVファイルをアップロードするだけで、KPIダッシュボードを作成できるWebアプリです
+                </p>
+                <a
+                  class="dev-demo-link"
+                  href="https://meccin5678.github.io/reactB/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >デモサイトを見る<span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+            <article
+              class="web-project-card dev-project-card dev-project-card--javascript"
+            >
+              <div class="web-project-copy">
+                <div class="web-project-heading">
+                  <h3>JavaScriptの部屋</h3>
+                  <p class="web-project-category">JavaScript</p>
+                </div>
+                <p>
+                  AIが使えなかった時代、自力で実装できるよう、特訓した記録。基礎からコードを組む土台になっています。
+                </p>
+                <a
+                  class="dev-demo-link"
+                  href="dev-js/swiper2.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >デモサイトを見る<span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+          </div> -->
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <span
+          >©2023-<span data-year></span> megumi Lab. All rights reserved.</span
+        ><a href="#">Back to Top ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

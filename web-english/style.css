@@ -3,7 +3,8 @@
 /* カスタムプロパティの定義 */
 :root {
     --primary-blue: #0034ee; /* よく使う青色 */
-    --highlight-yellow: #fbff00; /* 他の色も登録可能 */
+    --expo-yellow: #FFF100;
+    --highlight-yellow: var(--expo-yellow); /* 共通の黄色 */
     --font-dark: #25252e; /* 落ち着いたダークグリーン */
     --font-light: #ffffff; /* 明るいフォント色（白） */
 }
