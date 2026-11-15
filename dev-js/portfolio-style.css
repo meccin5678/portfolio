@@ -4,15 +4,19 @@
   --expo-yellow: #FFF100;
 }
 
-/* Google Fontsのインポート */
-@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family:  "Klee One", serif;
-  /* background-color: rgb(232, 250, 244); */
+  margin: 0;
+  background: #FFFFFF;
+  color: #222426;
+  /* style.css の共通タイポグラフィ設定に合わせる */
+  font-family: "Helvetica Neue", "Segoe UI", Arial, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: 1rem;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
   width: 100%;
 }
 html, body {

@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-year]').forEach((element) => {
+        element.textContent = String(new Date().getFullYear());
+    });
+
     fetch('nav.html')
         .then(response => response.text())
         .then(data => {
