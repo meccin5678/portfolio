@@ -3190,6 +3190,14 @@ body.theme-dev .dev-project-card::after {
   background: #ffffff;
 }
 
+.web-project-disclaimer {
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
 .contact-page .site-footer {
   padding-top: 0;
   background: transparent;
