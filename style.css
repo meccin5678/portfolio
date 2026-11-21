@@ -1915,6 +1915,17 @@ button {
   font-size: 0.46rem;
 }
 
+/* 03 / Manuals セクションのスペース配分調整（程よいサイズ感に微調整） */
+.dx-manual-section .dx-feature {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  column-gap: clamp(24px, 4vw, 52px);
+}
+
+.dx-manual-section .dx-feature .dx-app-preview {
+  width: min(100%, 480px);
+  padding: clamp(14px, 2.5vw, 24px);
+}
+
 /* =========================================================
    みんなで育てるマニュアル＆ポータル イラストスタイル
    ========================================================= */
@@ -1929,11 +1940,25 @@ button {
   gap: 12px;
 }
 
+/* 一番上の付箋ストリーム（現場のアイデア・ハッシュタグが盛り上がっている表示） */
+.dx-manual-sticky-stream {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px 12px;
+  padding: 4px 0 2px;
+}
+
+.dx-manual-sticky-stream .dx-sticky-note {
+  width: 170px; /* すべての付箋の横幅を揃える */
+}
+
 /* ポータル画面シミュレーション */
 .dx-manual-screen {
-  background: #ffffff;
-  border: 1px solid #e2e6ea;
-  border-radius: 6px;
+  background: #fbfcfe;
+  border: 1px solid #dce4ec;
+  border-left: 2px solid var(--expo-blue);
+  border-radius: 5px;
   padding: 10px 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
@@ -1961,75 +1986,160 @@ button {
 }
 
 .dx-tag-sim {
-  display: inline-block;
-  background: #e9f2fa;
-  color: #1976d2;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: color-mix(in srgb, var(--expo-pale-blue) 45%, white);
+  color: var(--expo-blue);
+  border: .5px solid var(--expo-blue);
   font-size: 0.48rem;
   font-weight: 600;
-  padding: 2px 6px;
-  border-radius: 3px;
+  padding: 1px 7px;
+  border-radius: 999px;
   white-space: nowrap;
+  letter-spacing: 0.03em;
 }
 
+.dx-tag-sim::before {
+  content: "#";
+  font-family: var(--font-latin);
+}
+
+/* マニュアル記事エリア（横並びサムネイルレイアウト） */
 .dx-manual-article {
   display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+/* YouTube / テレビ風の四角いミニ動画スクリーン（薄いグレー、従来の約1/5サイズ） */
+.dx-video-screen {
+  position: relative;
+  width: 70px;
+  height: 44px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #f2f5f8 0%, #e5ebf1 100%);
+  border-radius: 4px;
+  border: 1px solid #d3dbe3;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* 走査線・テレビ風の微細テクスチャ */
+.dx-video-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.04) 0px,
+    rgba(0, 0, 0, 0.04) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
+
+/* YouTube風の赤い再生ボタン（ミニサイズ） */
+.dx-yt-play-btn {
+  width: 20px;
+  height: 14px;
+  background: var(--expo-red);
+  border-radius: 3.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(230, 0, 18, 0.35);
+  position: relative;
+  z-index: 2;
+}
+
+.dx-yt-play-btn span {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid #ffffff;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  margin-left: 1.5px;
+}
+
+/* 赤いシークバー（再生進捗） */
+.dx-video-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.dx-video-progress-fill {
+  display: block;
+  height: 100%;
+  width: 58%;
+  background: var(--expo-red);
+}
+
+/* 右下のLIVEタグ */
+.dx-video-time-tag {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  font-size: 0.38rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 2.5px;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+  z-index: 2;
+  line-height: 1.2;
+}
+
+/* 記事本文側（タイトル＆メタ情報） */
+.dx-article-body {
+  display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
 }
 
 .dx-article-title {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   flex-wrap: wrap;
 }
 
-.dx-badge-update {
-  background: var(--expo-red);
-  color: #ffffff;
-  font-size: 0.46rem;
-  font-weight: 700;
-  padding: 1px 4px;
-  border-radius: 2px;
-  letter-spacing: 0.05em;
-  animation: pulse-live 2s infinite ease-in-out;
-}
-
-@keyframes pulse-live {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}
-
 .dx-article-title strong {
-  font-size: 0.64rem;
+  font-size: 0.62rem;
   color: #2b3035;
+  line-height: 1.35;
+}
+
+.dx-article-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .dx-update-time {
-  margin-left: auto;
-  font-size: 0.48rem;
+  font-size: 0.46rem;
   color: #438360;
   font-weight: 500;
 }
 
-.dx-article-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.dx-line-full {
-  height: 4px;
-  background: #f0f2f5;
-  border-radius: 2px;
-  width: 92%;
-}
-
-.dx-line-mid {
-  height: 4px;
-  background: #f0f2f5;
-  border-radius: 2px;
-  width: 65%;
+.dx-video-viewers {
+  color: #7b8590;
+  font-size: 0.44rem;
+  font-weight: 500;
 }
 
 /* 社内SNS＆付箋のコラボレーション層 */
@@ -2044,7 +2154,7 @@ button {
   grid-column: 1 / -1;
   background: #fbfcfe;
   border: 1px solid #dce4ec;
-  border-left: 3px solid #0068b7;
+  border-left: 2px solid var(--expo-blue); /* 枠線は引き締まる原色の青 */
   border-radius: 5px;
   padding: 8px 10px;
   display: flex;
@@ -2066,8 +2176,9 @@ button {
   border-radius: 50%;
   font-size: 0.5rem;
   font-weight: 700;
-  color: #fff;
-  background: #0068b7;
+  color: var(--expo-blue);
+  background: color-mix(in srgb, var(--expo-pale-blue) 45%, white);
+  border: .5px solid var(--expo-blue);
 }
 
 .dx-sns-user {
@@ -2115,14 +2226,19 @@ button {
   background: #ffffff;
   border-radius: 2px;
   height: 24px;
-  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0 0 10px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+  padding: 0 0 0 9px;
+  /* 右下角がめくれたようなリアルなドロップシャドウ */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05),
+              2px 3px 8px rgba(0, 0, 0, 0.1),
+              0 6px 12px -2px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-right: none;
+  overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   user-select: none;
 }
@@ -2136,6 +2252,8 @@ button {
   text-overflow: ellipsis;
   padding-right: 6px;
   letter-spacing: -0.01em;
+  flex: 1;
+  min-width: 0;
 }
 
 .dx-sticky-tab {
@@ -2151,48 +2269,48 @@ button {
   letter-spacing: 0.02em;
 }
 
-/* 4色のインデックス付箋（カラーコード維持・背景の濃度を落として淡くし文字の可読性を向上） */
+/* 4色のインデックス付箋（web.htmlの #STUDIO タグと同じピルカプセル型＆カラーミックス） */
 .dx-sticky-note.sticky-blue .dx-sticky-tab {
-  background: color-mix(in srgb, var(--expo-blue) 18%, #ffffff);
-  color: #0b3760;
+  background: color-mix(in srgb, var(--expo-pale-blue) 45%, white);
+  color: var(--expo-blue);
 }
 
 .dx-sticky-note.sticky-purple .dx-sticky-tab {
-  background: color-mix(in srgb, var(--expo-purple) 18%, #ffffff);
-  color: #3f2762;
+  background: color-mix(in srgb, var(--expo-pale-purple) 45%, white);
+  color: var(--expo-purple);
 }
 
 .dx-sticky-note.sticky-red .dx-sticky-tab {
-  background: color-mix(in srgb, var(--expo-red) 18%, #ffffff);
-  color: #8c0c16;
+  background: color-mix(in srgb, var(--expo-pale-red) 45%, white);
+  color: var(--expo-red);
 }
 
 .dx-sticky-note.sticky-yellow .dx-sticky-tab {
-  background: color-mix(in srgb, var(--expo-yellow) 28%, #ffffff);
-  color: #554400;
+  background: color-mix(in srgb, var(--expo-yellow) 18%, white);
+  color: #7a6800;
 }
 
-/* わずかな傾きでリアルな付箋感を演出 */
+/* 自然なばらつきのある傾きをつけて付箋らしさを強調 */
 .dx-sticky-note:nth-child(2) {
-  transform: rotate(-0.7deg);
+  transform: rotate(-1.8deg) translateY(-1px);
 }
 
 .dx-sticky-note:nth-child(3) {
-  transform: rotate(0.8deg);
+  transform: rotate(1.6deg);
 }
 
 .dx-sticky-note:nth-child(4) {
-  transform: rotate(-0.5deg);
+  transform: rotate(-1.2deg);
 }
 
 .dx-sticky-note:nth-child(5) {
-  transform: rotate(0.6deg);
+  transform: rotate(2.2deg) translateY(1px);
 }
 
 .dx-sticky-note:hover {
-  transform: rotate(0deg) translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-  z-index: 2;
+  transform: rotate(0deg) translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  z-index: 5;
 }
 
 /* 社員たち（アバター一覧） */
@@ -3691,6 +3809,34 @@ body.theme-dev .dev-project-card::after {
     gap: 20px;
   }
 
+  /* DXセクション：タブレット〜スマホ画面で1カラム化し横幅100%に展開 */
+  .dx-feature {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 24px;
+  }
+
+  .dx-feature-heading,
+  .dx-feature-copy,
+  .dx-feature .dx-app-preview,
+  .dx-feature-message-group {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .dx-feature-copy,
+  .dx-feature .dx-app-preview,
+  .dx-feature-message-group {
+    margin-top: 0;
+  }
+
+  .dx-feature .dx-app-preview,
+  .dx-manual-section .dx-feature .dx-app-preview {
+    width: 100%;
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
 }
 
 /* Mobile: single-column sections and compact typography */
@@ -3929,9 +4075,11 @@ body.theme-dev .dev-project-card::after {
     margin-top: 0;
   }
 
-  .dx-feature .dx-app-preview {
-    width: min(100%, 440px);
-    justify-self: center;
+  .dx-feature .dx-app-preview,
+  .dx-manual-section .dx-feature .dx-app-preview {
+    width: 100%;
+    max-width: 100%;
+    justify-self: stretch;
   }
 
   .banner-gallery {
@@ -4052,6 +4200,385 @@ body.theme-dev .dev-project-card::after {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* =========================================================
+   dx-feature レスポンシブ修正（960px / 640px 共通）
+   ========================================================= */
+@media (max-width: 960px) {
+  .dx-feature {
+    grid-template-columns: 1fr !important;
+    row-gap: 24px;
+  }
+
+  .dx-feature-heading,
+  .dx-feature-copy,
+  .dx-feature .dx-app-preview,
+  .dx-feature-message-group {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-self: stretch !important;
+    margin-top: 0;
+  }
+
+  .dx-manual-sticky-stream {
+    justify-content: flex-start !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .dx-feature {
+    grid-template-columns: 1fr !important;
+    row-gap: 20px;
+  }
+
+  .dx-feature-heading,
+  .dx-feature-copy,
+  .dx-feature .dx-app-preview,
+  .dx-feature-message-group {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-self: stretch !important;
+    margin-top: 0;
+  }
+
+  .dx-manual-sticky-stream {
+    justify-content: flex-start !important;
+  }
+}
+
+/* =========================================================
+   DX プレビュー図 拡大モーダル & PCホバー演出
+   ========================================================= */
+
+/* PCビュー時のホバー演出（拡大できることを視覚的に提示） */
+@media (min-width: 961px) {
+  .dx-app-preview {
+    position: relative;
+    cursor: zoom-in;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  }
+
+  .dx-app-preview:hover {
+    transform: translateY(-4px);
+  }
+
+  .dx-app-preview:hover .dx-app-window {
+    box-shadow: 0 16px 36px rgba(34, 36, 38, 0.14);
+  }
+
+  /* ホバー時に右上に表示される拡大案内バッジ */
+  .dx-app-preview::after {
+    content: "🔍 クリックで拡大";
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(34, 36, 38, 0.82);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 5px 12px;
+    border-radius: 999px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .dx-app-preview:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* モーダル基本スタイル */
+.dx-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.dx-modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dx-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 22, 28, 0.68);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: zoom-out;
+}
+
+.dx-modal-content {
+  position: relative;
+  z-index: 2;
+  width: min(840px, 92vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: clamp(20px, 3.5vw, 36px);
+  border: 1px solid rgba(230, 0, 18, 0.15);
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at 85% 12%, rgba(230, 0, 18, 0.14), transparent 45%),
+    linear-gradient(145deg, #ffffff 10%, #f8e9e9 100%);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  transform: scale(0.94);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dx-modal.is-active .dx-modal-content {
+  transform: scale(1);
+}
+
+.dx-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #333;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dx-modal-close:hover {
+  background: #ffffff;
+  transform: scale(1.1);
+}
+
+/* モーダル内の拡大表示スタイリング（精細に美しくスケール） */
+.dx-modal-body .dx-app-window {
+  width: 100%;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(34, 36, 38, 0.12);
+}
+
+.dx-modal-body .dx-app-toolbar {
+  padding: 12px 18px;
+  font-size: 0.72rem;
+}
+
+.dx-modal-body .dx-app-content {
+  padding: 24px 30px 28px;
+}
+
+.dx-modal-body .dx-app-title small {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.dx-modal-body .dx-app-title b {
+  font-size: 1.25rem;
+  margin-top: 4px;
+}
+
+/* 01: 業務メニューの拡大 */
+.dx-modal-body .dx-app-menu {
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.dx-modal-body .dx-app-menu > div {
+  padding: 12px 16px;
+}
+
+.dx-modal-body .dx-app-menu strong {
+  font-size: 0.85rem;
+}
+
+.dx-modal-body .dx-app-menu small {
+  font-size: 0.68rem;
+}
+
+/* 02: ダッシュボードの拡大 */
+.dx-modal-body .dx-dashboard-stats {
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.dx-modal-body .dx-dashboard-stats > div {
+  padding: 14px 18px;
+}
+
+.dx-modal-body .dx-dashboard-stats small {
+  font-size: 0.72rem;
+}
+
+.dx-modal-body .dx-dashboard-stats b {
+  font-size: 1.4rem;
+}
+
+.dx-modal-body .dx-chart {
+  margin-top: 20px;
+  height: 140px;
+}
+
+.dx-modal-body .dx-chart-labels span {
+  font-size: 0.72rem;
+}
+
+/* 03: マニュアルセクションの拡大 */
+.dx-modal-body .dx-manual-sticky-stream {
+  gap: 10px 14px;
+  padding: 8px 0 4px;
+}
+
+.dx-modal-body .dx-manual-sticky-stream .dx-sticky-note {
+  width: 220px;
+  height: 32px;
+  padding: 0 0 0 12px;
+}
+
+.dx-modal-body .dx-sticky-text {
+  font-size: 0.72rem;
+}
+
+.dx-modal-body .dx-sticky-tab {
+  font-size: 0.65rem;
+  padding: 3px 8px;
+}
+
+.dx-modal-body .dx-manual-screen-header {
+  padding: 10px 14px;
+}
+
+.dx-modal-body .dx-search-sim {
+  font-size: 0.72rem;
+}
+
+.dx-modal-body .dx-tag-sim {
+  font-size: 0.65rem;
+  padding: 3px 10px;
+}
+
+.dx-modal-body .dx-manual-article {
+  gap: 16px;
+  padding: 8px 6px;
+}
+
+.dx-modal-body .dx-video-screen {
+  width: 110px;
+  height: 68px;
+  border-radius: 6px;
+}
+
+.dx-modal-body .dx-badge-update {
+  font-size: 0.62rem;
+  padding: 2px 7px 2px 6px;
+  gap: 5px;
+}
+
+.dx-modal-body .dx-badge-update::before {
+  width: 5px;
+  height: 5px;
+}
+
+.dx-modal-body .dx-yt-play-btn {
+  width: 30px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.dx-modal-body .dx-yt-play-btn span {
+  border-left-width: 8px;
+  border-top-width: 4.5px;
+  border-bottom-width: 4.5px;
+  margin-left: 2px;
+}
+
+.dx-modal-body .dx-video-progress {
+  height: 3px;
+}
+
+.dx-modal-body .dx-video-time-tag {
+  font-size: 0.52rem;
+  padding: 1px 4px;
+}
+
+.dx-modal-body .dx-article-title strong {
+  font-size: 0.88rem;
+}
+
+.dx-modal-body .dx-update-time,
+.dx-modal-body .dx-video-viewers {
+  font-size: 0.65rem;
+}
+
+.dx-modal-body .dx-manual-article-main h4 {
+  font-size: 0.95rem;
+}
+
+.dx-modal-body .dx-manual-badge {
+  font-size: 0.6rem;
+  padding: 2px 7px;
+}
+
+.dx-modal-body .dx-manual-card-sns {
+  padding: 14px 18px;
+}
+
+.dx-modal-body .dx-sns-header h5 {
+  font-size: 0.9rem;
+}
+
+.dx-modal-body .dx-sns-user {
+  font-size: 0.68rem;
+}
+
+.dx-modal-body .dx-sns-text {
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.dx-modal-body .dx-sns-reactions span {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+}
+
+.dx-modal-body .dx-team-members {
+  padding-top: 14px;
+}
+
+.dx-modal-body .dx-team-avatar {
+  width: 30px;
+  height: 30px;
+  font-size: 0.68rem;
+}
+
+.dx-modal-body .dx-team-status {
+  font-size: 0.72rem;
 }
 
 /* Respect the visitor's reduced-motion preference */

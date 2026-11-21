@@ -1,228 +1,490 @@
 <!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="現場の課題を整理し、業務アプリやデータ可視化でDX推進を支援。無理なく続くデジタル活用の仕組みをつくります。">
-  <meta name="theme-color" content="#FAD2D2"><title>DX推進 | 業務改善・デジタル活用支援 | megumi Lab</title>
-  <link rel="stylesheet" href="style.css"><script src="menu.js" defer></script><script src="hero.js" defer></script>
-</head>
-<body>
-  <header class="site-header"><div class="container header-inner">
-    <a class="brand" href="index.html"><span class="brand-symbol">P.</span><span>megumi Lab<small>ポートフォリオ</small></span></a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く"><span></span><span></span></button>
-    <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション"><a aria-current="page" href="dx.html">DX推進</a><a href="web.html">Web制作</a><a href="dev.html">開発</a><a href="works.html">受注歴・職歴</a><a href="skills.html">スキル</a><a href="profile.html">プロフィール</a><a href="blog.html">ブログ</a><a class="nav-contact" href="contact.html">お問い合わせ <span>↗</span></a></nav>
-  </div></header>
-  <main>
-    <section class="page-hero has-art container">
-      <div class="page-hero-copy">
-        <p class="eyebrow">01 / DX Promotion</p>
-        <h1>DX推進</h1>
-        <p class="lead">まだ言葉になっていない課題から。<br>
-          「働く人が主役」現場に根付くDXを。</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="現場の課題を整理し、業務アプリやデータ可視化でDX推進を支援。無理なく続くデジタル活用の仕組みをつくります。"
+    />
+    <meta name="theme-color" content="#FAD2D2" />
+    <title>DX推進 | 業務改善・デジタル活用支援 | megumi Lab</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="menu.js" defer></script>
+    <script src="hero.js" defer></script>
+    <script src="dx.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html"
+          ><span class="brand-symbol">P.</span
+          ><span>megumi Lab<small>ポートフォリオ</small></span></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="メニューを開く"
+        >
+          <span></span><span></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+          <a aria-current="page" href="dx.html">DX推進</a
+          ><a href="web.html">Web制作</a><a href="dev.html">開発</a
+          ><a href="works.html">受注歴・職歴</a><a href="skills.html">スキル</a
+          ><a href="profile.html">プロフィール</a><a href="blog.html">ブログ</a
+          ><a class="nav-contact" href="contact.html"
+            >お問い合わせ <span>↗</span></a
+          >
+        </nav>
       </div>
-      <div class="hero-art dx-hero-art" aria-hidden="true"><svg class="light-triangle" viewBox="0 0 400 340" focusable="false"><path class="triangle-fill" d="M200 38 355 292 45 292Z"></path><path class="triangle-outline" d="M200 38 355 292 45 292Z"></path><g class="triangle-rays"><path d="M200 38 200 0M200 38 178 0M200 38 222 0"></path><path d="M355 292 400 269M355 292 400 292M355 292 400 315"></path><path d="M45 292 0 269M45 292 0 292M45 292 0 315"></path></g><g class="moving-rays"><line class="moving-ray ray-one" x1="200" y1="38" x2="200" y2="0"></line><line class="moving-ray ray-two" x1="200" y1="38" x2="178" y2="0"></line><line class="moving-ray ray-three" x1="200" y1="38" x2="222" y2="0"></line></g><circle class="light-halo" cx="200" cy="38" r="26"></circle><circle class="light-point" cx="200" cy="38" r="3"></circle></svg><div class="art-disc">DX</div><span class="vertex-label vertex-label-top">LEAN</span><span class="vertex-label vertex-label-right">RELIABLE</span><span class="vertex-label vertex-label-left">DOCUMENTED</span>
-      </div>
-    </section>
-    <div class="dx-feature-group">
-    <section class="section dx-feature-section">
-      <div class="container dx-feature">
-        <div class="dx-feature-heading">
-          <p class="eyebrow">01 / Business Apps</p>
-          <h2>業務アプリ</h2>
+    </header>
+    <main>
+      <section class="page-hero has-art container">
+        <div class="page-hero-copy">
+          <p class="eyebrow">01 / DX Promotion</p>
+          <h1>DX推進</h1>
+          <p class="lead">
+            まだ言葉になっていない課題から。<br />
+            「働く人が主役」現場に根付くDXを。
+          </p>
         </div>
-        <div class="dx-feature-copy">
-          <ul class="dx-skill-tags" aria-label="活用スキル">
-            <li>AppSheet</li>
-            <li>Google Apps Script</li>
-            <li>Google Sheets</li>
-          </ul>
-          <div class="dx-development-work dx-point-card">
-            <h3>開発実績</h3>
-            <ol>
-              <li><div><h4>施工管理</h4><p>現場の進捗や写真、対応状況をスマートフォンから記録・共有。事務所への報告や確認を一元化します。</p></div></li>
-              <li><div><h4>業務フローフォロー</h4><p>業務の流れや判断ポイントを整理し、必要な手順を確認しながら進められる仕組みを整えます。</p></div></li>
-              <li><div><h4>在庫管理</h4><p>入庫・出庫と在庫数を記録し、品目ごとの状況を一覧で把握。確認や集計をスムーズにします。</p></div></li>
-              <li><div><h4>人事評価</h4><p>目標設定から評価、面談記録までをまとめて管理。評価の進捗を見える化します。</p></div></li>
-              <li><div><h4>経費精算</h4><p>申請・承認の流れと処理状況を一元化し、申請内容を追跡しやすくします。</p></div></li>
-            </ol>
-          </div>
+        <div class="hero-art dx-hero-art" aria-hidden="true">
+          <svg class="light-triangle" viewBox="0 0 400 340" focusable="false">
+            <path class="triangle-fill" d="M200 38 355 292 45 292Z"></path>
+            <path class="triangle-outline" d="M200 38 355 292 45 292Z"></path>
+            <g class="triangle-rays">
+              <path d="M200 38 200 0M200 38 178 0M200 38 222 0"></path>
+              <path d="M355 292 400 269M355 292 400 292M355 292 400 315"></path>
+              <path d="M45 292 0 269M45 292 0 292M45 292 0 315"></path>
+            </g>
+            <g class="moving-rays">
+              <line
+                class="moving-ray ray-one"
+                x1="200"
+                y1="38"
+                x2="200"
+                y2="0"
+              ></line>
+              <line
+                class="moving-ray ray-two"
+                x1="200"
+                y1="38"
+                x2="178"
+                y2="0"
+              ></line>
+              <line
+                class="moving-ray ray-three"
+                x1="200"
+                y1="38"
+                x2="222"
+                y2="0"
+              ></line>
+            </g>
+            <circle class="light-halo" cx="200" cy="38" r="26"></circle>
+            <circle class="light-point" cx="200" cy="38" r="3"></circle>
+          </svg>
+          <div class="art-disc">DX</div>
+          <span class="vertex-label vertex-label-top">LEAN</span
+          ><span class="vertex-label vertex-label-right">RELIABLE</span
+          ><span class="vertex-label vertex-label-left">DOCUMENTED</span>
         </div>
-        <div class="dx-app-preview" aria-hidden="true">
-          <div class="dx-app-window">
-            <div class="dx-app-toolbar"><span>BUSINESS APPS</span><i></i><i></i></div>
-            <div class="dx-app-content">
-              <div class="dx-app-title"><small>WORKSPACE / MENU</small><b>業務メニュー</b></div>
-              <div class="dx-app-menu">
-                <div><i>01</i><span><strong>施工管理</strong><small>進捗・写真の共有</small></span><b>→</b></div>
-                <div><i>02</i><span><strong>在庫管理</strong><small>入出庫・在庫の記録</small></span><b>→</b></div>
-                <div><i>03</i><span><strong>人事評価</strong><small>目標・評価の管理</small></span><b>→</b></div>
-                <div><i>04</i><span><strong>経費精算</strong><small>申請・承認の確認</small></span><b>→</b></div>
+      </section>
+      <div class="dx-feature-group">
+        <section class="section dx-feature-section">
+          <div class="container dx-feature">
+            <div class="dx-feature-heading">
+              <p class="eyebrow">01 / Business Apps</p>
+              <h2>業務アプリ</h2>
+            </div>
+            <div class="dx-feature-copy">
+              <ul class="dx-skill-tags" aria-label="活用スキル">
+                <li>AppSheet</li>
+                <li>Google Apps Script</li>
+                <li>Google Sheets</li>
+              </ul>
+              <div class="dx-development-work dx-point-card">
+                <h3>開発実績</h3>
+                <ol>
+                  <li>
+                    <div>
+                      <h4>施工管理</h4>
+                      <p>
+                        現場の進捗や写真、対応状況をスマートフォンから記録・共有。事務所への報告や確認を一元化します。
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <h4>業務フローフォロー</h4>
+                      <p>
+                        業務の流れや判断ポイントを整理し、必要な手順を確認しながら進められる仕組みを整えます。
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <h4>在庫管理</h4>
+                      <p>
+                        入庫・出庫と在庫数を記録し、品目ごとの状況を一覧で把握。確認や集計をスムーズにします。
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <h4>人事評価</h4>
+                      <p>
+                        目標設定から評価、面談記録までをまとめて管理。評価の進捗を見える化します。
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <h4>経費精算</h4>
+                      <p>
+                        申請・承認の流れと処理状況を一元化し、申請内容を追跡しやすくします。
+                      </p>
+                    </div>
+                  </li>
+                </ol>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="dx-feature-message-group">
-          <p class="dx-feature-message"><strong>うまく言葉にできていない現場のストレスから、共に現状を整理します。</strong></p>
-          <p>簡単なヒアリングをもとに<mark class="text-marker">数日でプロトタイプを作成</mark>し、実際に操作しながら現場の声を反映。毎日の業務で確実に使えるアプリへと仕上げます。<mark class="text-marker">導入までの目安は約3週間</mark>〜。</p>
-        </div>
-      </div>
-    </section>
-    <section class="section dx-feature-section">
-      <div class="container dx-feature">
-        <div class="dx-feature-heading">
-          <p class="eyebrow">02 / Dashboards</p>
-          <h2>データ分析・ダッシュボードによる可視化</h2>
-        </div>
-        <div class="dx-feature-copy">
-          <ul class="dx-skill-tags" aria-label="おすすめの方法">
-            <li>Looker Studio</li>
-            <li>Google Apps Script（GAS）</li>
-            <li>Python</li>
-          </ul>
-          <p class="dx-skill-tags-caption">従来の方法...</p>
-          <ul class="dx-skill-tags dx-skill-tags-outdated" aria-label="従来の方法">
-            <li>Excel等の手作りのグラフ</li>
-            <li>集計ルールの解釈違い</li>
-            <li>マクロ・VBAのブラックボックス化</li>
-          </ul>
-        </div>
-        <div class="dx-app-preview" aria-hidden="true">
-          <div class="dx-app-window">
-            <div class="dx-app-toolbar"><span>PERFORMANCE</span><i></i><i></i></div>
-            <div class="dx-app-content">
-              <div class="dx-app-title"><small>OVERVIEW / THIS MONTH</small><b>業務ダッシュボード</b></div>
-              <div class="dx-dashboard-stats"><div><small>完了案件</small><b>128 <i>+12%</i></b></div><div><small>平均対応日数</small><b>2.4 <small>日</small></b></div></div>
-              <div class="dx-chart">
-                <div class="dx-chart-axis"><i></i><i></i><i></i></div>
-                <div class="dx-chart-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="dx-chart-labels"><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span><span>日</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="dx-feature-message-group">
-          <p class="dx-feature-message"><strong>誰かが更新しないと変わらないグラフから、卒業しませんか。</strong></p>
-          <p><mark class="text-marker">高額なBIツールの導入は不要</mark>です。今お使いのデータや身近なツールを活かし、<mark class="text-marker">リアルタイムに可視化する仕組み</mark>をつくります。集計やグラフの更新作業に追われることなく、いつでも最新の状況を確認できます。</p>
-        </div>
-      </div>
-    </section>
-    <section class="section dx-feature-section">
-      <div class="container dx-feature">
-        <div class="dx-feature-heading">
-          <p class="eyebrow">03 / Manuals</p>
-          <h2>みんなで育てるマニュアル</h2>
-        </div>
-        <div class="dx-feature-copy">
-          <ul class="dx-skill-tags" aria-label="活用スキル">
-            <li>Google Sites</li>
-            <li>Google Drive</li>
-            <li>AppSheet</li>
-          </ul>
-          <p class="dx-skill-tags-caption">従来の方法...</p>
-          <ul class="dx-skill-tags dx-skill-tags-outdated" aria-label="従来の方法">
-            <li>PDF</li>
-            <li>紙のマニュアル</li>
-            <li>お問い合わせフォーム</li>
-          </ul>
-          <div class="dx-development-work dx-point-card">
-            <h3>マニュアルのヒント！</h3>
-            <ol>
-              <li><div><h4>社内ポータル</h4><p>Google Sitesを活用すれば、検索機能や、AppSheetやGAS、Google Formsなど社内のツールと連携もスムーズです。</p></div></li>
-              <li><div><h4>社内SNS</h4><p>使い方に迷った場面のスクショをとって投稿しておくと、誰かが解決してくれる！</p></div></li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="dx-app-preview" aria-hidden="true">
-          <div class="dx-app-window dx-manual-board">
-            <div class="dx-app-toolbar"><span>TEAM PORTAL &amp; MANUAL</span><i></i><i></i></div>
-            <div class="dx-app-content dx-manual-content">
-              <div class="dx-app-title">
-                <small>KNOWLEDGE HUB / GROWING TOGETHER</small>
-                <b>みんなで育てる業務ポータル</b>
-              </div>
-
-              <!-- ポータル＆マニュアル本体画面 -->
-              <div class="dx-manual-screen">
-                <div class="dx-manual-screen-header">
-                  <span class="dx-search-sim"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10 10l4 4"/></svg>マニュアル・手順を検索...</span>
-                  <span class="dx-tag-sim">社内ポータル</span>
+            <div class="dx-app-preview" aria-hidden="true">
+              <div class="dx-app-window">
+                <div class="dx-app-toolbar">
+                  <span>BUSINESS APPS</span><i></i><i></i>
                 </div>
-                <div class="dx-manual-article">
-                  <div class="dx-article-title">
-                    <span class="dx-badge-update">LIVE</span>
-                    <strong>【最新】受注から納品までのフロー</strong>
-                    <span class="dx-update-time">たった今更新</span>
+                <div class="dx-app-content">
+                  <div class="dx-app-title">
+                    <small>WORKSPACE / MENU</small><b>業務メニュー</b>
                   </div>
-                  <div class="dx-article-lines">
-                    <span class="dx-line-full"></span>
-                    <span class="dx-line-mid"></span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 社内SNSのスクショ投稿＆付箋（改善メモ・気づき） -->
-              <div class="dx-manual-collab-layer">
-                <!-- 社内SNSタイムライン -->
-                <div class="dx-sns-card">
-                  <div class="dx-sns-header">
-                    <span class="dx-avatar av-1">A</span>
-                    <div class="dx-sns-user">
-                      <b>現場スタッフ</b>
-                      <small>社内SNSでシェア</small>
+                  <div class="dx-app-menu">
+                    <div>
+                      <i>01</i
+                      ><span
+                        ><strong>施工管理</strong
+                        ><small>進捗・写真の共有</small></span
+                      ><b>→</b>
+                    </div>
+                    <div>
+                      <i>02</i
+                      ><span
+                        ><strong>在庫管理</strong
+                        ><small>入出庫・在庫の記録</small></span
+                      ><b>→</b>
+                    </div>
+                    <div>
+                      <i>03</i
+                      ><span
+                        ><strong>人事評価</strong
+                        ><small>目標・評価の管理</small></span
+                      ><b>→</b>
+                    </div>
+                    <div>
+                      <i>04</i
+                      ><span
+                        ><strong>経費精算</strong
+                        ><small>申請・承認の確認</small></span
+                      ><b>→</b>
                     </div>
                   </div>
-                  <p class="dx-sns-text">「手順02の確認項目、スクショ付きで補足しました！これで迷わないはず💡」</p>
-                  <div class="dx-sns-reactions">
-                    <span>👍 5</span>
-                    <span>🙌 3</span>
-                    <span>💬 解決！</span>
-                  </div>
                 </div>
-
-                <!-- 付箋（現場の改善アイデア・メモ：スリムなインデックス付箋風） -->
-                <div class="dx-sticky-note sticky-blue">
-                  <span class="dx-sticky-text">Forms連携で自動化</span>
-                  <span class="dx-sticky-tab">#営業</span>
-                </div>
-
-                <div class="dx-sticky-note sticky-purple">
-                  <span class="dx-sticky-text">最新テンプレ更新済✏️</span>
-                  <span class="dx-sticky-tab">#総務</span>
-                </div>
-
-                <div class="dx-sticky-note sticky-red">
-                  <span class="dx-sticky-text">手順02の注意点を追加</span>
-                  <span class="dx-sticky-tab">#設計</span>
-                </div>
-
-                <div class="dx-sticky-note sticky-yellow">
-                  <span class="dx-sticky-text">ショートカット一覧貼付</span>
-                  <span class="dx-sticky-tab">#パート</span>
-                </div>
-              </div>
-
-              <!-- 社員たち（みんなで協力しているアバター群） -->
-              <div class="dx-team-members">
-                <div class="dx-team-avatars">
-                  <span class="dx-team-avatar av-1" title="営業">佐</span>
-                  <span class="dx-team-avatar av-2" title="現場">高</span>
-                  <span class="dx-team-avatar av-3" title="事務">渡</span>
-                  <span class="dx-team-avatar av-4" title="管理者">田</span>
-                  <span class="dx-team-more">+全社員</span>
-                </div>
-                <span class="dx-team-status">全員で更新・改善中！</span>
               </div>
             </div>
+            <div class="dx-feature-message-group">
+              <p class="dx-feature-message">
+                <strong
+                  >うまく言葉にできていない現場のストレスから、共に現状を整理します。</strong
+                >
+              </p>
+              <p>
+                簡単なヒアリングをもとに<mark class="text-marker"
+                  >数日でプロトタイプを作成</mark
+                >し、実際に操作しながら現場の声を反映。毎日の業務で確実に使えるアプリへと仕上げます。<mark
+                  class="text-marker"
+                  >導入までの目安は約3週間</mark
+                >〜。
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="dx-feature-message-group">
-          <p class="dx-feature-message"><strong>ノウハウが定着、会社の資産価値に</strong></p>
-          <p>仕組みを一度整えれば、<mark class="text-marker">気づいた人がその場でサッと更新</mark>でき、常に最新の状態が保たれます。セキュアな社内環境で業務ノウハウを安全に蓄積・共有することで、<mark class="text-marker">属人化を防ぎ、社員全体の業務レベルを底上げし、会社全体の資産価値へ</mark>とつなげます。</p>
-        </div>
+        </section>
+        <section class="section dx-feature-section">
+          <div class="container dx-feature">
+            <div class="dx-feature-heading">
+              <p class="eyebrow">02 / Dashboards</p>
+              <h2>データ分析・ダッシュボードによる可視化</h2>
+            </div>
+            <div class="dx-feature-copy">
+              <ul class="dx-skill-tags" aria-label="おすすめの方法">
+                <li>Looker Studio</li>
+                <li>Google Apps Script（GAS）</li>
+                <li>Python</li>
+              </ul>
+              <p class="dx-skill-tags-caption">従来の方法...</p>
+              <ul
+                class="dx-skill-tags dx-skill-tags-outdated"
+                aria-label="従来の方法"
+              >
+                <li>Excel等の手作りのグラフ</li>
+                <li>集計ルールの解釈違い</li>
+                <li>マクロ・VBAのブラックボックス化</li>
+              </ul>
+            </div>
+            <div class="dx-app-preview" aria-hidden="true">
+              <div class="dx-app-window">
+                <div class="dx-app-toolbar">
+                  <span>PERFORMANCE</span><i></i><i></i>
+                </div>
+                <div class="dx-app-content">
+                  <div class="dx-app-title">
+                    <small>OVERVIEW / THIS MONTH</small
+                    ><b>業務ダッシュボード</b>
+                  </div>
+                  <div class="dx-dashboard-stats">
+                    <div>
+                      <small>完了案件</small><b>128 <i>+12%</i></b>
+                    </div>
+                    <div>
+                      <small>平均対応日数</small><b>2.4 <small>日</small></b>
+                    </div>
+                  </div>
+                  <div class="dx-chart">
+                    <div class="dx-chart-axis"><i></i><i></i><i></i></div>
+                    <div class="dx-chart-bars">
+                      <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <div class="dx-chart-labels">
+                      <span>月</span><span>火</span><span>水</span
+                      ><span>木</span><span>金</span><span>土</span
+                      ><span>日</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dx-feature-message-group">
+              <p class="dx-feature-message">
+                <strong
+                  >誰かが更新しないと変わらないグラフから、卒業しませんか。</strong
+                >
+              </p>
+              <p>
+                <mark class="text-marker">高額なBIツールの導入は不要</mark
+                >です。今お使いのデータや身近なツールを活かし、<mark
+                  class="text-marker"
+                  >リアルタイムに可視化する仕組み</mark
+                >をつくります。集計やグラフの更新作業に追われることなく、いつでも最新の状況を確認できます。
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="section dx-feature-section dx-manual-section">
+          <div class="container dx-feature">
+            <div class="dx-feature-heading">
+              <p class="eyebrow">03 / Manuals</p>
+              <h2>みんなで育てるマニュアル</h2>
+            </div>
+            <div class="dx-feature-copy">
+              <ul class="dx-skill-tags" aria-label="活用スキル">
+                <li>Google Sites</li>
+                <li>Google Drive</li>
+                <li>AppSheet</li>
+              </ul>
+              <p class="dx-skill-tags-caption">従来の方法...</p>
+              <ul
+                class="dx-skill-tags dx-skill-tags-outdated"
+                aria-label="従来の方法"
+              >
+                <li>PDF</li>
+                <li>紙のマニュアル</li>
+                <li>お問い合わせフォーム</li>
+              </ul>
+              <div class="dx-development-work dx-point-card">
+                <h3>マニュアルのヒント！</h3>
+                <ol>
+                  <li>
+                    <div>
+                      <h4>社内ポータル</h4>
+                      <p>
+                        Google
+                        Sitesを活用すれば、検索機能や、AppSheetやGAS、Google
+                        Formsなど社内のツールと連携もスムーズです。
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <h4>社内SNS</h4>
+                      <p>
+                        使い方に迷った場面のスクショをとって投稿しておくと、誰かが解決してくれる！
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="dx-app-preview" aria-hidden="true">
+              <div class="dx-app-window dx-manual-board">
+                <div class="dx-app-toolbar">
+                  <span>TEAM PORTAL &amp; MANUAL</span><i></i><i></i>
+                </div>
+                <div class="dx-app-content dx-manual-content">
+                  <div class="dx-app-title">
+                    <small>KNOWLEDGE HUB / GROWING TOGETHER</small>
+                    <b>みんなで育てる業務マニュアル</b>
+                  </div>
+
+                  <!-- 検索窓（付箋ボックスの上に配置） -->
+                  <div class="dx-manual-search-bar">
+                    <span class="dx-search-sim"
+                      ><svg
+                        viewBox="0 0 16 16"
+                        width="10"
+                        height="10"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="6.5" cy="6.5" r="4.5" />
+                        <path d="M10 10l4 4" /></svg
+                      >マニュアル・手順を検索...</span
+                    >
+                    <span class="dx-tag-sim">検索</span>
+                  </div>
+
+                  <!-- 1. 付箋（現場の改善アイデア・ハッシュタグが盛り上がっているタイムライン上部） -->
+                  <div class="dx-manual-sticky-stream">
+                    <div class="dx-sticky-note sticky-blue">
+                      <span class="dx-sticky-text">商品マスター改定</span>
+                      <span class="dx-sticky-tab">#営業</span>
+                    </div>
+
+                    <div class="dx-sticky-note sticky-purple">
+                      <span class="dx-sticky-text"
+                        >スマホでレシートのスキャンが可能に</span
+                      >
+                      <span class="dx-sticky-tab">#経理</span>
+                    </div>
+
+                    <div class="dx-sticky-note sticky-red">
+                      <span class="dx-sticky-text"
+                        >助成金の申請手続きについて</span
+                      >
+                      <span class="dx-sticky-tab">#設計</span>
+                    </div>
+
+                    <div class="dx-sticky-note sticky-yellow">
+                      <span class="dx-sticky-text">交通費は精算アプリで</span>
+                      <span class="dx-sticky-tab">#パート</span>
+                    </div>
+                  </div>
+
+                  <!-- 2. ポータル＆マニュアル本体画面 -->
+                  <div class="dx-manual-screen">
+                    <div class="dx-manual-article">
+                      <!-- YouTube / テレビ風の四角いミニ動画スクリーン（薄いグレー） -->
+                      <div class="dx-video-screen">
+                        <div class="dx-yt-play-btn" aria-hidden="true">
+                          <span></span>
+                        </div>
+                        <div class="dx-video-progress">
+                          <span class="dx-video-progress-fill"></span>
+                        </div>
+                        <span class="dx-video-time-tag">LIVE</span>
+                      </div>
+
+                      <div class="dx-article-body">
+                        <div class="dx-article-title">
+                          <span class="dx-badge-update">LIVE</span>
+                          <strong>【最新】受注から納品までのフロー</strong>
+                        </div>
+                        <div class="dx-article-meta">
+                          <span class="dx-update-time">たった今更新</span>
+                          <span class="dx-video-viewers">👁 18人視聴中</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 3. 社内SNSのスクショ投稿 -->
+                  <div class="dx-manual-collab-layer">
+                    <!-- 社内SNSタイムライン -->
+                    <div class="dx-sns-card">
+                      <div class="dx-sns-header">
+                        <span class="dx-avatar av-1">営</span>
+                        <div class="dx-sns-user">
+                          <b>見積り支援マスター更新しました💡</b>
+                          <small>社内SNSでシェア</small>
+                        </div>
+                      </div>
+                      <p class="dx-sns-text">
+                        リニューアル品・廃盤品・価格改定が反映されています。お取引先にご留意ください。
+                      </p>
+                      <div class="dx-sns-reactions">
+                        <span>👍 5</span>
+                        <span>🙌 3</span>
+                        <span>💬 解決！</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 社員たち（みんなで協力しているアバター群） -->
+                  <div class="dx-team-members">
+                    <div class="dx-team-avatars">
+                      <span class="dx-team-avatar av-1" title="営業">佐</span>
+                      <span class="dx-team-avatar av-2" title="現場">高</span>
+                      <span class="dx-team-avatar av-3" title="事務">渡</span>
+                      <span class="dx-team-avatar av-4" title="管理者">田</span>
+                      <span class="dx-team-more">+全社員</span>
+                    </div>
+                    <span class="dx-team-status">全員で更新・改善中！</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dx-feature-message-group">
+              <p class="dx-feature-message">
+                <strong>ノウハウが定着、会社の資産価値に</strong>
+              </p>
+              <p>
+                仕組みを一度整えれば、<mark class="text-marker"
+                  >気づいた人がその場でサッと更新</mark
+                >でき、常に最新の状態が保たれます。セキュアな社内環境で業務ノウハウを安全に蓄積・共有することで、<mark
+                  class="text-marker"
+                  >属人化を防ぎ、社員全体の業務レベルを底上げし、会社全体の資産価値へ</mark
+                >とつなげます。
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <span
+          >©2023-<span data-year></span> megumi Lab. All rights reserved.</span
+        ><a href="#">Back to Top ↑</a>
+      </div>
+    </footer>
+
+    <!-- DXプレビュー拡大モーダル（PCビュー用） -->
+    <div
+      id="dxModal"
+      class="dx-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="イメージ図拡大表示"
+    >
+      <div class="dx-modal-backdrop"></div>
+      <div class="dx-modal-content">
+        <button type="button" class="dx-modal-close" aria-label="閉じる">
+          ×
+        </button>
+        <div class="dx-modal-body"></div>
+      </div>
     </div>
-  </main>
-  <footer class="site-footer"><div class="container footer-bottom"><span>©2023-<span data-year></span> megumi Lab. All rights reserved.</span><a href="#">Back to Top ↑</a></div></footer>
-</body></html>
+  </body>
+</html>
