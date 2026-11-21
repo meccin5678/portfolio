@@ -1957,7 +1957,7 @@ button {
 .dx-manual-screen {
   background: #fbfcfe;
   border: 1px solid #dce4ec;
-  border-left: 1.5px solid var(--expo-red);
+  border-left: 1.2px solid var(--expo-red);
   border-radius: 5px;
   padding: 10px 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
@@ -2152,7 +2152,7 @@ button {
   grid-column: 1 / -1;
   background: #fbfcfe;
   border: 1px solid #dce4ec;
-  border-left: 1.5px solid var(--expo-blue); /* 枠線は引き締まる原色の青 */
+  border-left: 1.2px solid var(--expo-blue); /* 枠線は引き締まる原色の青 */
   border-radius: 5px;
   padding: 8px 10px;
   display: flex;
