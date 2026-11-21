@@ -13,6 +13,8 @@
   --expo-pale-purple: #EEE8F7;
   --expo-yellow: #FFF100;
   --expo-yellow-rgb: 255, 241, 0;
+  --expo-green: #589A84;
+  --expo-pale-green: #E8F3EE;
   --expo-mid-gray: #828487;
   --expo-dark-gray: #222426;
   --expo-gray: #D2D7DA;
@@ -2107,72 +2109,90 @@ button {
   font-weight: 500;
 }
 
-/* 付箋（Post-it / Sticky notes） */
+/* 付箋（Post-it / Index Tab flags：実物のインデックス付箋風の細長デザイン） */
 .dx-sticky-note {
   position: relative;
-  border-radius: 3px;
-  padding: 8px 9px 6px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border-radius: 2px;
+  height: 24px;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  transform: rotate(-1deg);
-  transition: transform 0.2s ease;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-right: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.dx-sticky-text {
+  font-size: 0.52rem;
+  font-weight: 500;
+  color: #2e3842;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 6px;
+  letter-spacing: -0.01em;
+}
+
+.dx-sticky-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 8px;
+  font-size: 0.52rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  min-width: 36px;
+  letter-spacing: 0.02em;
+}
+
+/* 4色のインデックス付箋（カラーコード維持・背景の濃度を落として淡くし文字の可読性を向上） */
+.dx-sticky-note.sticky-blue .dx-sticky-tab {
+  background: color-mix(in srgb, var(--expo-blue) 18%, #ffffff);
+  color: #0b3760;
+}
+
+.dx-sticky-note.sticky-purple .dx-sticky-tab {
+  background: color-mix(in srgb, var(--expo-purple) 18%, #ffffff);
+  color: #3f2762;
+}
+
+.dx-sticky-note.sticky-red .dx-sticky-tab {
+  background: color-mix(in srgb, var(--expo-red) 18%, #ffffff);
+  color: #8c0c16;
+}
+
+.dx-sticky-note.sticky-yellow .dx-sticky-tab {
+  background: color-mix(in srgb, var(--expo-yellow) 28%, #ffffff);
+  color: #554400;
+}
+
+/* わずかな傾きでリアルな付箋感を演出 */
+.dx-sticky-note:nth-child(2) {
+  transform: rotate(-0.7deg);
+}
+
+.dx-sticky-note:nth-child(3) {
+  transform: rotate(0.8deg);
+}
+
+.dx-sticky-note:nth-child(4) {
+  transform: rotate(-0.5deg);
+}
+
+.dx-sticky-note:nth-child(5) {
+  transform: rotate(0.6deg);
 }
 
 .dx-sticky-note:hover {
-  transform: rotate(0deg) scale(1.02);
-}
-
-.dx-sticky-note.sticky-pink {
-  transform: rotate(1.5deg);
-}
-
-.dx-sticky-note.sticky-pink:hover {
-  transform: rotate(0deg) scale(1.02);
-}
-
-.dx-sticky-note.sticky-yellow {
-  background: #fffde0;
-  border: 1px solid #f2e9aa;
-  color: #594d13;
-}
-
-.dx-sticky-note.sticky-pink {
-  background: #fff0f3;
-  border: 1px solid #ffd1dc;
-  color: #692c3a;
-}
-
-.dx-sticky-pin {
-  position: absolute;
-  top: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 14px;
-  height: 5px;
-  background: rgba(220, 50, 50, 0.35);
-  border-radius: 1px;
-}
-
-.dx-sticky-note small {
-  font-size: 0.46rem;
-  font-weight: 700;
-  opacity: 0.8;
-  letter-spacing: 0.04em;
-}
-
-.dx-sticky-note p {
-  margin: 0;
-  font-size: 0.52rem;
-  line-height: 1.4;
-  font-weight: 500;
-}
-
-.dx-sticky-note b {
-  align-self: flex-end;
-  font-size: 0.46rem;
-  opacity: 0.75;
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  z-index: 2;
 }
 
 /* 社員たち（アバター一覧） */
