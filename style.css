@@ -1957,7 +1957,7 @@ button {
 .dx-manual-screen {
   background: #fbfcfe;
   border: 1px solid #dce4ec;
-  border-left: 2px solid var(--expo-blue);
+  border-left: 1.5px solid var(--expo-red);
   border-radius: 5px;
   padding: 10px 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
@@ -1976,11 +1976,12 @@ button {
 .dx-search-sim {
   display: inline-flex;
   align-items: center;
+  /* text-align: left; */
   gap: 5px;
-  background: #f4f6f8;
-  padding: 3px 8px;
+  background: #ffffff;
+  padding: 3px 12px;
   border-radius: 4px;
-  color: #8c949d;
+  color: var(--expo-blue);
   font-size: 0.52rem;
   flex: 1;
 }
@@ -2000,10 +2001,7 @@ button {
   letter-spacing: 0.03em;
 }
 
-.dx-tag-sim::before {
-  content: "#";
-  font-family: var(--font-latin);
-}
+
 
 /* マニュアル記事エリア（横並びサムネイルレイアウト） */
 .dx-manual-article {
@@ -2154,7 +2152,7 @@ button {
   grid-column: 1 / -1;
   background: #fbfcfe;
   border: 1px solid #dce4ec;
-  border-left: 2px solid var(--expo-blue); /* 枠線は引き締まる原色の青 */
+  border-left: 1.5px solid var(--expo-blue); /* 枠線は引き締まる原色の青 */
   border-radius: 5px;
   padding: 8px 10px;
   display: flex;
@@ -4473,7 +4471,16 @@ body.theme-dev .dev-project-card::after {
 .dx-modal-body .dx-manual-screen-header {
   padding: 10px 14px;
 }
-
+/* 検索窓 */
+.dx-manual-search-bar {
+  width: 100%;
+  padding: 6px;
+  background: #f4f6f8;
+  text-align: right;
+  display: flex;
+  gap: 12px;
+  text-align: center;
+}
 .dx-modal-body .dx-search-sim {
   font-size: 0.72rem;
 }
