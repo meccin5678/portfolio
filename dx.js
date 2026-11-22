@@ -68,4 +68,27 @@ document.addEventListener('DOMContentLoaded', () => {
       closeModal();
     }
   });
+
+  // dx-feature-message-group のスクロール検知（スクロール到達後、赤グラデをフェードアウトして真っ白に）
+  const messageGroups = document.querySelectorAll('.dx-feature-message-group');
+  if (messageGroups.length > 0 && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // 視界に入ってから約1.2秒留まった後、赤グラデをスーッと消して真っ白にする
+            setTimeout(() => {
+              entry.target.classList.add('is-cleared');
+            }, 1200);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.3, // ボックスの30%が画面に入ったら検知
+      }
+    );
+
+    messageGroups.forEach((el) => observer.observe(el));
+  }
 });
