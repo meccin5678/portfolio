@@ -1996,46 +1996,272 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 9px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .dx-dashboard-stats > div {
   display: grid;
-  gap: 7px;
-  padding: 9px 11px;
+  gap: 4px;
+  padding: 8px 10px;
   border: 1px solid #eceef0;
   border-radius: 5px;
+  background: #ffffff;
 }
 
 .dx-dashboard-stats small {
   color: #818990;
-  font-size: 0.52rem;
+  font-size: 0.5rem;
 }
 
 .dx-dashboard-stats b {
-  font: 600 0.8rem var(--font-latin);
+  font: 600 0.88rem var(--font-latin);
 }
 
 .dx-dashboard-stats b i {
   margin-left: 4px;
   color: #438360;
-  font: 500 0.48rem var(--font-latin);
+  font: 600 0.5rem var(--font-latin);
   font-style: normal;
 }
 
 .dx-dashboard-stats b small {
-  font: 400 0.52rem var(--font);
+  font: 500 0.55rem var(--font);
 }
 
-.dx-chart {
+/* ダッシュボード内の可視化グリッド（エリア別地図 ＆ 円グラフ） */
+.dx-dashboard-visual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.dx-dash-card {
+  background: #ffffff;
+  border: 1px solid #eceef0;
+  border-radius: 5px;
+  padding: 8px 9px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dx-dash-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.dx-dash-card-head small {
+  font-size: 0.46rem;
+  color: #78828d;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* 1. エリア別（北海道・東北地方地図）ビジュアル */
+.dx-map-visual {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+}
+
+.dx-map-svg {
+  width: 52px;
+  height: 46px;
+  flex-shrink: 0;
+}
+
+.map-reg {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* マニュアルセクションの付箋カラー（くっきりしたペール背景＋テーマカラー枠線） */
+.map-hokkaido {
+  fill: var(--expo-pale-red);
+  stroke: var(--expo-red);
+  stroke-width: 1;
+}
+
+.map-minamitohoku {
+  fill: var(--expo-pale-blue);
+  stroke: var(--expo-blue);
+  stroke-width: 1;
+}
+
+.map-kitatohoku {
+  fill: var(--expo-pale-purple);
+  stroke: var(--expo-purple);
+  stroke-width: 1;
+}
+
+.map-pin-sapporo {
+  fill: var(--expo-red);
+}
+
+.map-pin-wave {
+  fill: none;
+  stroke: var(--expo-red);
+  stroke-width: 0.9;
+  animation: map-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes map-ping {
+  75%, 100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.dx-map-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+  font-size: 0.42rem;
+  color: #64707d;
+  flex: 1;
+}
+
+.dx-map-legend > div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.dx-map-legend b {
+  margin-left: auto;
+  font-size: 0.46rem;
+  color: var(--expo-dark-gray);
+  font-family: var(--font-latin);
+}
+
+.dot-hokkaido {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--expo-red);
+  box-shadow: 0 0 0 1.5px var(--expo-pale-red);
+}
+
+.dot-minamitohoku {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--expo-blue);
+  box-shadow: 0 0 0 1.5px var(--expo-pale-blue);
+}
+
+.dot-kitatohoku {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--expo-purple);
+  box-shadow: 0 0 0 1.5px var(--expo-pale-purple);
+}
+
+/* 2. 円グラフ（ドーナツチャート）ビジュアル */
+.dx-pie-visual {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+}
+
+.dx-pie-chart {
   position: relative;
-  height: 103px;
-  padding: 0 8px 18px 22px;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  /* マニュアルセクション準拠のソリッドカラー */
+  background: conic-gradient(
+    var(--expo-red) 0% 42%,
+    var(--expo-blue) 42% 82%,
+    var(--expo-purple) 82% 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.dx-pie-hole {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.dx-pie-hole b {
+  font-size: 0.44rem;
+  color: var(--expo-dark-gray);
+  font-family: var(--font-latin);
+}
+
+.dx-pie-hole small {
+  font-size: 0.28rem;
+  color: #9299a0;
+  transform: scale(0.85);
+}
+
+.dx-pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+  font-size: 0.42rem;
+  color: #64707d;
+  flex: 1;
+}
+
+.dx-pie-legend > div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.dx-pie-legend b {
+  margin-left: auto;
+  font-size: 0.46rem;
+  color: var(--expo-dark-gray);
+  font-family: var(--font-latin);
+}
+
+.dx-pie-legend i {
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+}
+
+.pie-c1 { background: var(--expo-red); }
+.pie-c2 { background: var(--expo-blue); }
+.pie-c3 { background: var(--expo-purple); }
+
+/* 棒グラフラッパー */
+.dx-chart-wrap {
+  background: #ffffff;
+  border: 1px solid #eceef0;
+  border-radius: 5px;
+  padding: 7px 9px 4px;
+}
+
+.dx-chart-wrap .dx-chart {
+  position: relative;
+  height: 64px;
+  padding: 0 4px 14px 18px;
 }
 
 .dx-chart-axis {
   position: absolute;
-  inset: 3px 8px 20px 22px;
+  inset: 2px 4px 16px 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2047,36 +2273,36 @@ button {
 
 .dx-chart-bars {
   position: absolute;
-  inset: 4px 14px 22px 30px;
+  inset: 2px 8px 18px 24px;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  gap: 8px;
+  gap: 7px;
 }
 
 .dx-chart-bars i {
-  width: 9%;
+  width: 8.5%;
   height: 42%;
-  border-radius: 3px 3px 0 0;
-  background: #efb8bb;
+  border-radius: 2px 2px 0 0;
+  background: #e6ebf0;
 }
 
 .dx-chart-bars i:nth-child(2) { height: 65%; }
 .dx-chart-bars i:nth-child(3) { height: 52%; }
 .dx-chart-bars i:nth-child(4) { height: 78%; }
-.dx-chart-bars i:nth-child(5) { height: 61%; }
-.dx-chart-bars i:nth-child(6) { height: 88%; background: #d94d56; }
-.dx-chart-bars i:nth-child(7) { height: 72%; }
+.dx-chart-bars i:nth-child(5) { height: 88%; background: var(--expo-red); }
+.dx-chart-bars i:nth-child(6) { height: 72%; }
+.dx-chart-bars i:nth-child(7) { height: 82%; background: var(--expo-blue); }
 
 .dx-chart-labels {
   position: absolute;
-  right: 12px;
+  right: 6px;
   bottom: 0;
-  left: 28px;
+  left: 20px;
   display: flex;
   justify-content: space-around;
   color: #9299a0;
-  font-size: 0.46rem;
+  font-size: 0.4rem;
 }
 
 /* 03 / Manuals セクションのスペース配分調整（程よいサイズ感に微調整） */
@@ -4593,29 +4819,116 @@ body.theme-dev .dev-project-card::after {
 
 /* 02: ダッシュボードの拡大 */
 .dx-modal-body .dx-dashboard-stats {
-  gap: 16px;
-  margin-top: 16px;
+  gap: 14px;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 .dx-modal-body .dx-dashboard-stats > div {
-  padding: 14px 18px;
+  padding: 12px 16px;
 }
 
 .dx-modal-body .dx-dashboard-stats small {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
 }
 
 .dx-modal-body .dx-dashboard-stats b {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
-.dx-modal-body .dx-chart {
-  margin-top: 20px;
-  height: 140px;
+.dx-modal-body .dx-dashboard-visual-grid {
+  gap: 14px;
+  margin-bottom: 14px;
 }
 
-.dx-modal-body .dx-chart-labels span {
+.dx-modal-body .dx-dash-card {
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+
+.dx-modal-body .dx-dash-card-head {
+  margin-bottom: 8px;
+}
+
+.dx-modal-body .dx-dash-card-head small {
+  font-size: 0.68rem;
+}
+
+.dx-modal-body .dx-map-visual {
+  gap: 12px;
+}
+
+.dx-modal-body .dx-map-svg {
+  width: 82px;
+  height: 74px;
+}
+
+.dx-modal-body .dx-map-legend {
+  font-size: 0.65rem;
+  gap: 6px;
+}
+
+.dx-modal-body .dx-map-legend b {
   font-size: 0.72rem;
+}
+
+.dx-modal-body .dot-hokkaido,
+.dx-modal-body .dot-minamitohoku,
+.dx-modal-body .dot-kitatohoku {
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.dx-modal-body .dx-pie-visual {
+  gap: 12px;
+}
+
+.dx-modal-body .dx-pie-chart {
+  width: 76px;
+  height: 76px;
+}
+
+.dx-modal-body .dx-pie-hole {
+  width: 46px;
+  height: 46px;
+}
+
+.dx-modal-body .dx-pie-hole b {
+  font-size: 0.72rem;
+}
+
+.dx-modal-body .dx-pie-hole small {
+  font-size: 0.48rem;
+  transform: none;
+}
+
+.dx-modal-body .dx-pie-legend {
+  font-size: 0.65rem;
+  gap: 5px;
+}
+
+.dx-modal-body .dx-pie-legend b {
+  font-size: 0.72rem;
+}
+
+.dx-modal-body .dx-pie-legend i {
+  width: 7px;
+  height: 7px;
+}
+
+.dx-modal-body .dx-chart-wrap {
+  padding: 12px 14px 8px;
+  border-radius: 8px;
+}
+
+.dx-modal-body .dx-chart-wrap .dx-chart {
+  height: 100px;
+  padding: 0 6px 20px 24px;
+}
+
+.dx-modal-body .dx-chart-labels {
+  font-size: 0.62rem;
 }
 
 /* 03: マニュアルセクションの拡大 */

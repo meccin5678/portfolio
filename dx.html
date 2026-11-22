@@ -507,30 +507,119 @@
             <div class="dx-app-preview" aria-hidden="true">
               <div class="dx-app-window">
                 <div class="dx-app-toolbar">
-                  <span>PERFORMANCE</span><i></i><i></i>
+                  <span>SALES ANALYTICS &amp; BI</span><i></i><i></i>
                 </div>
                 <div class="dx-app-content">
                   <div class="dx-app-title">
-                    <small>OVERVIEW / THIS MONTH</small
-                    ><b>業務ダッシュボード</b>
+                    <small>REALTIME KPI / 売上げ速報値</small
+                    ><b>エリア別売上げ実績</b>
                   </div>
+                  <!-- 主要KPI -->
                   <div class="dx-dashboard-stats">
                     <div>
-                      <small>完了案件</small><b>128 <i>+12%</i></b>
+                      <small>今月受注額</small
+                      ><b>3,480<small>万円</small> <i>+18%</i></b>
                     </div>
                     <div>
-                      <small>平均対応日数</small><b>2.4 <small>日</small></b>
+                      <small>目標達成率</small
+                      ><b>114<i>%</i> <small>達成</small></b>
                     </div>
                   </div>
-                  <div class="dx-chart">
-                    <div class="dx-chart-axis"><i></i><i></i><i></i></div>
-                    <div class="dx-chart-bars">
-                      <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+
+                  <!-- エリア別地図 ＆ 円グラフの2カラム可視化 -->
+                  <div class="dx-dashboard-visual-grid">
+                    <!-- エリア別（北海道・東北地方地図）売上可視化 -->
+                    <div class="dx-dash-card dx-map-card">
+                      <div class="dx-dash-card-head">
+                        <small>北海道・東北エリア売上</small>
+                      </div>
+                      <div class="dx-map-visual">
+                        <!-- 北海道・東北地方SVG -->
+                        <svg
+                          viewBox="0 0 100 90"
+                          class="dx-map-svg"
+                          aria-hidden="true"
+                        >
+                          <!-- 北海道（主軸拠点・札幌：赤系） -->
+                          <path
+                            d="M48 4 L60 10 L82 12 L85 20 L70 24 L62 34 L48 28 L42 30 L38 34 L30 38 L24 34 L28 24 L36 16 Z"
+                            class="map-reg map-hokkaido"
+                          />
+                          <!-- 北東北（青森・岩手・秋田：紫系） -->
+                          <path
+                            d="M32 44 L38 48 L46 42 L50 52 L52 62 L26 62 L22 54 L26 48 Z"
+                            class="map-reg map-kitatohoku"
+                          />
+                          <!-- 南東北（宮城・山形・福島：青系） -->
+                          <path
+                            d="M26 63 L52 63 L52 68 L46 70 L48 80 L34 84 L24 76 Z"
+                            class="map-reg map-minamitohoku"
+                          />
+                          <!-- 札幌拠点ピン -->
+                          <circle
+                            cx="40"
+                            cy="24"
+                            r="3"
+                            class="map-pin-sapporo"
+                          />
+                          <circle
+                            cx="40"
+                            cy="24"
+                            r="5.5"
+                            class="map-pin-wave"
+                          />
+                        </svg>
+                        <div class="dx-map-legend">
+                          <div>
+                            <span class="dot-hokkaido"></span>北海道 <b>52%</b>
+                          </div>
+                          <div>
+                            <span class="dot-minamitohoku"></span>北東北
+                            <b>30%</b>
+                          </div>
+                          <div>
+                            <span class="dot-kitatohoku"></span>南東北
+                            <b>18%</b>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="dx-chart-labels">
-                      <span>月</span><span>火</span><span>水</span
-                      ><span>木</span><span>金</span><span>土</span
-                      ><span>日</span>
+
+                    <!-- 円グラフ（受注内訳・構成比） -->
+                    <div class="dx-dash-card dx-pie-card">
+                      <div class="dx-dash-card-head">
+                        <small>商談・受注構成比</small>
+                      </div>
+                      <div class="dx-pie-visual">
+                        <div class="dx-pie-chart" aria-hidden="true">
+                          <span class="dx-pie-hole"
+                            ><b>82%</b><small>新規+既存</small></span
+                          >
+                        </div>
+                        <div class="dx-pie-legend">
+                          <div><i class="pie-c1"></i>既存ルート <b>42%</b></div>
+                          <div><i class="pie-c2"></i>新規開拓 <b>40%</b></div>
+                          <div>
+                            <i class="pie-c3"></i>Web・問合せ <b>18%</b>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 週次推移の棒グラフ -->
+                  <div class="dx-chart-wrap">
+                    <div class="dx-dash-card-head">
+                      <small>週次売上推移（直近）</small>
+                    </div>
+                    <div class="dx-chart">
+                      <div class="dx-chart-axis"><i></i><i></i><i></i></div>
+                      <div class="dx-chart-bars">
+                        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                      </div>
+                      <div class="dx-chart-labels">
+                        <span>第1週-実績</span><span>第2週-実績</span><span>第3週-実績</span><span>今週-実績</span><span>次週-見込み</span><span>残週-予測</span><span>月間-着地</span>
+                      </div>
                     </div>
                   </div>
                 </div>
