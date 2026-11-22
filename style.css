@@ -1595,6 +1595,18 @@ button {
   grid-row: 1;
 }
 
+/* プレビュー画像（.dx-app-preview）がないセクションは親ブロック内でwidth 100%に展開 */
+.dx-feature:not(:has(> .dx-app-preview)),
+.dx-feature.is-fullwidth {
+  grid-template-columns: 1fr;
+}
+
+.dx-feature:not(:has(> .dx-app-preview)) .dx-feature-copy,
+.dx-feature.is-fullwidth .dx-feature-copy {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
 .dx-feature-copy > .dx-skill-tags:first-child {
   margin-top: 0;
 }
@@ -1721,52 +1733,171 @@ button {
 
 .dx-development-work {
   margin-top: 26px;
+  width: 100%;
 }
 
 .dx-development-work > h3 {
   margin: 0;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--line);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--expo-dark-gray);
 }
 
-.dx-development-work ol {
+/* 業務アプリ開発例：大きめアイコンイラスト付きリスト */
+.dx-dev-list {
   margin: 0;
   padding: 0;
   list-style: none;
-  counter-reset: development-work;
 }
 
-.dx-development-work li {
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  gap: 8px;
-  padding: 12px 0;
+.dx-dev-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 22px 0;
   border-bottom: 1px solid var(--line);
-  counter-increment: development-work;
+  transition: transform 0.2s ease;
 }
 
-.dx-development-work li::before {
-  padding-top: 2px;
+.dx-dev-item:last-child {
+  border-bottom: none;
+}
+
+/* 大きめサイズのアイコンイラストバッジ */
+.dx-dev-icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--expo-pale-red) 55%, white);
+  border: 1px solid rgba(230, 0, 18, 0.16);
+  color: var(--expo-red);
+  box-shadow: 0 4px 14px rgba(230, 0, 18, 0.08);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.dx-dev-item:hover .dx-dev-icon-badge {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(230, 0, 18, 0.14);
+}
+
+.dx-dev-icon-badge svg {
+  display: block;
+}
+
+/* 4色＋緑のカラーバリエーション（イラストのような華やかさ） */
+.dx-dev-icon-badge.icon-red {
+  background: color-mix(in srgb, var(--expo-pale-red) 55%, white);
+  border-color: rgba(230, 0, 18, 0.18);
+  color: var(--expo-red);
+  box-shadow: 0 4px 14px rgba(230, 0, 18, 0.08);
+}
+.dx-dev-item:hover .dx-dev-icon-badge.icon-red {
+  box-shadow: 0 6px 18px rgba(230, 0, 18, 0.14);
+}
+
+.dx-dev-icon-badge.icon-blue {
+  background: color-mix(in srgb, var(--expo-pale-blue) 55%, white);
+  border-color: rgba(0, 104, 183, 0.18);
+  color: var(--expo-blue);
+  box-shadow: 0 4px 14px rgba(0, 104, 183, 0.08);
+}
+.dx-dev-item:hover .dx-dev-icon-badge.icon-blue {
+  box-shadow: 0 6px 18px rgba(0, 104, 183, 0.14);
+}
+
+.dx-dev-icon-badge.icon-purple {
+  background: color-mix(in srgb, var(--expo-pale-purple) 55%, white);
+  border-color: rgba(112, 83, 163, 0.18);
+  color: var(--expo-purple);
+  box-shadow: 0 4px 14px rgba(112, 83, 163, 0.08);
+}
+.dx-dev-item:hover .dx-dev-icon-badge.icon-purple {
+  box-shadow: 0 6px 18px rgba(112, 83, 163, 0.14);
+}
+
+.dx-dev-icon-badge.icon-yellow {
+  background: color-mix(in srgb, var(--expo-yellow) 24%, white);
+  border-color: rgba(190, 150, 0, 0.24);
+  color: #8c7300;
+  box-shadow: 0 4px 14px rgba(190, 150, 0, 0.08);
+}
+.dx-dev-item:hover .dx-dev-icon-badge.icon-yellow {
+  box-shadow: 0 6px 18px rgba(190, 150, 0, 0.14);
+}
+
+.dx-dev-icon-badge.icon-green {
+  background: color-mix(in srgb, #e8f3ee 70%, white);
+  border-color: rgba(88, 154, 132, 0.25);
+  color: #3b7e68;
+  box-shadow: 0 4px 14px rgba(88, 154, 132, 0.08);
+}
+.dx-dev-item:hover .dx-dev-icon-badge.icon-green {
+  box-shadow: 0 6px 18px rgba(88, 154, 132, 0.14);
+}
+
+/* 本文エリア */
+.dx-dev-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.dx-dev-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.dx-dev-num {
+  font-family: var(--font-latin);
+  font-weight: 700;
+  font-size: 0.85rem;
   color: var(--accent);
-  content: counter(development-work, decimal-leading-zero);
-  font: 500 0.68rem/1.5 var(--font-latin);
   letter-spacing: 0.05em;
 }
 
-.dx-development-work h4 {
-  margin: 0 0 3px;
-  font-size: 0.92rem;
-  font-weight: 600;
-  line-height: 1.6;
+.dx-dev-head h4 {
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--expo-dark-gray);
 }
 
-.dx-development-work li p {
+.dx-dev-body p {
   margin: 0;
-  color: var(--muted);
-  font-size: 0.8rem;
-  line-height: 1.8;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+/* スマホ表示時の調整 */
+@media (max-width: 640px) {
+  .dx-dev-item {
+    gap: 14px;
+    padding: 16px 0;
+  }
+  .dx-dev-icon-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+  .dx-dev-icon-badge svg {
+    width: 22px;
+    height: 22px;
+  }
+  .dx-dev-head h4 {
+    font-size: 1.02rem;
+  }
+  .dx-dev-body p {
+    font-size: 0.88rem;
+  }
 }
 
 .dx-feature .dx-app-preview {
@@ -1781,51 +1912,6 @@ button {
 
 .dx-feature .dx-app-content {
   padding: 18px clamp(14px, 2.5vw, 24px);
-}
-
-.dx-app-menu {
-  border-top: 1px solid #eef0f1;
-}
-
-.dx-app-menu > div {
-  display: flex;
-  min-height: 46px;
-  align-items: center;
-  gap: 10px;
-  border-bottom: 1px solid #eef0f1;
-}
-
-.dx-app-menu > div > i {
-  display: grid;
-  width: 23px;
-  height: 23px;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 6px;
-  background: #fbe9e9;
-  color: #c53b43;
-  font: 600 0.5rem var(--font-latin);
-  font-style: normal;
-}
-
-.dx-app-menu span {
-  display: grid;
-  flex: 1;
-  gap: 2px;
-}
-
-.dx-app-menu strong {
-  font-size: 0.59rem;
-}
-
-.dx-app-menu small {
-  color: #91979c;
-  font-size: 0.5rem;
-}
-
-.dx-app-menu > div > b {
-  color: #aeb4b9;
-  font: 400 0.8rem var(--font-latin);
 }
 
 .dx-dashboard-stats {
@@ -1961,6 +2047,15 @@ button {
   border-radius: 5px;
   padding: 10px 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.dx-manual-search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 8px;
 }
 
 .dx-manual-screen-header {
@@ -4402,24 +4497,6 @@ body.theme-dev .dev-project-card::after {
   margin-top: 4px;
 }
 
-/* 01: 業務メニューの拡大 */
-.dx-modal-body .dx-app-menu {
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.dx-modal-body .dx-app-menu > div {
-  padding: 12px 16px;
-}
-
-.dx-modal-body .dx-app-menu strong {
-  font-size: 0.85rem;
-}
-
-.dx-modal-body .dx-app-menu small {
-  font-size: 0.68rem;
-}
-
 /* 02: ダッシュボードの拡大 */
 .dx-modal-body .dx-dashboard-stats {
   gap: 16px;
@@ -4468,6 +4545,7 @@ body.theme-dev .dev-project-card::after {
   padding: 3px 8px;
 }
 
+.dx-modal-body .dx-manual-search-bar,
 .dx-modal-body .dx-manual-screen-header {
   padding: 10px 14px;
 }
